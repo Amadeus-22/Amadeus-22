@@ -19,7 +19,9 @@
   I blend strong analytical skills with robust software engineering to build efficient financial models and comprehensive software solutions. My background allows me to not only develop models but also to architect and deliver complete, production-ready systems.
 </p>
 
-<div class="tenor-gif-embed" data-postid="27569875" data-share-method="host" data-aspect-ratio="1" data-width="100%"><a href="https://tenor.com/view/cryptoflash-crypto-flash-tattoo-vintage-gif-27569875">Cryptoflash Tattoo GIF</a>from <a href="https://tenor.com/search/cryptoflash-gifs">Cryptoflash GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+<p align="center">
+  <img src="https://assets10.lottiefiles.com/packages/lf20_t5cyi82k.gif" width="70" /> 
+</p>
 
 ## 🎯 Core Focuses
 
@@ -43,7 +45,7 @@
 ## 📊 My Code Footprint (Languages)
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Amadeus-22&layout=compact&langs_count=6&theme=midnight-purple&hide_border=true&card_width=400"/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Amadeus-22&layout=compact&langs_count=6&theme=midnight-purple&hide_border=true&card_width=400" alt="Top Languages by Code Contribution" />
 </p>
 
 ## 🔥 GitHub Activity & Consistency
