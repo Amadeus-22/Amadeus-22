@@ -1,4 +1,4 @@
-<h1 align="center">Hello, I'm Amadeus 👋</h1>
+<h1 align="center">Hello, I'm Pedro Barbosa 👋</h1>
 
 <p align="center">
   <a href="https://www.linkedin.com/in/pedro-barbosa-0143a6289/">
@@ -6,6 +6,9 @@
   </a>
   <a href="mailto:barbosamaverickv8@gmail.com">
     <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail">
+  </a>
+  <a href="https://dilectusadeo.com/">
+    <img src="https://img.shields.io/badge/Website-5f2c3e?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Website">
   </a>
 </p>
 
@@ -17,7 +20,7 @@
 </p>
 
 <p align="center">
-  <img src="https://media.giphy.com/media/LmNwrMIGf2g4yC3H06/giphy.gif" width="60" /> 
+  <img src="https://emojis.slackmojis.com/emojis/images/1531843109/4246/blob-code.gif?1531843109" width="40" /> 
 </p>
 
 ## 🎯 Core Focuses
@@ -55,7 +58,5 @@
 ---
 
 <p align="center">
-  Looking for challenging projects that require a blend of analytical depth and reliable system implementation. <br>
-  Let's connect on <a href="https://www.linkedin.com/in/pedro-barbosa-0143a6289/">LinkedIn</a>!
+  Explore my work on <a href="https://dilectusadeo.com/">my website</a> or connect with me on <a href="https://www.linkedin.com/in/pedro-barbosa-0143a6289/">LinkedIn</a>!
 </p>
-
