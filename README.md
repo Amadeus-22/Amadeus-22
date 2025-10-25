@@ -1,4 +1,3 @@
-
 <h1 align="center">Hello, I'm Pedro Barbosa 👋</h1>
 
 <p align="center">
@@ -21,7 +20,7 @@
 </p>
 
 <p align="center">
-  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMWE3NWQ0OWMzN2U2YTYwMmM1MmI3MWRlZGU5MDRmMTIyZDUyOTY5ZCZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/xUPGcws0g9x4l6c/giphy.gif" width="60" /> 
+  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjRjZTRmZmE0YzY3YjA4ZjdmNDc4Y2JmZTA0ZjE2NDIyYmU4Y2Q0NiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/xTiTnf6P3jY0F1K6Jk/giphy.gif" width="60" /> 
 </p>
 
 ## 🎯 Core Focuses
