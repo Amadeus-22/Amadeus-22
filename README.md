@@ -1,4 +1,4 @@
-<h1 align="center">Hello, I`m Amadeus 👋</h1>
+<h1 align="center">Hello, I'm Amadeus 👋</h1>
 
 <p align="center">
   <a href="https://www.linkedin.com/in/pedro-barbosa-0143a6289/">
@@ -29,8 +29,6 @@
 - 💻 **System Architecture & Development:** Building end-to-end applications from the ground up, demonstrating proficiency in continuous integration with **Travis CI**, UI automation with **Selenium**, and low-code integration with **n8n**. For example, my **[SOS project](link-to-sos-repo)** is a testament to my ability to program complete, functional systems.
 
 ## 🛠️ Key Technologies & Skills
-
-*Adicionado Selenium (`selenium`).*
 
 <p align="center">
   <a href="https://skillicons.dev">
