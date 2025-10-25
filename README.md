@@ -1,4 +1,4 @@
-<h1 align="center">Hello, I'm Pedro Barbosa 👋</h1>
+<h1 align="center">Hello, I'm Amadeus 👋</h1>
 
 <p align="center">
   <a href="https://www.linkedin.com/in/pedro-barbosa-0143a6289/">
