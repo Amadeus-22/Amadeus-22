@@ -19,9 +19,7 @@
   I blend strong analytical skills with robust software engineering to build efficient financial models and comprehensive software solutions. My background allows me to not only develop models but also to architect and deliver complete, production-ready systems.
 </p>
 
-<p align="center">
-  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2Q3NjA3MmQ3YjU3ZjcyMTFhODFmZGNjNTI3NzkwNmJmYzQ5Yjg4ZCZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/SslYV2Y3iH2o4/giphy.gif" width="100" /> 
-</p>
+<div class="tenor-gif-embed" data-postid="27569875" data-share-method="host" data-aspect-ratio="1" data-width="100%"><a href="https://tenor.com/view/cryptoflash-crypto-flash-tattoo-vintage-gif-27569875">Cryptoflash Tattoo GIF</a>from <a href="https://tenor.com/search/cryptoflash-gifs">Cryptoflash GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
 ## 🎯 Core Focuses
 
