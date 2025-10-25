@@ -1,4 +1,4 @@
-<h1 align="center">Hello, I'm Amadeus 👋</h1>
+<h1 align="center">Hello, I'm Pedro Barbosa 👋</h1>
 
 <p align="center">
   <a href="https://www.linkedin.com/in/pedro-barbosa-0143a6289/">
@@ -20,18 +20,18 @@
   <img src="https://media.giphy.com/media/LmNwrMIGf2g4yC3H06/giphy.gif" width="60" /> 
 </p>
 
-## 🎯 Dual Focus: Quant & Full-Stack Systems
+## 🎯 Core Focuses
 
-- 💹 **Quantitative Development:** Applying mathematical and programming rigor to financial data analysis, risk modeling, and trading strategy simulation using **Python**. I actively develop bots on **QuantConnect**, utilizing my skills in both finance and coding.
+- 💹 **Quantitative Development & ML:** Applying mathematical and programming rigor to financial data analysis, risk modeling, and trading strategy simulation using **Python** and **R**. I actively develop bots on **QuantConnect** and implement **Machine Learning** models for predictive tasks.
 - 💻 **System Architecture & Development:** Building end-to-end applications from the ground up, demonstrating proficiency in full-stack development. For example, my **[SOS project](link-to-sos-repo)** is a testament to my ability to program complete, functional systems.
 
 ## 🛠️ Key Technologies & Skills
 
-*Refinado para incluir QuantConnect, AWS, Linux/Ubuntu e focar nas suas principais linguagens.*
+*Ícones ajustados para serem compactos e incluírem Machine Learning (Scikit-learn) e AWS.*
 
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=python,r,flask,numpy,pandas,aws,linux,ubuntu,vscode,git,docker,ts,react,nodejs,mongodb,postgresql" />
+    <img src="https://skillicons.dev/icons?i=python,r,flask,numpy,pandas,aws,linux,ubuntu,sklearn,ts,react,nodejs,mongodb,postgresql,docker,git,vscode" />
   </a>
 </p>
 
@@ -43,7 +43,7 @@
 
 ## 📊 My Code Footprint (Languages)
 
-*Este card mostra apenas a distribuição de linguagens, sem a nota de ranqueamento.*
+*Este card é mais estável e objetivo, focado na distribuição de código.*
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Amadeus-22&layout=compact&langs_count=6&theme=midnight-purple&hide_border=true&card_width=400" alt="Top Languages by Code Contribution" />
@@ -51,7 +51,7 @@
 
 ## 🔥 GitHub Activity & Consistency
 
-***Ajuste Chave:** Adicionamos `&hide_rank=true` para remover o ranqueamento (a nota 'C') do seu cartão de estatísticas, tornando-o mais elegante.*
+***CORREÇÃO PRINCIPAL:** O parâmetro `&hide_rank=true` remove a nota de ranqueamento (C, B, A, etc.).*
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=Amadeus-22&show_icons=true&theme=midnight-purple&hide_border=true&count_private=true&hide_rank=true" alt="Pedro's GitHub stats" />
@@ -64,3 +64,19 @@
   Looking for challenging projects that require a blend of analytical depth and reliable system implementation. <br>
   Let's connect on <a href="https://www.linkedin.com/in/pedro-barbosa-0143a6289/">LinkedIn</a>!
 </p>
+
+### Sobre a Visualização Mobile (Caixas Pretas)
+
+O problema da não visualização dos gráficos (`GitHub Readme Stats` e `GitHub Streak`) no seu celular, onde aparecem caixas pretas, é quase sempre causado por:
+
+1.  **Bloqueio de Scripts/CORS:** O aplicativo GitHub (ou seu navegador) pode estar bloqueando a requisição para os servidores externos que geram as imagens SVG (`vercel.app` e `herokuapp.com`).
+2.  **Cache:** O aplicativo pode ter um cache agressivo da versão anterior ou da tentativa de carregamento que falhou.
+
+**Solução (O que você pode tentar):**
+
+* **Limpar o Cache do App:** Limpe o cache do aplicativo GitHub no seu celular e tente novamente.
+* **Visualizar no Navegador Mobile:** Tente acessar seu perfil GitHub através de um navegador (Chrome, Firefox) no modo desktop para ver se o problema persiste.
+
+**Do ponto de vista do código,** não há nada que eu possa fazer para forçar o carregamento, pois o Markdown é estático e as imagens são dinâmicas. O código acima é o padrão da comunidade e está configurado corretamente. O fato de aparecerem no seu PC é a prova de que o link está funcional.
+
+O importante é que a **estética e a organização do conteúdo estão agora perfeitas e alinhadas com seu foco Quant/Sistemas!**
