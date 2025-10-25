@@ -1,4 +1,4 @@
-<h1 align="center">Hello, I'm Amadeus 👋</h1>
+<h1 align="center">Hello, I`m Amadeus 👋</h1>
 
 <p align="center">
   <a href="https://www.linkedin.com/in/pedro-barbosa-0143a6289/">
@@ -26,13 +26,15 @@
 ## 🎯 Core Focuses
 
 - 💹 **Quantitative Development & ML:** Applying mathematical and programming rigor to financial data analysis, risk modeling, and trading strategy simulation using **Python** and **R**. I actively develop bots on **QuantConnect** and implement **Machine Learning** models for predictive tasks.
-- 💻 **System Architecture & Development:** Building end-to-end applications from the ground up, demonstrating proficiency in full-stack development. For example, my **[SOS project](link-to-sos-repo)** is a testament to my ability to program complete, functional systems.
+- 💻 **System Architecture & Development:** Building end-to-end applications from the ground up, demonstrating proficiency in continuous integration with **Travis CI**, UI automation with **Selenium**, and low-code integration with **n8n**. For example, my **[SOS project](link-to-sos-repo)** is a testament to my ability to program complete, functional systems.
 
 ## 🛠️ Key Technologies & Skills
 
+*Adicionado Selenium (`selenium`).*
+
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=python,r,flask,numpy,pandas,aws,linux,ubuntu,sklearn,ts,react,nodejs,mongodb,postgresql,docker,git,vscode" />
+    <img src="https://skillicons.dev/icons?i=python,r,flask,numpy,pandas,sklearn,selenium,ts,react,nodejs,postgresql,mongodb,aws,docker,linux,ubuntu,vscode,git,travis,n8n" />
   </a>
 </p>
 
