@@ -43,7 +43,7 @@
 ## 📊 My Code Footprint (Languages)
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Amadeus-22&layout=compact&langs_count=6&theme=midnight-purple&hide_border=true&card_width=400" alt="Top Languages by Code Contribution" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Amadeus-22&layout=compact&langs_count=6&theme=midnight-purple&hide_border=true&card_width=400"/>
 </p>
 
 ## 🔥 GitHub Activity & Consistency
