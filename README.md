@@ -1,7 +1,7 @@
-<h1 align="center">Olá, sou o Amadeus! 👋</h1>
+<h1 align="center">Hello, I'm Pedro Barbosa 👋</h1>
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/amadeus-gon%C3%A7alves-2921a221b/">
+  <a href="https://www.linkedin.com/in/pedro-barbosa-0143a6289/">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
   </a>
   <a href="mailto:amadeus.gonsalves9@gmail.com">
@@ -12,45 +12,47 @@
 ---
 
 <p align="center">
-  Passionate <strong>Full-Stack Developer</strong> with a keen interest in building robust and scalable web applications. <br>
-  Currently focused on developing secure and efficient solutions using modern JavaScript frameworks and backend technologies.
+  <h3>✨ Engineer focused on Quantitative Development and System Building</h3>
+  I blend strong analytical skills with robust software engineering to build efficient financial models and comprehensive software solutions. My background allows me to not only develop models but also to architect and deliver complete, production-ready systems.
 </p>
 
 <p align="center">
   <img src="https://media.giphy.com/media/LmNwrMIGf2g4yC3H06/giphy.gif" width="60" /> 
 </p>
 
-## 🚀 What I'm Up To
+## 🎯 Dual Focus: Quant & Full-Stack Systems
 
-- 💻 Developing full-stack applications with **React**, **TypeScript**, and **Node.js**.
-- 🛡️ Exploring **Cybersecurity** concepts and secure coding practices (inspired by projects like OWASP Juice Shop).
-- 📚 Continuously learning and experimenting with new technologies to enhance development workflows.
+- 💹 **Quantitative Development:** Applying mathematical and programming rigor to financial data analysis, risk modeling, and trading strategy simulation, primarily using **Python** and its ecosystem.
+- 💻 **System Architecture & Development:** Building end-to-end applications from the ground up, demonstrating proficiency in full-stack development. **For example, my [SOS project](link-to-sos-repo)** is a testament to my ability to program complete, functional systems.
 
-## 🛠️ Technologies & Tools
+## 🛠️ Key Technologies & Skills
 
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=react,typescript,javascript,nodejs,express,mongodb,html,css,git,github,vscode,docker" />
+    <img src="https://skillicons.dev/icons?i=python,flask,pandas,numpy,r" />
+    <br>
+    <img src="https://skillicons.dev/icons?i=react,typescript,javascript,nodejs,express,mongodb,postgresql,docker,git,vscode" />
   </a>
 </p>
 
+## 📊 My Code Footprint (Languages)
+
+*Substituímos o gráfico com a "nota" pelo cartão de Linguagens Principais, que foca na porcentagem de código por arquivo, sem dar uma nota de validação. Ele é mais elegante e objetivo.*
+
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=nextjs,tailwind,sass,jest,figma,supabase,postgresql,firebase" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Amadeus-22&layout=compact&langs_count=6&theme=midnight-purple&hide_border=true&card_width=400" alt="Top Languages by Code Contribution" />
 </p>
 
-## 🔥 GitHub Stats
+## 🔥 GitHub Activity & Consistency
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Amadeus-22&show_icons=true&theme=midnight-purple&hide_border=true&count_private=true" alt="Amadeus's GitHub stats" />
+  <img src="https://github-readme-stats.vercel.app/api?username=Amadeus-22&show_icons=true&theme=midnight-purple&hide_border=true&count_private=true" alt="Pedro's GitHub stats" />
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=Amadeus-22&theme=midnight-purple&hide_border=true" alt="GitHub Streak" />
 </p>
 
 ---
 
 <p align="center">
-  "The only way to do great work is to love what you do." - Steve Jobs
-</p>
-
-<p align="center">
-  Thanks for stopping by! Don't hesitate to connect.
+  Looking for challenging projects that require a blend of analytical depth and reliable system implementation. <br>
+  Let's connect on <a href="https://www.linkedin.com/in/pedro-barbosa-0143a6289/">LinkedIn</a>!
 </p>
