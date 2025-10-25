@@ -1,3 +1,4 @@
+
 <h1 align="center">Hello, I'm Pedro Barbosa 👋</h1>
 
 <p align="center">
@@ -20,7 +21,7 @@
 </p>
 
 <p align="center">
-  <img src="https://emojis.slackmojis.com/emojis/images/1531843109/4246/blob-code.gif?1531843109" width="40" /> 
+  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMWE3NWQ0OWMzN2U2YTYwMmM1MmI3MWRlZGU5MDRmMTIyZDUyOTY5ZCZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/xUPGcws0g9x4l6c/giphy.gif" width="60" /> 
 </p>
 
 ## 🎯 Core Focuses
