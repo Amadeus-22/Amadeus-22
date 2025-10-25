@@ -20,7 +20,7 @@
 </p>
 
 <p align="center">
-  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjRjZTRmZmE0YzY3YjA4ZjdmNDc4Y2JmZTA0ZjE2NDIyYmU4Y2Q0NiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/xTiTnf6P3jY0F1K6Jk/giphy.gif" width="80" /> 
+  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2Q3NjA3MmQ3YjU3ZjcyMTFhODFmZGNjNTI3NzkwNmJmYzQ5Yjg4ZCZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/SslYV2Y3iH2o4/giphy.gif" width="60" /> 
 </p>
 
 ## 🎯 Core Focuses
