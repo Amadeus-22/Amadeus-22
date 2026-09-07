@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="628" height="232" viewBox="0 0 628 232" role="img" aria-labelledby="t">
+  <title id="t">Data automation — Collection bots, scraping, pipelines and internal tooling. Linux and systemd, scheduled jobs, and reporting that someone actually reads.</title>
+  <defs>
+    <linearGradient id="k" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#c6ac84"/><stop offset="0.5" stop-color="#bda179"/><stop offset="1" stop-color="#ae9066"/>
+    </linearGradient>
+    <filter id="m"><feTurbulence type="fractalNoise" baseFrequency="0.014" numOctaves="4" seed="43"/><feColorMatrix type="saturate" values="0"/></filter>
+    <filter id="f"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="47"/><feColorMatrix type="saturate" values="0"/></filter>
+  </defs>
+  <rect width="628" height="232" fill="url(#k)"/>
+  <rect width="628" height="232" filter="url(#m)" opacity="0.15"/>
+  <rect width="628" height="232" filter="url(#f)" opacity="0.08"/>
+  <path d="M11 10 L617 8 L618 223 L10 225 Z" fill="none" stroke="#2b2116" stroke-width="2.4" opacity="0.85"/>
+
+  <text x="40" y="60" font-family="Georgia, serif" font-size="23" font-weight="700" fill="#241a0f" letter-spacing="1.2">Data automation</text>
+  <g stroke="#7b2d26" stroke-width="1.2" opacity="0.7"><line x1="40" y1="78" x2="588" y2="78"/></g>
+  <text x="40" y="106" font-family="Georgia, serif" font-size="14.5" fill="#3f2f1c">Collection bots, scraping, pipelines and internal</text>
+  <text x="40" y="129" font-family="Georgia, serif" font-size="14.5" fill="#3f2f1c">tooling. Linux and systemd, scheduled jobs, and</text>
+  <text x="40" y="152" font-family="Georgia, serif" font-size="14.5" fill="#3f2f1c">reporting that someone actually reads.</text>
+</svg>

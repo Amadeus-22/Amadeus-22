@@ -1,135 +1,85 @@
 <p align="center">
-  <img src="./assets/profile-banner.svg" width="100%" alt="AMADEUS — Quantitative Developer and Systems Engineer">
+  <img src="./assets/profile-banner.svg" width="100%" alt="AMADEUS — Pedro Barbosa — Quantitative Developer and Systems Engineer">
+  <img src="./assets/at-a-glance.svg" width="100%" alt="Quant research and backtesting · Backend in Go, PHP and Python · UTC−3 · English and Português">
 </p>
 
 <p align="center">
   <a href="https://dilectusadeo.com/"><img src="https://img.shields.io/badge/Portfolio-4a3720?style=for-the-badge&logo=googlechrome&logoColor=e8dcc0" alt="Portfolio"></a>
   <a href="mailto:barbosamaverickv8@gmail.com"><img src="https://img.shields.io/badge/Start_a_Project-7b2d26?style=for-the-badge&logo=minutemailer&logoColor=e8dcc0" alt="Start a project"></a>
   <a href="https://www.linkedin.com/in/pedro-barbosa-0143a6289/"><img src="https://img.shields.io/badge/LinkedIn-3f4a3c?style=for-the-badge&logo=linkedin&logoColor=e8dcc0" alt="LinkedIn"></a>
-  <a href="https://www.quantconnect.com/"><img src="https://img.shields.io/badge/QuantConnect-5a4a2a?style=for-the-badge&logo=quantconnect&logoColor=e8dcc0" alt="QuantConnect"></a>
+  <a href="https://github.com/QuantConnect"><img src="https://img.shields.io/badge/QuantConnect-5a4a2a?style=for-the-badge&logo=quantconnect&logoColor=e8dcc0" alt="QuantConnect"></a>
 </p>
 
 <p align="center">
-  I research trading strategies and build the systems that run them.<br>
-  Quantitative work in <b>Python</b> and <b>R</b> · production software in <b>Go</b> and <b>PHP</b>.
+  <img src="./assets/h-work.svg" width="100%" alt="What I work on">
 </p>
-
-<p align="center">
-  <img src="./assets/at-a-glance.svg" width="100%" alt="Quant research and backtesting · Backend in Go, PHP and Python · UTC−3 · English and Português">
-</p>
-
-<p align="center"><img src="./assets/rule.svg" width="420" alt=""></p>
-
-## What I work on
 
 <table>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>Quantitative development</h3>
-      <p>Trading strategy research and backtesting on QuantConnect. Risk modelling and predictive models on financial time series, with evaluation that separates a real edge from a curve that only looks good.</p>
-    </td>
-    <td width="50%" valign="top">
-      <h3>Backend systems in Go</h3>
-      <p>Services that ship as a single static binary with no runtime dependencies. SQLite with full-text search, subprocess isolation over versioned contracts, systemd deployment.</p>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>PHP applications &amp; legacy modernisation</h3>
-      <p>Working inside established codebases: registration and permission flows, scheduling, payments, and reversible database migrations on systems already carrying users.</p>
-    </td>
-    <td width="50%" valign="top">
-      <h3>Data automation</h3>
-      <p>Collection bots, scraping, pipelines and internal tooling. Linux and systemd, scheduled jobs, and reporting that someone actually reads.</p>
-    </td>
-  </tr>
+<tr>
+<td width="50%"><img src="./assets/w-quant.svg" width="100%" alt="Quantitative development — trading strategy research and backtesting on QuantConnect, risk modelling and predictive models on financial time series."></td>
+<td width="50%"><img src="./assets/w-go.svg" width="100%" alt="Backend systems in Go — services that ship as a single static binary with no runtime dependencies, SQLite with full-text search, systemd deployment."></td>
+</tr>
+<tr>
+<td width="50%"><img src="./assets/w-php.svg" width="100%" alt="PHP applications and legacy modernisation — registration and permission flows, scheduling, payments, reversible database migrations."></td>
+<td width="50%"><img src="./assets/w-data.svg" width="100%" alt="Data automation — collection bots, scraping, pipelines and internal tooling on Linux and systemd."></td>
+</tr>
 </table>
 
 > Most of what I build is private — client work, an employer's platform, and my own tooling. The public repositories below are the part I can show.
 
-<p align="center"><img src="./assets/rule.svg" width="420" alt=""></p>
+<p align="center">
+  <img src="./assets/h-selected.svg" width="100%" alt="Selected work">
+</p>
 
-## Selected work
-
-**[iode](https://github.com/Amadeus-22)** — personal orchestration engine, in Go.
-Indexes projects, collects daily activity and surfaces connections between them.
-Single static binary, SQLite with FTS5, no CGO. Collectors run as subprocesses
-over a versioned JSON contract, so a new data source never touches the core.
+**iode** — personal orchestration engine, in Go. Indexes projects, collects daily
+activity and surfaces connections between them. Single static binary, SQLite with
+FTS5, no CGO. Collectors run as subprocesses over a versioned JSON contract, so a
+new data source never touches the core.
 
 **Go suite** — `sentinel` for host integrity, `bounty` for ranking funded GitHub
 issues, `rgbd`. One thesis across three programs: no CGO, one binary each,
 deployed with systemd.
 
 **[SOS](https://github.com/Amadeus-22/SOS)** — administrative system built end to
-end, in JavaScript. The project I point to when the question is whether I ship
-whole systems, not only models.
+end, in JavaScript.
 
-**Quantitative research** — strategy simulation and backtesting on QuantConnect,
-with predictive modelling in Python and R.
+**Quantitative research** — strategy simulation and backtesting on
+[QuantConnect](https://github.com/QuantConnect), with predictive modelling in
+Python and R.
 
-<p align="center"><img src="./assets/rule.svg" width="420" alt=""></p>
-
-## Currently
-
-**Software Engineer at [TIIX](https://tiix.com.br/)** — a health and services platform.
-
-I work on the PHP portals for clients, professionals and brokers: registration
-and permission flows, scheduling, payments, and the shared foundation beneath
-them. Legacy PHP in a WordPress-based ecosystem, with reversible MySQL migrations.
-
-<p align="center"><img src="./assets/rule.svg" width="420" alt=""></p>
-
-## Stack
-
-<p align="center"><sub><b>LANGUAGES</b></sub></p>
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=go,python,php,js,ts,r,bash" alt="Languages">
+  <img src="./assets/h-currently.svg" width="100%" alt="Currently">
 </p>
 
-<p align="center"><sub><b>DATA &amp; ANALYSIS</b></sub></p>
+**Software Engineer at [TIIX](https://github.com/AM-TIIX)** — a health and services
+platform ([tiix.com.br](https://tiix.com.br/)). I work on the PHP portals for
+clients, professionals and brokers: registration and permission flows, scheduling,
+payments, and the shared foundation beneath them. Legacy PHP in a WordPress-based
+ecosystem, with reversible MySQL migrations.
+
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=sqlite,postgresql,mongodb,sklearn" alt="Data and analysis">
+  <img src="./assets/h-stack.svg" width="100%" alt="Stack">
+  <img src="./assets/stack.svg" width="100%" alt="Go, Python, PHP, JavaScript, TypeScript, R, Bash · SQLite, PostgreSQL, MongoDB, scikit-learn · Linux, Docker, Git, GitHub, Node.js, React, Flask">
 </p>
 
-<p align="center"><sub><b>RUNTIME &amp; TOOLING</b></sub></p>
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=linux,docker,git,github,nodejs,react,flask,vscode" alt="Runtime and tooling">
+  <img src="./assets/h-communities.svg" width="100%" alt="Communities and organizations">
 </p>
-
-<p align="center"><img src="./assets/rule.svg" width="420" alt=""></p>
-
-## Communities & organizations
 
 <table>
-  <tr>
-    <td width="50%" valign="top">
-      <a href="https://github.com/QuantConnect"><img src="https://github.com/QuantConnect.png?size=64" width="52" align="left" hspace="12" alt="QuantConnect"></a>
-      <h3><a href="https://github.com/QuantConnect">QuantConnect</a></h3>
-      <p>Algorithmic trading research and backtesting, on the platform behind <a href="https://github.com/QuantConnect/Lean">Lean</a>. Where the quantitative side of my work is developed and tested.</p>
-    </td>
-    <td width="50%" valign="top">
-      <a href="https://github.com/AM-TIIX"><img src="https://github.com/AM-TIIX.png?size=64" width="52" align="left" hspace="12" alt="TIIX"></a>
-      <h3><a href="https://github.com/AM-TIIX">TIIX</a></h3>
-      <p>Health and services platform (<a href="https://tiix.com.br/">tiix.com.br</a>). Current employer — see <b>Currently</b> above.</p>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <a href="https://github.com/NER-ELOHIM"><img src="https://github.com/NER-ELOHIM.png?size=64" width="52" align="left" hspace="12" alt="NER-ELOHIM"></a>
-      <h3><a href="https://github.com/NER-ELOHIM">NER-ELOHIM</a></h3>
-      <p>My own organization, where the Go suite and the engineering tooling live. Private by design.</p>
-    </td>
-    <td width="50%" valign="top">
-      <a href="https://github.com/instituto-nova-sos"><img src="https://github.com/instituto-nova-sos.png?size=64" width="52" align="left" hspace="12" alt="Instituto Nova SOS"></a>
-      <h3><a href="https://github.com/instituto-nova-sos">Instituto Nova SOS</a></h3>
-      <p>Contributor to <code>chesed</code>, a Go and TypeScript project for a social institute.</p>
-    </td>
-  </tr>
+<tr>
+<td width="50%"><a href="https://github.com/QuantConnect"><img src="./assets/c-qc.svg" width="100%" alt="QuantConnect — algorithmic trading research and backtesting, on the platform behind Lean."></a></td>
+<td width="50%"><a href="https://github.com/AM-TIIX"><img src="./assets/c-tiix.svg" width="100%" alt="TIIX — health and services platform, current employer."></a></td>
+</tr>
+<tr>
+<td width="50%"><a href="https://github.com/NER-ELOHIM"><img src="./assets/c-ner.svg" width="100%" alt="NER-ELOHIM — my own organization, private by design."></a></td>
+<td width="50%"><a href="https://github.com/instituto-nova-sos"><img src="./assets/c-sos.svg" width="100%" alt="Instituto Nova SOS — contributor to chesed, a Go and TypeScript project."></a></td>
+</tr>
 </table>
 
-<p align="center"><img src="./assets/rule.svg" width="420" alt=""></p>
-
-## Contact
+<p align="center">
+  <img src="./assets/h-contact.svg" width="100%" alt="Contact">
+</p>
 
 <p align="center">
   Open to <b>remote roles and contract work</b>: backend engineering,
