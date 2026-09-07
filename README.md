@@ -108,20 +108,24 @@ them. Legacy PHP in a WordPress-based ecosystem, with reversible MySQL migration
 <table>
   <tr>
     <td width="50%" valign="top">
+      <a href="https://github.com/QuantConnect"><img src="https://github.com/QuantConnect.png?size=64" width="52" align="left" hspace="12" alt="QuantConnect"></a>
       <h3><a href="https://github.com/QuantConnect">QuantConnect</a></h3>
       <p>Algorithmic trading research and backtesting, on the platform behind <a href="https://github.com/QuantConnect/Lean">Lean</a>. Where the quantitative side of my work is developed and tested.</p>
     </td>
     <td width="50%" valign="top">
+      <a href="https://github.com/AM-TIIX"><img src="https://github.com/AM-TIIX.png?size=64" width="52" align="left" hspace="12" alt="TIIX"></a>
       <h3><a href="https://github.com/AM-TIIX">TIIX</a></h3>
       <p>Health and services platform (<a href="https://tiix.com.br/">tiix.com.br</a>). Current employer — see <b>Currently</b> above.</p>
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
+      <a href="https://github.com/NER-ELOHIM"><img src="https://github.com/NER-ELOHIM.png?size=64" width="52" align="left" hspace="12" alt="NER-ELOHIM"></a>
       <h3><a href="https://github.com/NER-ELOHIM">NER-ELOHIM</a></h3>
       <p>My own organization, where the Go suite and the engineering tooling live. Private by design.</p>
     </td>
     <td width="50%" valign="top">
+      <a href="https://github.com/instituto-nova-sos"><img src="https://github.com/instituto-nova-sos.png?size=64" width="52" align="left" hspace="12" alt="Instituto Nova SOS"></a>
       <h3><a href="https://github.com/instituto-nova-sos">Instituto Nova SOS</a></h3>
       <p>Contributor to <code>chesed</code>, a Go and TypeScript project for a social institute.</p>
     </td>
