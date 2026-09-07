@@ -1,0 +1,16 @@
+# Os ficheiros em assets/ são produzidos pelos scripts em scripts/, nunca
+# editados à mão. Marcá-los como gerados faz o GitHub recolher o diff deles
+# numa revisão: regenerar as placas muda 66 ficheiros de uma vez, e sem isto
+# qualquer pull request fica ilegível.
+assets/**            linguist-generated=true
+assets/**            -diff
+
+# Este é um repositório de perfil, não um projeto Python. Os geradores são
+# ferramenta de apoio; contá-los faz o GitHub anunciar o repositório como
+# 100% Python, que descreve errado o que ele é.
+scripts/**           linguist-vendored=true
+
+# Fim de linha normalizado, para não sujar diffs entre sistemas.
+* text=auto eol=lf
+*.png binary
+*.jpg binary
