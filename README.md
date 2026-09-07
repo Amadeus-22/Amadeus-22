@@ -108,12 +108,12 @@ them. Legacy PHP in a WordPress-based ecosystem, with reversible MySQL migration
 <table>
   <tr>
     <td width="50%" valign="top">
-      <h3><a href="https://www.quantconnect.com/">QuantConnect</a></h3>
-      <p>Algorithmic trading research and backtesting. Where the quantitative side of my work is developed and tested.</p>
+      <h3><a href="https://github.com/QuantConnect">QuantConnect</a></h3>
+      <p>Algorithmic trading research and backtesting, on the platform behind <a href="https://github.com/QuantConnect/Lean">Lean</a>. Where the quantitative side of my work is developed and tested.</p>
     </td>
     <td width="50%" valign="top">
-      <h3><a href="https://tiix.com.br/">TIIX</a></h3>
-      <p>Health and services platform. Current employer — see <b>Currently</b> above.</p>
+      <h3><a href="https://github.com/AM-TIIX">TIIX</a></h3>
+      <p>Health and services platform (<a href="https://tiix.com.br/">tiix.com.br</a>). Current employer — see <b>Currently</b> above.</p>
     </td>
   </tr>
   <tr>

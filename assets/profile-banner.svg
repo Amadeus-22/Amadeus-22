@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360" role="img" aria-labelledby="t d">
-  <title id="t">Amadeus — Quantitative Developer and Systems Engineer</title>
+  <title id="t">Amadeus (Pedro Barbosa) — Quantitative Developer and Systems Engineer</title>
   <desc id="d">Quantitative research in Python and R. Production systems in Go and PHP. Rio de Janeiro, Brazil.</desc>
 
   <defs>
@@ -53,32 +53,37 @@
     <path d="M1222 300 l-9 0 l0 -2.6 l6.4 0 l0 -6.4 l2.6 0 Z"/>
   </g>
 
-  <text x="640" y="136" text-anchor="middle"
+  <text x="640" y="126" text-anchor="middle"
         font-family="Georgia, 'Times New Roman', 'Palatino Linotype', serif"
         font-size="76" font-weight="700" fill="#241a0f" letter-spacing="13">AMADEUS</text>
 
+  <!-- assinatura: o nome legal sob o nome de trabalho, como se assina obra -->
+  <text x="640" y="156" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="17" font-style="italic" fill="#4a3720" letter-spacing="3.4" opacity="0.9">Pedro Barbosa</text>
+
   <!-- filete com fleurão central -->
   <g stroke="#7b2d26" stroke-width="1.7" opacity="0.92">
-    <line x1="286" y1="168" x2="588" y2="168"/>
-    <line x1="692" y1="168" x2="994" y2="168"/>
+    <line x1="286" y1="182" x2="588" y2="182"/>
+    <line x1="692" y1="182" x2="994" y2="182"/>
   </g>
   <g fill="#7b2d26" opacity="0.92">
-    <path d="M640 158 l10 10 l-10 10 l-10 -10 Z"/>
-    <path d="M612 168 l7 -4 l0 8 Z"/>
-    <path d="M668 168 l-7 -4 l0 8 Z"/>
+    <path d="M640 172 l10 10 l-10 10 l-10 -10 Z"/>
+    <path d="M612 182 l7 -4 l0 8 Z"/>
+    <path d="M668 182 l-7 -4 l0 8 Z"/>
   </g>
 
-  <text x="640" y="208" text-anchor="middle"
+  <text x="640" y="220" text-anchor="middle"
         font-family="Georgia, 'Times New Roman', serif"
         font-size="20" font-weight="700" fill="#4a3720" letter-spacing="7">QUANTITATIVE DEVELOPER &#183; SYSTEMS ENGINEER</text>
 
-  <text x="640" y="246" text-anchor="middle"
+  <text x="640" y="254" text-anchor="middle"
         font-family="Georgia, 'Times New Roman', serif"
         font-size="18" font-style="italic" fill="#3f2f1c" opacity="0.94">Quantitative research in Python and R &#183; production systems in Go and PHP</text>
 
-  <line x1="200" y1="274" x2="1080" y2="274" stroke="#5c4326" stroke-width="0.9" opacity="0.55"/>
+  <line x1="200" y1="280" x2="1080" y2="280" stroke="#5c4326" stroke-width="0.9" opacity="0.55"/>
 
-  <text x="640" y="300" text-anchor="middle"
+  <text x="640" y="306" text-anchor="middle"
         font-family="Georgia, 'Times New Roman', serif"
         font-size="14" fill="#4a3720" letter-spacing="2.6" opacity="0.92">RIO DE JANEIRO &#8212; UTC&#8722;3 &#8212; ENGLISH &amp; PORTUGU&#202;S &#8212; AVAILABLE FOR REMOTE WORK</text>
 </svg>
