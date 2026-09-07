@@ -99,32 +99,10 @@ ecosystem, with reversible MySQL migrations.
   <source media="(prefers-color-scheme: light)" srcset="./assets/h-stack-light.svg">
   <img src="./assets/h-stack.svg" width="100%" alt="Stack">
 </picture>
-</p>
-
-<p align="center"><b>LANGUAGES</b></p>
-<p align="center">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=go,python,php,js,ts,r,bash&theme=dark">
-  <source media="(prefers-color-scheme: light)" srcset="https://skillicons.dev/icons?i=go,python,php,js,ts,r,bash&theme=light">
-  <img src="https://skillicons.dev/icons?i=go,python,php,js,ts,r,bash&theme=dark" alt="Go, Python, PHP, JavaScript, TypeScript, R, Bash">
-</picture>
-</p>
-
-<p align="center"><b>DATA &amp; ANALYSIS</b></p>
-<p align="center">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=sqlite,postgresql,mongodb,sklearn&theme=dark">
-  <source media="(prefers-color-scheme: light)" srcset="https://skillicons.dev/icons?i=sqlite,postgresql,mongodb,sklearn&theme=light">
-  <img src="https://skillicons.dev/icons?i=sqlite,postgresql,mongodb,sklearn&theme=dark" alt="SQLite, PostgreSQL, MongoDB, scikit-learn">
-</picture>
-</p>
-
-<p align="center"><b>RUNTIME &amp; TOOLING</b></p>
-<p align="center">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=linux,docker,git,github,nodejs,react,flask,vscode&theme=dark">
-  <source media="(prefers-color-scheme: light)" srcset="https://skillicons.dev/icons?i=linux,docker,git,github,nodejs,react,flask,vscode&theme=light">
-  <img src="https://skillicons.dev/icons?i=linux,docker,git,github,nodejs,react,flask,vscode&theme=dark" alt="Linux, Docker, Git, GitHub, Node.js, React, Flask, VS Code">
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/stack.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/stack-light.svg">
+  <img src="./assets/stack.svg" width="100%" alt="Go, Python, PHP, JavaScript, TypeScript, R, Bash · SQLite, PostgreSQL, MongoDB, scikit-learn · Linux, Docker, Git, GitHub, Node.js, React, Flask">
 </picture>
 </p>
 

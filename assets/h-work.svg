@@ -10,15 +10,11 @@
       <stop offset="0.5" stop-color="#ff3b30"/>
       <stop offset="1" stop-color="#ff3b30" stop-opacity="0.25"/>
     </linearGradient>
-    <pattern id="gridt0d" width="34" height="34" patternUnits="userSpaceOnUse">
-      <path d="M34 0H0V34" fill="none" stroke="#39506b" stroke-opacity="0.2" stroke-width="1"/>
-    </pattern>
     <pattern id="scant0d" width="4" height="4" patternUnits="userSpaceOnUse">
       <rect width="4" height="1.4" fill="#8fc7ff" fill-opacity="0.045"/>
     </pattern>
   </defs>
   <rect width="1280" height="104" fill="url(#bgt0d)"/>
-  <rect width="1280" height="104" fill="url(#gridt0d)"/>
   <rect width="1280" height="104" fill="url(#scant0d)"/>
   <g stroke="#ff3b30" stroke-width="2.2" fill="none" opacity="0.9">
     <path d="M10 32 L10 10 L32 10"/><path d="M1248 10 L1270 10 L1270 32"/>
