@@ -1,89 +1,135 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360" role="img" aria-labelledby="t d">
-  <title id="t">Amadeus (Pedro Barbosa) — Quantitative Developer and Systems Engineer</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="400" viewBox="0 0 1280 400" role="img" aria-labelledby="t d">
+  <title id="t">AMADEUS — Pedro Barbosa — Quantitative Developer and Systems Engineer</title>
   <desc id="d">Quantitative research in Python and R. Production systems in Go and PHP. Rio de Janeiro, Brazil.</desc>
-
   <defs>
-    <linearGradient id="kraft" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0"    stop-color="#cbb28a"/>
-      <stop offset="0.38" stop-color="#c2a67c"/>
-      <stop offset="0.72" stop-color="#b89a6d"/>
-      <stop offset="1"    stop-color="#a98b5d"/>
+    <linearGradient id="bgB" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b0f16"/><stop offset="0.55" stop-color="#070a10"/>
+      <stop offset="1" stop-color="#0d1219"/>
     </linearGradient>
-
-    <!-- mancha grossa: irregularidade do papel -->
-    <filter id="mottle">
-      <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="4" seed="17"/>
-      <feColorMatrix type="saturate" values="0"/>
-    </filter>
-    <!-- granulado fino: fibra -->
-    <filter id="fiber">
-      <feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="5"/>
-      <feColorMatrix type="saturate" values="0"/>
-    </filter>
-
-    <radialGradient id="stainA" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0"   stop-color="#5c4326" stop-opacity="0.16"/>
-      <stop offset="0.7" stop-color="#5c4326" stop-opacity="0.05"/>
-      <stop offset="1"   stop-color="#5c4326" stop-opacity="0"/>
+    <linearGradient id="redB" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7a0f0a"/><stop offset="0.5" stop-color="#ff3b30"/>
+      <stop offset="1" stop-color="#7a0f0a"/>
+    </linearGradient>
+    <radialGradient id="haloB" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ff3b30" stop-opacity="0.20"/>
+      <stop offset="1" stop-color="#ff3b30" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="burn" cx="0.5" cy="0.5" r="0.68">
-      <stop offset="0.5" stop-color="#2e2010" stop-opacity="0"/>
-      <stop offset="1"   stop-color="#2e2010" stop-opacity="0.34"/>
+    <pattern id="gridB" width="34" height="34" patternUnits="userSpaceOnUse">
+      <path d="M34 0H0V34" fill="none" stroke="#39506b" stroke-opacity="0.20" stroke-width="1"/>
+    </pattern>
+    <pattern id="scanB" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="1.4" fill="#8fc7ff" fill-opacity="0.045"/>
+    </pattern>
+    <linearGradient id="chromeB" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#c9d1da"/><stop offset="0.42" stop-color="#8d96a3"/>
+      <stop offset="0.68" stop-color="#5b636f"/><stop offset="1" stop-color="#8e97a4"/>
+    </linearGradient>
+    <linearGradient id="chromeHiB" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e6ecf2"/><stop offset="1" stop-color="#98a1ad"/>
+    </linearGradient>
+    <radialGradient id="eyeB">
+      <stop offset="0" stop-color="#fff0f0"/><stop offset="0.35" stop-color="#ff3b30"/>
+      <stop offset="1" stop-color="#8f0d06"/>
     </radialGradient>
   </defs>
+  <rect width="1280" height="400" fill="url(#bgB)"/>
+  <rect width="1280" height="400" fill="url(#gridB)"/>
+  <rect width="1280" height="400" fill="url(#scanB)"/>
 
-  <rect width="1280" height="360" fill="url(#kraft)"/>
-  <rect width="1280" height="360" filter="url(#mottle)" opacity="0.16"/>
-  <rect width="1280" height="360" filter="url(#fiber)"  opacity="0.09"/>
-  <ellipse cx="212" cy="86"  rx="190" ry="112" fill="url(#stainA)"/>
-  <ellipse cx="1064" cy="296" rx="230" ry="130" fill="url(#stainA)"/>
-  <rect width="1280" height="360" fill="url(#burn)"/>
-
-  <!-- moldura carimbada: filete grosso, filete fino, traço levemente irregular -->
-  <g stroke="#2b2116" fill="none">
-    <path d="M30 31 L1250 29 L1251 331 L29 329 Z" stroke-width="3.4" opacity="0.88"/>
-    <path d="M42 43 L1238 41.5 L1239 319 L41 317.5 Z" stroke-width="1" opacity="0.62"/>
+  <ellipse cx="188" cy="200" rx="210" ry="190" fill="url(#haloB)"/>
+  <ellipse cx="1096" cy="200" rx="210" ry="190" fill="url(#haloB)"/>
+  <g transform="translate(188,176) scale(1.32)" opacity="0.95">
+    <!-- calota -->
+    <path d="M0 -62 C 34 -62 52 -40 52 -10 C 52 10 48 26 42 38 L 32 52 L -32 52 L -42 38
+             C -48 26 -52 10 -52 -10 C -52 -40 -34 -62 0 -62 Z"
+          fill="url(#chromeB)" stroke="#aeb6c0" stroke-width="1.4"/>
+    <!-- placa frontal -->
+    <path d="M0 -54 C 26 -54 42 -37 42 -12 L -42 -12 C -42 -37 -26 -54 0 -54 Z"
+          fill="url(#chromeHiB)" opacity="0.9"/>
+    <line x1="0" y1="-58" x2="0" y2="-14" stroke="#6f7885" stroke-width="1"/>
+    <!-- arco superciliar -->
+    <path d="M-46 -8 L -12 -14 L -12 -4 L -46 2 Z" fill="#6b7480"/>
+    <path d="M46 -8 L 12 -14 L 12 -4 L 46 2 Z" fill="#6b7480"/>
+    <!-- órbitas -->
+    <ellipse cx="-24" cy="8"  rx="14" ry="11" fill="#05070a"/>
+    <ellipse cx="24"  cy="8"  rx="14" ry="11" fill="#05070a"/>
+    <circle cx="-24" cy="8" r="5.6" fill="url(#eyeB)"/>
+    <circle cx="24"  cy="8" r="5.6" fill="url(#eyeB)"/>
+    <circle cx="-24" cy="8" r="2.4" fill="#ffd9d9"/>
+    <circle cx="24"  cy="8" r="2.4" fill="#ffd9d9"/>
+    <!-- maçãs angulares -->
+    <path d="M-42 16 L -20 24 L -24 38 L -38 32 Z" fill="#7c848f" opacity="0.85"/>
+    <path d="M42 16 L 20 24 L 24 38 L 38 32 Z" fill="#7c848f" opacity="0.85"/>
+    <!-- mandíbula e dentes -->
+    <path d="M-30 40 L 30 40 L 24 62 L -24 62 Z" fill="url(#chromeB)" stroke="#9aa2ad" stroke-width="1.1"/>
+    <g stroke="#454c57" stroke-width="1">
+      <line x1="-30" y1="50" x2="30" y2="50"/>
+      <line x1="-18" y1="40" x2="-18" y2="62"/><line x1="-6" y1="40" x2="-6" y2="62"/>
+      <line x1="6" y1="40" x2="6" y2="62"/><line x1="18" y1="40" x2="18" y2="62"/>
+    </g>
+    <!-- pistões do pescoço -->
+    <g fill="#5c646f">
+      <rect x="-14" y="62" width="7" height="20" rx="3"/>
+      <rect x="-3.5" y="62" width="7" height="26" rx="3"/>
+      <rect x="7" y="62" width="7" height="20" rx="3"/>
+    </g>
+  </g>
+  <g transform="translate(1092,176) scale(1.32)" opacity="0.95">
+    <!-- calota -->
+    <path d="M0 -62 C 34 -62 52 -40 52 -10 C 52 10 48 26 42 38 L 32 52 L -32 52 L -42 38
+             C -48 26 -52 10 -52 -10 C -52 -40 -34 -62 0 -62 Z"
+          fill="url(#chromeB)" stroke="#aeb6c0" stroke-width="1.4"/>
+    <!-- placa frontal -->
+    <path d="M0 -54 C 26 -54 42 -37 42 -12 L -42 -12 C -42 -37 -26 -54 0 -54 Z"
+          fill="url(#chromeHiB)" opacity="0.9"/>
+    <line x1="0" y1="-58" x2="0" y2="-14" stroke="#6f7885" stroke-width="1"/>
+    <!-- arco superciliar -->
+    <path d="M-46 -8 L -12 -14 L -12 -4 L -46 2 Z" fill="#6b7480"/>
+    <path d="M46 -8 L 12 -14 L 12 -4 L 46 2 Z" fill="#6b7480"/>
+    <!-- órbitas -->
+    <ellipse cx="-24" cy="8"  rx="14" ry="11" fill="#05070a"/>
+    <ellipse cx="24"  cy="8"  rx="14" ry="11" fill="#05070a"/>
+    <circle cx="-24" cy="8" r="5.6" fill="url(#eyeB)"/>
+    <circle cx="24"  cy="8" r="5.6" fill="url(#eyeB)"/>
+    <circle cx="-24" cy="8" r="2.4" fill="#ffd9d9"/>
+    <circle cx="24"  cy="8" r="2.4" fill="#ffd9d9"/>
+    <!-- maçãs angulares -->
+    <path d="M-42 16 L -20 24 L -24 38 L -38 32 Z" fill="#7c848f" opacity="0.85"/>
+    <path d="M42 16 L 20 24 L 24 38 L 38 32 Z" fill="#7c848f" opacity="0.85"/>
+    <!-- mandíbula e dentes -->
+    <path d="M-30 40 L 30 40 L 24 62 L -24 62 Z" fill="url(#chromeB)" stroke="#9aa2ad" stroke-width="1.1"/>
+    <g stroke="#454c57" stroke-width="1">
+      <line x1="-30" y1="50" x2="30" y2="50"/>
+      <line x1="-18" y1="40" x2="-18" y2="62"/><line x1="-6" y1="40" x2="-6" y2="62"/>
+      <line x1="6" y1="40" x2="6" y2="62"/><line x1="18" y1="40" x2="18" y2="62"/>
+    </g>
+    <!-- pistões do pescoço -->
+    <g fill="#5c646f">
+      <rect x="-14" y="62" width="7" height="20" rx="3"/>
+      <rect x="-3.5" y="62" width="7" height="26" rx="3"/>
+      <rect x="7" y="62" width="7" height="20" rx="3"/>
+    </g>
+  </g>
+  <g stroke="#ff3b30" stroke-width="1.3" fill="none" opacity="0.55">
+    <circle cx="1092" cy="184" r="96"/>
+    <circle cx="1092" cy="184" r="132" stroke-dasharray="7 11"/>
+    <line x1="1092" y1="52" x2="1092" y2="86"/><line x1="1092" y1="282" x2="1092" y2="316"/>
+    <line x1="960" y1="184" x2="994" y2="184"/><line x1="1190" y1="184" x2="1224" y2="184"/>
+  </g>
+  <g stroke="#ff3b30" stroke-width="2.6" fill="none" opacity="0.9">
+    <path d="M10 44 L10 10 L44 10"/>
+    <path d="M1236 10 L1270 10 L1270 44"/>
+    <path d="M10 356 L10 390 L44 390"/>
+    <path d="M1236 390 L1270 390 L1270 356"/>
   </g>
 
-  <!-- fleurões de canto -->
-  <g fill="#7b2d26" opacity="0.9">
-    <path d="M58 60 l9 0 l0 2.6 l-6.4 0 l0 6.4 l-2.6 0 Z"/>
-    <path d="M1222 60 l-9 0 l0 2.6 l6.4 0 l0 6.4 l2.6 0 Z"/>
-    <path d="M58 300 l9 0 l0 -2.6 l-6.4 0 l0 -6.4 l-2.6 0 Z"/>
-    <path d="M1222 300 l-9 0 l0 -2.6 l6.4 0 l0 -6.4 l2.6 0 Z"/>
-  </g>
-
-  <text x="640" y="126" text-anchor="middle"
-        font-family="Georgia, 'Times New Roman', 'Palatino Linotype', serif"
-        font-size="76" font-weight="700" fill="#241a0f" letter-spacing="13">AMADEUS</text>
-
-  <!-- assinatura: o nome legal sob o nome de trabalho, como se assina obra -->
-  <text x="640" y="156" text-anchor="middle"
-        font-family="Georgia, 'Times New Roman', serif"
-        font-size="17" font-style="italic" fill="#4a3720" letter-spacing="3.4" opacity="0.9">Pedro Barbosa</text>
-
-  <!-- filete com fleurão central -->
-  <g stroke="#7b2d26" stroke-width="1.7" opacity="0.92">
-    <line x1="286" y1="182" x2="588" y2="182"/>
-    <line x1="692" y1="182" x2="994" y2="182"/>
-  </g>
-  <g fill="#7b2d26" opacity="0.92">
-    <path d="M640 172 l10 10 l-10 10 l-10 -10 Z"/>
-    <path d="M612 182 l7 -4 l0 8 Z"/>
-    <path d="M668 182 l-7 -4 l0 8 Z"/>
-  </g>
-
-  <text x="640" y="220" text-anchor="middle"
-        font-family="Georgia, 'Times New Roman', serif"
-        font-size="20" font-weight="700" fill="#4a3720" letter-spacing="7">QUANTITATIVE DEVELOPER &#183; SYSTEMS ENGINEER</text>
-
-  <text x="640" y="254" text-anchor="middle"
-        font-family="Georgia, 'Times New Roman', serif"
-        font-size="18" font-style="italic" fill="#3f2f1c" opacity="0.94">Quantitative research in Python and R &#183; production systems in Go and PHP</text>
-
-  <line x1="200" y1="280" x2="1080" y2="280" stroke="#5c4326" stroke-width="0.9" opacity="0.55"/>
-
-  <text x="640" y="306" text-anchor="middle"
-        font-family="Georgia, 'Times New Roman', serif"
-        font-size="14" fill="#4a3720" letter-spacing="2.6" opacity="0.92">RIO DE JANEIRO &#8212; UTC&#8722;3 &#8212; ENGLISH &amp; PORTUGU&#202;S &#8212; AVAILABLE FOR REMOTE WORK</text>
+  <rect x="0" y="0" width="1280" height="3" fill="url(#redB)"/>
+  <rect x="0" y="397" width="1280" height="3" fill="url(#redB)"/>
+  <text x="640" y="168" text-anchor="middle" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="82" font-weight="700" fill="#eef4fb" letter-spacing="17">AMADEUS</text>
+  <text x="640" y="200" text-anchor="middle" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="16" fill="#8ea3bb" letter-spacing="7">PEDRO BARBOSA</text>
+  <rect x="390" y="218" width="500" height="2" fill="url(#redB)"/>
+  <text x="640" y="256" text-anchor="middle" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="19" font-weight="700" fill="#ff3b30" letter-spacing="6">QUANTITATIVE DEVELOPER // SYSTEMS ENGINEER</text>
+  <text x="640" y="292" text-anchor="middle" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="14.5" fill="#9fb2c8" letter-spacing="1.4">Quantitative research in Python and R &#183; production systems in Go and PHP</text>
+  <g stroke="#39506b" stroke-width="1" opacity="0.7"><line x1="340" y1="316" x2="940" y2="316"/></g>
+  <text x="640" y="344" text-anchor="middle" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="13" fill="#7d93ac" letter-spacing="3.4">RIO DE JANEIRO &#8212; UTC&#8722;3 &#8212; EN &amp; PT &#8212; AVAILABLE FOR REMOTE WORK</text>
 </svg>

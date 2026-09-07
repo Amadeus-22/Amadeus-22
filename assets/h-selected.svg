@@ -1,20 +1,51 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="84" viewBox="0 0 1280 84" role="img" aria-labelledby="t">
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="76" viewBox="0 0 1280 76" role="img" aria-labelledby="t">
   <title id="t">Selected work</title>
   <defs>
-    <linearGradient id="k" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#c6ac84"/><stop offset="0.5" stop-color="#bda179"/><stop offset="1" stop-color="#ae9066"/>
+    <linearGradient id="bgb" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b0f16"/><stop offset="0.55" stop-color="#070a10"/>
+      <stop offset="1" stop-color="#0d1219"/>
     </linearGradient>
-    <filter id="m"><feTurbulence type="fractalNoise" baseFrequency="0.014" numOctaves="4" seed="31"/><feColorMatrix type="saturate" values="0"/></filter>
-    <filter id="f"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="35"/><feColorMatrix type="saturate" values="0"/></filter>
+    <linearGradient id="redb" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7a0f0a"/><stop offset="0.5" stop-color="#ff3b30"/>
+      <stop offset="1" stop-color="#7a0f0a"/>
+    </linearGradient>
+    <radialGradient id="halob" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ff3b30" stop-opacity="0.20"/>
+      <stop offset="1" stop-color="#ff3b30" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="gridb" width="34" height="34" patternUnits="userSpaceOnUse">
+      <path d="M34 0H0V34" fill="none" stroke="#39506b" stroke-opacity="0.20" stroke-width="1"/>
+    </pattern>
+    <pattern id="scanb" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="1.4" fill="#8fc7ff" fill-opacity="0.045"/>
+    </pattern>
+    <linearGradient id="chromeb" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#c9d1da"/><stop offset="0.42" stop-color="#8d96a3"/>
+      <stop offset="0.68" stop-color="#5b636f"/><stop offset="1" stop-color="#8e97a4"/>
+    </linearGradient>
+    <linearGradient id="chromeHib" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e6ecf2"/><stop offset="1" stop-color="#98a1ad"/>
+    </linearGradient>
+    <radialGradient id="eyeb">
+      <stop offset="0" stop-color="#fff0f0"/><stop offset="0.35" stop-color="#ff3b30"/>
+      <stop offset="1" stop-color="#8f0d06"/>
+    </radialGradient>
   </defs>
-  <rect width="1280" height="84" fill="url(#k)"/>
-  <rect width="1280" height="84" filter="url(#m)" opacity="0.15"/>
-  <rect width="1280" height="84" filter="url(#f)" opacity="0.08"/>
-  <path d="M11 10 L1269 8 L1270 75 L10 77 Z" fill="none" stroke="#2b2116" stroke-width="2.4" opacity="0.85"/>
-  <g fill="#7b2d26" opacity="0.9">
-    <path d="M52 42 l9 9 l-9 9 l-9 -9 Z" transform="translate(0,-9)"/>
-    <path d="M1228 42 l-9 9 l9 9 l9 -9 Z" transform="translate(0,-9)"/>
+  <rect width="1280" height="76" fill="url(#bgb)"/>
+  <rect width="1280" height="76" fill="url(#gridb)"/>
+  <rect width="1280" height="76" fill="url(#scanb)"/>
+  <g stroke="#ff3b30" stroke-width="1.8" fill="none" opacity="0.9">
+    <path d="M10 28 L10 10 L28 10"/>
+    <path d="M1252 10 L1270 10 L1270 28"/>
+    <path d="M10 48 L10 66 L28 66"/>
+    <path d="M1252 66 L1270 66 L1270 48"/>
   </g>
-  <text x="640" y="53" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif"
-        font-size="27" font-weight="700" fill="#241a0f" letter-spacing="6.5">SELECTED WORK</text>
+  <rect x="0" y="0" width="1280" height="2" fill="url(#redb)" opacity="0.85"/>
+  <rect x="0" y="74" width="1280" height="2" fill="url(#redb)" opacity="0.55"/>
+  <g fill="#ff3b30" opacity="0.9">
+    <rect x="56" y="29" width="4" height="18"/>
+    <rect x="68" y="33" width="4" height="10"/>
+  </g>
+  <text x="92" y="46" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="24" font-weight="700"
+        fill="#e8eef6" letter-spacing="7">SELECTED WORK</text>
 </svg>

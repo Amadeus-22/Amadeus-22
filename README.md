@@ -4,10 +4,10 @@
 </p>
 
 <p align="center">
-  <a href="https://dilectusadeo.com/"><img src="https://img.shields.io/badge/Portfolio-4a3720?style=for-the-badge&logo=googlechrome&logoColor=e8dcc0" alt="Portfolio"></a>
-  <a href="mailto:barbosamaverickv8@gmail.com"><img src="https://img.shields.io/badge/Start_a_Project-7b2d26?style=for-the-badge&logo=minutemailer&logoColor=e8dcc0" alt="Start a project"></a>
-  <a href="https://www.linkedin.com/in/pedro-barbosa-0143a6289/"><img src="https://img.shields.io/badge/LinkedIn-3f4a3c?style=for-the-badge&logo=linkedin&logoColor=e8dcc0" alt="LinkedIn"></a>
-  <a href="https://github.com/QuantConnect"><img src="https://img.shields.io/badge/QuantConnect-5a4a2a?style=for-the-badge&logo=quantconnect&logoColor=e8dcc0" alt="QuantConnect"></a>
+  <a href="https://dilectusadeo.com/"><img src="https://img.shields.io/badge/Portfolio-1c2430?style=for-the-badge&logo=googlechrome&logoColor=e8eef6" alt="Portfolio"></a>
+  <a href="mailto:barbosamaverickv8@gmail.com"><img src="https://img.shields.io/badge/Start_a_Project-c1121f?style=for-the-badge&logo=minutemailer&logoColor=e8eef6" alt="Start a project"></a>
+  <a href="https://www.linkedin.com/in/pedro-barbosa-0143a6289/"><img src="https://img.shields.io/badge/LinkedIn-1c2430?style=for-the-badge&logo=linkedin&logoColor=e8eef6" alt="LinkedIn"></a>
+  <a href="https://github.com/QuantConnect"><img src="https://img.shields.io/badge/QuantConnect-1c2430?style=for-the-badge&logo=quantconnect&logoColor=e8eef6" alt="QuantConnect"></a>
 </p>
 
 <p align="center">
@@ -59,7 +59,21 @@ ecosystem, with reversible MySQL migrations.
 
 <p align="center">
   <img src="./assets/h-stack.svg" width="100%" alt="Stack">
-  <img src="./assets/stack.svg" width="100%" alt="Go, Python, PHP, JavaScript, TypeScript, R, Bash · SQLite, PostgreSQL, MongoDB, scikit-learn · Linux, Docker, Git, GitHub, Node.js, React, Flask">
+</p>
+
+<p align="center"><sub><b>LANGUAGES</b></sub></p>
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=go,python,php,js,ts,r,bash" alt="Go, Python, PHP, JavaScript, TypeScript, R, Bash">
+</p>
+
+<p align="center"><sub><b>DATA &amp; ANALYSIS</b></sub></p>
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=sqlite,postgresql,mongodb,sklearn" alt="SQLite, PostgreSQL, MongoDB, scikit-learn">
+</p>
+
+<p align="center"><sub><b>RUNTIME &amp; TOOLING</b></sub></p>
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=linux,docker,git,github,nodejs,react,flask,vscode" alt="Linux, Docker, Git, GitHub, Node.js, React, Flask, VS Code">
 </p>
 
 <p align="center">
@@ -68,12 +82,28 @@ ecosystem, with reversible MySQL migrations.
 
 <table>
 <tr>
-<td width="50%"><a href="https://github.com/QuantConnect"><img src="./assets/c-qc.svg" width="100%" alt="QuantConnect — algorithmic trading research and backtesting, on the platform behind Lean."></a></td>
-<td width="50%"><a href="https://github.com/AM-TIIX"><img src="./assets/c-tiix.svg" width="100%" alt="TIIX — health and services platform, current employer."></a></td>
+<td width="50%" valign="top">
+  <a href="https://github.com/QuantConnect"><img src="https://github.com/QuantConnect.png?size=64" width="46" align="left" hspace="12" alt="QuantConnect"></a>
+  <h3><a href="https://github.com/QuantConnect">QuantConnect</a></h3>
+  <p>Algorithmic trading research and backtesting, on the platform behind <a href="https://github.com/QuantConnect/Lean">Lean</a>.</p>
+</td>
+<td width="50%" valign="top">
+  <a href="https://github.com/AM-TIIX"><img src="https://github.com/AM-TIIX.png?size=64" width="46" align="left" hspace="12" alt="TIIX"></a>
+  <h3><a href="https://github.com/AM-TIIX">TIIX</a></h3>
+  <p>Health and services platform (<a href="https://tiix.com.br/">tiix.com.br</a>). Current employer.</p>
+</td>
 </tr>
 <tr>
-<td width="50%"><a href="https://github.com/NER-ELOHIM"><img src="./assets/c-ner.svg" width="100%" alt="NER-ELOHIM — my own organization, private by design."></a></td>
-<td width="50%"><a href="https://github.com/instituto-nova-sos"><img src="./assets/c-sos.svg" width="100%" alt="Instituto Nova SOS — contributor to chesed, a Go and TypeScript project."></a></td>
+<td width="50%" valign="top">
+  <a href="https://github.com/NER-ELOHIM"><img src="https://github.com/NER-ELOHIM.png?size=64" width="46" align="left" hspace="12" alt="NER-ELOHIM"></a>
+  <h3><a href="https://github.com/NER-ELOHIM">NER-ELOHIM</a></h3>
+  <p>My own organization, where the Go suite and the engineering tooling live. Private by design.</p>
+</td>
+<td width="50%" valign="top">
+  <a href="https://github.com/instituto-nova-sos"><img src="https://github.com/instituto-nova-sos.png?size=64" width="46" align="left" hspace="12" alt="Instituto Nova SOS"></a>
+  <h3><a href="https://github.com/instituto-nova-sos">Instituto Nova SOS</a></h3>
+  <p>Contributor to <code>chesed</code>, a Go and TypeScript project for a social institute.</p>
+</td>
 </tr>
 </table>
 
@@ -87,6 +117,6 @@ ecosystem, with reversible MySQL migrations.
 </p>
 
 <p align="center">
-  <a href="mailto:barbosamaverickv8@gmail.com"><img src="https://img.shields.io/badge/barbosamaverickv8@gmail.com-7b2d26?style=for-the-badge&logo=gmail&logoColor=e8dcc0" alt="Email"></a>
-  <a href="https://dilectusadeo.com/"><img src="https://img.shields.io/badge/dilectusadeo.com-4a3720?style=for-the-badge&logo=googlechrome&logoColor=e8dcc0" alt="Website"></a>
+  <a href="mailto:barbosamaverickv8@gmail.com"><img src="https://img.shields.io/badge/barbosamaverickv8@gmail.com-c1121f?style=for-the-badge&logo=gmail&logoColor=e8eef6" alt="Email"></a>
+  <a href="https://dilectusadeo.com/"><img src="https://img.shields.io/badge/dilectusadeo.com-1c2430?style=for-the-badge&logo=googlechrome&logoColor=e8eef6" alt="Website"></a>
 </p>
