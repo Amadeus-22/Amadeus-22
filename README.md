@@ -1,7 +1,7 @@
 <p align="center">
 <picture>
   <source media="(max-width: 700px)" srcset="./assets/profile-banner-m.jpg">
-  <img src="./assets/profile-banner.jpg" width="100%" alt="Humanoid robot turning a gear beside a wireframe globe">
+  <img src="./assets/profile-banner.jpg" width="100%" alt="Humanoid robots working in a lab: monitors showing an event-driven architecture diagram, code, dashboards and a project roadmap">
 </picture>
 <picture>
   <source media="(max-width: 700px) and (prefers-color-scheme: dark)" srcset="./assets/nameplate-m.svg">
