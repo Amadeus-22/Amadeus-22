@@ -1,8 +1,14 @@
 <p align="center">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/profile-banner.png">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/profile-banner-light.png">
-  <img src="./assets/profile-banner.png" width="100%" alt="AMADEUS — Pedro Barbosa — Quantitative Developer and Systems Engineer">
+  <source media="(max-width: 700px)" srcset="./assets/profile-banner-m.jpg">
+  <img src="./assets/profile-banner.jpg" width="100%" alt="Humanoid robot turning a gear beside a wireframe globe">
+</picture>
+<picture>
+  <source media="(max-width: 700px) and (prefers-color-scheme: dark)" srcset="./assets/nameplate-m.svg">
+  <source media="(max-width: 700px) and (prefers-color-scheme: light)" srcset="./assets/nameplate-m-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/nameplate.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/nameplate-light.svg">
+  <img src="./assets/nameplate.svg" width="100%" alt="AMADEUS — Pedro Barbosa — Quantitative Developer and Systems Engineer — Rio de Janeiro, UTC−3, EN & PT, remote">
 </picture>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/at-a-glance.svg">
@@ -175,13 +181,3 @@ ecosystem, with reversible MySQL migrations.
   <a href="https://dilectusadeo.com/"><img src="https://img.shields.io/badge/dilectusadeo.com-1c2430?style=for-the-badge&logo=googlechrome&logoColor=e8eef6" alt="Website"></a>
 </p>
 
----
-
-<p align="center">
-  <sub>
-    Banner photograph: <a href="https://commons.wikimedia.org/wiki/File:Ameca_Generation_1.jpg">Ameca Generation 1</a>
-    by Willy Jackson, via Wikimedia Commons, licensed
-    <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.<br>
-    The composed banner is a derivative work and is released under the same licence.
-  </sub>
-</p>
