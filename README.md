@@ -3,10 +3,10 @@
 </p>
 
 <p align="center">
-  <a href="https://dilectusadeo.com/"><img src="https://img.shields.io/badge/Portfolio-5c4a32?style=for-the-badge&logo=googlechrome&logoColor=f2e9d8" alt="Portfolio"></a>
-  <a href="mailto:barbosamaverickv8@gmail.com"><img src="https://img.shields.io/badge/Start_a_Project-7b2d26?style=for-the-badge&logo=minutemailer&logoColor=f2e9d8" alt="Start a project"></a>
-  <a href="https://www.linkedin.com/in/pedro-barbosa-0143a6289/"><img src="https://img.shields.io/badge/LinkedIn-3d4a5c?style=for-the-badge&logo=linkedin&logoColor=f2e9d8" alt="LinkedIn"></a>
-  <a href="https://www.quantconnect.com/"><img src="https://img.shields.io/badge/QuantConnect-4a5a43?style=for-the-badge&logo=quantconnect&logoColor=f2e9d8" alt="QuantConnect"></a>
+  <a href="https://dilectusadeo.com/"><img src="https://img.shields.io/badge/Portfolio-4a3720?style=for-the-badge&logo=googlechrome&logoColor=e8dcc0" alt="Portfolio"></a>
+  <a href="mailto:barbosamaverickv8@gmail.com"><img src="https://img.shields.io/badge/Start_a_Project-7b2d26?style=for-the-badge&logo=minutemailer&logoColor=e8dcc0" alt="Start a project"></a>
+  <a href="https://www.linkedin.com/in/pedro-barbosa-0143a6289/"><img src="https://img.shields.io/badge/LinkedIn-3f4a3c?style=for-the-badge&logo=linkedin&logoColor=e8dcc0" alt="LinkedIn"></a>
+  <a href="https://www.quantconnect.com/"><img src="https://img.shields.io/badge/QuantConnect-5a4a2a?style=for-the-badge&logo=quantconnect&logoColor=e8dcc0" alt="QuantConnect"></a>
 </p>
 
 <p align="center">
@@ -138,6 +138,6 @@ them. Legacy PHP in a WordPress-based ecosystem, with reversible MySQL migration
 </p>
 
 <p align="center">
-  <a href="mailto:barbosamaverickv8@gmail.com"><img src="https://img.shields.io/badge/barbosamaverickv8@gmail.com-7b2d26?style=for-the-badge&logo=gmail&logoColor=f2e9d8" alt="Email"></a>
-  <a href="https://dilectusadeo.com/"><img src="https://img.shields.io/badge/dilectusadeo.com-5c4a32?style=for-the-badge&logo=googlechrome&logoColor=f2e9d8" alt="Website"></a>
+  <a href="mailto:barbosamaverickv8@gmail.com"><img src="https://img.shields.io/badge/barbosamaverickv8@gmail.com-7b2d26?style=for-the-badge&logo=gmail&logoColor=e8dcc0" alt="Email"></a>
+  <a href="https://dilectusadeo.com/"><img src="https://img.shields.io/badge/dilectusadeo.com-4a3720?style=for-the-badge&logo=googlechrome&logoColor=e8dcc0" alt="Website"></a>
 </p>
