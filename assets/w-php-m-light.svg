@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="420" viewBox="0 0 560 420" role="img" aria-labelledby="t">
+  <title id="t">PHP and legacy modernisation — Working inside established codebases: registration and permission flows, scheduling, payments, and reversible database migrations on systems already carrying users.</title>
+  <defs>
+    <linearGradient id="redmc2l" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#c1121f" stop-opacity="0.25"/>
+      <stop offset="0.5" stop-color="#c1121f"/>
+      <stop offset="1" stop-color="#c1121f" stop-opacity="0.25"/>
+    </linearGradient>
+  </defs>
+
+  <g stroke="#c1121f" stroke-width="2.4" fill="none" opacity="0.9">
+    <path d="M10 28 L10 10 L28 10"/><path d="M532 10 L550 10 L550 28"/>
+    <path d="M10 392 L10 410 L28 410"/><path d="M532 410 L550 410 L550 392"/>
+  </g>
+
+  <rect x="0" y="0" width="560" height="4" fill="url(#redmc2l)"/>
+  <g fill="#c1121f"><rect x="30" y="42" width="7" height="28"/></g>
+  <text x="48" y="66" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="30" font-weight="700" fill="#111820" letter-spacing="1.4">PHP AND LEGACY</text>
+  <text x="48" y="100" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="30" font-weight="700" fill="#111820" letter-spacing="1.4">MODERNISATION</text>
+  <line x1="30" y1="148" x2="530" y2="148" stroke="#8fa2bb" stroke-width="1.6" opacity="0.8"/>
+  <text x="30" y="186" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="24" fill="#33414f">Working inside established</text>
+  <text x="30" y="220" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="24" fill="#33414f">codebases: registration and</text>
+  <text x="30" y="254" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="24" fill="#33414f">permission flows, scheduling,</text>
+  <text x="30" y="288" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="24" fill="#33414f">payments, and reversible</text>
+  <text x="30" y="322" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="24" fill="#33414f">database migrations on systems</text>
+  <text x="30" y="356" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="24" fill="#33414f">already carrying users.</text>
+</svg>

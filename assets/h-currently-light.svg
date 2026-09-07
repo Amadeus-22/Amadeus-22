@@ -1,21 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="104" viewBox="0 0 1280 104" role="img" aria-labelledby="t">
   <title id="t">Currently</title>
   <defs>
-    <linearGradient id="bgt2l" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#eef1f5"/><stop offset="0.55" stop-color="#e6eaf0"/>
-      <stop offset="1" stop-color="#dfe4ec"/>
-    </linearGradient>
     <linearGradient id="redt2l" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="#c1121f" stop-opacity="0.25"/>
       <stop offset="0.5" stop-color="#c1121f"/>
       <stop offset="1" stop-color="#c1121f" stop-opacity="0.25"/>
     </linearGradient>
-    <pattern id="scant2l" width="4" height="4" patternUnits="userSpaceOnUse">
-      <rect width="4" height="1.4" fill="#39506b" fill-opacity="0.03"/>
-    </pattern>
   </defs>
-  <rect width="1280" height="104" fill="url(#bgt2l)"/>
-  <rect width="1280" height="104" fill="url(#scant2l)"/>
   <g stroke="#c1121f" stroke-width="2.2" fill="none" opacity="0.9">
     <path d="M10 32 L10 10 L32 10"/><path d="M1248 10 L1270 10 L1270 32"/>
     <path d="M10 72 L10 94 L32 94"/><path d="M1248 94 L1270 94 L1270 72"/>

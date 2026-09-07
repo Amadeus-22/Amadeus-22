@@ -20,43 +20,51 @@
 
 <p align="center">
 <picture>
+  <source media="(max-width: 700px) and (prefers-color-scheme: dark)" srcset="./assets/h-work-m.svg">
+  <source media="(max-width: 700px) and (prefers-color-scheme: light)" srcset="./assets/h-work-m-light.svg">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/h-work.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/h-work-light.svg">
   <img src="./assets/h-work.svg" width="100%" alt="What I work on">
 </picture>
 </p>
 
-<table>
-<tr>
-<td width="50%"><picture>
+<p align="center">
+<picture>
+  <source media="(max-width: 700px) and (prefers-color-scheme: dark)" srcset="./assets/w-quant-m.svg">
+  <source media="(max-width: 700px) and (prefers-color-scheme: light)" srcset="./assets/w-quant-m-light.svg">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/w-quant.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/w-quant-light.svg">
-  <img src="./assets/w-quant.svg" width="100%" alt="Quantitative development — trading strategy research and backtesting on QuantConnect, risk modelling and predictive models on financial time series.">
-</picture></td>
-<td width="50%"><picture>
+  <img src="./assets/w-quant.svg" width="380" alt="Quantitative development — trading strategy research and backtesting on QuantConnect, risk modelling and predictive models on financial time series.">
+</picture>
+<picture>
+  <source media="(max-width: 700px) and (prefers-color-scheme: dark)" srcset="./assets/w-go-m.svg">
+  <source media="(max-width: 700px) and (prefers-color-scheme: light)" srcset="./assets/w-go-m-light.svg">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/w-go.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/w-go-light.svg">
-  <img src="./assets/w-go.svg" width="100%" alt="Backend systems in Go — services that ship as a single static binary with no runtime dependencies, SQLite with full-text search, systemd deployment.">
-</picture></td>
-</tr>
-<tr>
-<td width="50%"><picture>
+  <img src="./assets/w-go.svg" width="380" alt="Backend systems in Go — services that ship as a single static binary with no runtime dependencies, SQLite with full-text search, systemd deployment.">
+</picture>
+<picture>
+  <source media="(max-width: 700px) and (prefers-color-scheme: dark)" srcset="./assets/w-php-m.svg">
+  <source media="(max-width: 700px) and (prefers-color-scheme: light)" srcset="./assets/w-php-m-light.svg">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/w-php.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/w-php-light.svg">
-  <img src="./assets/w-php.svg" width="100%" alt="PHP and legacy modernisation — registration and permission flows, scheduling, payments, reversible database migrations.">
-</picture></td>
-<td width="50%"><picture>
+  <img src="./assets/w-php.svg" width="380" alt="PHP and legacy modernisation — registration and permission flows, scheduling, payments, reversible database migrations.">
+</picture>
+<picture>
+  <source media="(max-width: 700px) and (prefers-color-scheme: dark)" srcset="./assets/w-data-m.svg">
+  <source media="(max-width: 700px) and (prefers-color-scheme: light)" srcset="./assets/w-data-m-light.svg">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/w-data.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/w-data-light.svg">
-  <img src="./assets/w-data.svg" width="100%" alt="Data automation — collection bots, scraping, pipelines and internal tooling on Linux and systemd.">
-</picture></td>
-</tr>
-</table>
+  <img src="./assets/w-data.svg" width="380" alt="Data automation — collection bots, scraping, pipelines and internal tooling on Linux and systemd.">
+</picture>
+</p>
 
 > Most of what I build is private — client work, an employer's platform, and my own tooling. The public repositories below are the part I can show.
 
 <p align="center">
 <picture>
+  <source media="(max-width: 700px) and (prefers-color-scheme: dark)" srcset="./assets/h-selected-m.svg">
+  <source media="(max-width: 700px) and (prefers-color-scheme: light)" srcset="./assets/h-selected-m-light.svg">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/h-selected.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/h-selected-light.svg">
   <img src="./assets/h-selected.svg" width="100%" alt="Selected work">
@@ -81,6 +89,8 @@ Python and R.
 
 <p align="center">
 <picture>
+  <source media="(max-width: 700px) and (prefers-color-scheme: dark)" srcset="./assets/h-currently-m.svg">
+  <source media="(max-width: 700px) and (prefers-color-scheme: light)" srcset="./assets/h-currently-m-light.svg">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/h-currently.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/h-currently-light.svg">
   <img src="./assets/h-currently.svg" width="100%" alt="Currently">
@@ -95,6 +105,8 @@ ecosystem, with reversible MySQL migrations.
 
 <p align="center">
 <picture>
+  <source media="(max-width: 700px) and (prefers-color-scheme: dark)" srcset="./assets/h-stack-m.svg">
+  <source media="(max-width: 700px) and (prefers-color-scheme: light)" srcset="./assets/h-stack-m-light.svg">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/h-stack.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/h-stack-light.svg">
   <img src="./assets/h-stack.svg" width="100%" alt="Stack">
@@ -108,6 +120,8 @@ ecosystem, with reversible MySQL migrations.
 
 <p align="center">
 <picture>
+  <source media="(max-width: 700px) and (prefers-color-scheme: dark)" srcset="./assets/h-communities-m.svg">
+  <source media="(max-width: 700px) and (prefers-color-scheme: light)" srcset="./assets/h-communities-m-light.svg">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/h-communities.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/h-communities-light.svg">
   <img src="./assets/h-communities.svg" width="100%" alt="Communities and organizations">
@@ -143,6 +157,8 @@ ecosystem, with reversible MySQL migrations.
 
 <p align="center">
 <picture>
+  <source media="(max-width: 700px) and (prefers-color-scheme: dark)" srcset="./assets/h-contact-m.svg">
+  <source media="(max-width: 700px) and (prefers-color-scheme: light)" srcset="./assets/h-contact-m-light.svg">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/h-contact.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/h-contact-light.svg">
   <img src="./assets/h-contact.svg" width="100%" alt="Contact">

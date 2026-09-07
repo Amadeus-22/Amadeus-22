@@ -1,21 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="628" height="300" viewBox="0 0 628 300" role="img" aria-labelledby="t">
   <title id="t">Quantitative development — Trading strategy research and backtesting on QuantConnect. Risk modelling and predictive models on financial time series, with evaluation that separates a real edge from a curve that only looks good.</title>
   <defs>
-    <linearGradient id="bgc0d" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0b0f16"/><stop offset="0.55" stop-color="#070a10"/>
-      <stop offset="1" stop-color="#0d1219"/>
-    </linearGradient>
     <linearGradient id="redc0d" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="#ff3b30" stop-opacity="0.25"/>
       <stop offset="0.5" stop-color="#ff3b30"/>
       <stop offset="1" stop-color="#ff3b30" stop-opacity="0.25"/>
     </linearGradient>
-    <pattern id="scanc0d" width="4" height="4" patternUnits="userSpaceOnUse">
-      <rect width="4" height="1.4" fill="#8fc7ff" fill-opacity="0.045"/>
-    </pattern>
   </defs>
-  <rect width="628" height="300" fill="url(#bgc0d)"/>
-  <rect width="628" height="300" fill="url(#scanc0d)"/>
 
   <g stroke="#ff3b30" stroke-width="2.0" fill="none" opacity="0.9">
     <path d="M10 28 L10 10 L28 10"/><path d="M600 10 L618 10 L618 28"/>
