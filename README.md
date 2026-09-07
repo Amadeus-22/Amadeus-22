@@ -103,11 +103,30 @@ them. Legacy PHP in a WordPress-based ecosystem, with reversible MySQL migration
 
 ---
 
-## Communities
+## Communities & organizations
 
-**[QuantConnect](https://www.quantconnect.com/)** — algorithmic trading research and backtesting.
-
-**[Instituto Nova SOS](https://github.com/instituto-nova-sos)** — contributor to `chesed`, a Go and TypeScript project.
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3><a href="https://www.quantconnect.com/">QuantConnect</a></h3>
+      <p>Algorithmic trading research and backtesting. Where the quantitative side of my work is developed and tested.</p>
+    </td>
+    <td width="50%" valign="top">
+      <h3><a href="https://tiix.com.br/">TIIX</a></h3>
+      <p>Health and services platform. Current employer — see <b>Currently</b> above.</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3><a href="https://github.com/NER-ELOHIM">NER-ELOHIM</a></h3>
+      <p>My own organization, where the Go suite and the engineering tooling live. Private by design.</p>
+    </td>
+    <td width="50%" valign="top">
+      <h3><a href="https://github.com/instituto-nova-sos">Instituto Nova SOS</a></h3>
+      <p>Contributor to <code>chesed</code>, a Go and TypeScript project for a social institute.</p>
+    </td>
+  </tr>
+</table>
 
 ---
 
