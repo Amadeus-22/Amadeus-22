@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/profile-banner.svg" width="100%" alt="AMADEUS — Pedro Barbosa — Quantitative Developer and Systems Engineer">
+  <img src="./assets/profile-banner.png" width="100%" alt="AMADEUS — Pedro Barbosa — Quantitative Developer and Systems Engineer">
   <img src="./assets/at-a-glance.svg" width="100%" alt="Quant research and backtesting · Backend in Go, PHP and Python · UTC−3 · English and Português">
 </p>
 
@@ -119,4 +119,15 @@ ecosystem, with reversible MySQL migrations.
 <p align="center">
   <a href="mailto:barbosamaverickv8@gmail.com"><img src="https://img.shields.io/badge/barbosamaverickv8@gmail.com-c1121f?style=for-the-badge&logo=gmail&logoColor=e8eef6" alt="Email"></a>
   <a href="https://dilectusadeo.com/"><img src="https://img.shields.io/badge/dilectusadeo.com-1c2430?style=for-the-badge&logo=googlechrome&logoColor=e8eef6" alt="Website"></a>
+</p>
+
+---
+
+<p align="center">
+  <sub>
+    Banner photograph: <a href="https://commons.wikimedia.org/wiki/File:Ameca_Generation_1.jpg">Ameca Generation 1</a>
+    by Willy Jackson, via Wikimedia Commons, licensed
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.<br>
+    The composed banner is a derivative work and is released under the same licence.
+  </sub>
 </p>
