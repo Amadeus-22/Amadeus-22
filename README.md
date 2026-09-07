@@ -134,32 +134,36 @@ ecosystem, with reversible MySQL migrations.
 </picture>
 </p>
 
-<table>
-<tr>
-<td width="50%" valign="top">
-  <a href="https://github.com/QuantConnect"><img src="https://github.com/QuantConnect.png?size=80" width="56" align="left" hspace="14" alt="QuantConnect"></a>
-  <h3><a href="https://github.com/QuantConnect">QuantConnect</a></h3>
-  <p>Algorithmic trading research and backtesting, on the platform behind <a href="https://github.com/QuantConnect/Lean">Lean</a>.</p>
-</td>
-<td width="50%" valign="top">
-  <a href="https://github.com/AM-TIIX"><img src="https://github.com/AM-TIIX.png?size=80" width="56" align="left" hspace="14" alt="TIIX"></a>
-  <h3><a href="https://github.com/AM-TIIX">TIIX</a></h3>
-  <p>Health and services platform (<a href="https://tiix.com.br/">tiix.com.br</a>). Current employer.</p>
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-  <a href="https://github.com/NER-ELOHIM"><img src="https://github.com/NER-ELOHIM.png?size=80" width="56" align="left" hspace="14" alt="NER-ELOHIM"></a>
-  <h3><a href="https://github.com/NER-ELOHIM">NER-ELOHIM</a></h3>
-  <p>My own organization, where the Go suite and the engineering tooling live. Private by design.</p>
-</td>
-<td width="50%" valign="top">
-  <a href="https://github.com/instituto-nova-sos"><img src="https://github.com/instituto-nova-sos.png?size=80" width="56" align="left" hspace="14" alt="Instituto Nova SOS"></a>
-  <h3><a href="https://github.com/instituto-nova-sos">Instituto Nova SOS</a></h3>
-  <p>Contributor to <code>chesed</code>, a Go and TypeScript project for a social institute.</p>
-</td>
-</tr>
-</table>
+<p align="center">
+<a href="https://github.com/QuantConnect"><picture>
+  <source media="(max-width: 700px) and (prefers-color-scheme: dark)" srcset="./assets/c-qc-m.svg">
+  <source media="(max-width: 700px) and (prefers-color-scheme: light)" srcset="./assets/c-qc-m-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/c-qc.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/c-qc-light.svg">
+  <img src="./assets/c-qc.svg" width="380" alt="QuantConnect — algorithmic trading research and backtesting, on the platform behind Lean.">
+</picture></a>
+<a href="https://github.com/AM-TIIX"><picture>
+  <source media="(max-width: 700px) and (prefers-color-scheme: dark)" srcset="./assets/c-tiix-m.svg">
+  <source media="(max-width: 700px) and (prefers-color-scheme: light)" srcset="./assets/c-tiix-m-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/c-tiix.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/c-tiix-light.svg">
+  <img src="./assets/c-tiix.svg" width="380" alt="TIIX — health and services platform at tiix.com.br. Current employer.">
+</picture></a>
+<a href="https://github.com/NER-ELOHIM"><picture>
+  <source media="(max-width: 700px) and (prefers-color-scheme: dark)" srcset="./assets/c-ner-m.svg">
+  <source media="(max-width: 700px) and (prefers-color-scheme: light)" srcset="./assets/c-ner-m-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/c-ner.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/c-ner-light.svg">
+  <img src="./assets/c-ner.svg" width="380" alt="NER-ELOHIM — my own organization, where the Go suite and the engineering tooling live.">
+</picture></a>
+<a href="https://github.com/instituto-nova-sos"><picture>
+  <source media="(max-width: 700px) and (prefers-color-scheme: dark)" srcset="./assets/c-sos-m.svg">
+  <source media="(max-width: 700px) and (prefers-color-scheme: light)" srcset="./assets/c-sos-m-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/c-sos.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/c-sos-light.svg">
+  <img src="./assets/c-sos.svg" width="380" alt="Instituto Nova SOS — contributor to chesed, a Go and TypeScript project.">
+</picture></a>
+</p>
 
 <p align="center">
 <picture>
