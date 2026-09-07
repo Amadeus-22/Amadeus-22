@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/profile-banner.svg" width="100%" alt="Pedro Barbosa — Quantitative Developer and Systems Engineer">
+  <img src="./assets/profile-banner.svg" width="100%" alt="AMADEUS — Quantitative Developer and Systems Engineer">
 </p>
 
 <p align="center">
