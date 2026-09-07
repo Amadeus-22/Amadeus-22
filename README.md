@@ -14,16 +14,11 @@
   Quantitative work in <b>Python</b> and <b>R</b> · production software in <b>Go</b> and <b>PHP</b>.
 </p>
 
-<table align="center">
-  <tr>
-    <td align="center"><strong>Quant</strong><br><sub>research &amp; backtesting</sub></td>
-    <td align="center"><strong>Backend</strong><br><sub>Go · PHP · Python</sub></td>
-    <td align="center"><strong>UTC−3</strong><br><sub>overlaps US &amp; EU hours</sub></td>
-    <td align="center"><strong>EN · PT</strong><br><sub>working languages</sub></td>
-  </tr>
-</table>
+<p align="center">
+  <img src="./assets/at-a-glance.svg" width="100%" alt="Quant research and backtesting · Backend in Go, PHP and Python · UTC−3 · English and Português">
+</p>
 
----
+<p align="center"><img src="./assets/rule.svg" width="420" alt=""></p>
 
 ## What I work on
 
@@ -52,7 +47,7 @@
 
 > Most of what I build is private — client work, an employer's platform, and my own tooling. The public repositories below are the part I can show.
 
----
+<p align="center"><img src="./assets/rule.svg" width="420" alt=""></p>
 
 ## Selected work
 
@@ -72,7 +67,7 @@ whole systems, not only models.
 **Quantitative research** — strategy simulation and backtesting on QuantConnect,
 with predictive modelling in Python and R.
 
----
+<p align="center"><img src="./assets/rule.svg" width="420" alt=""></p>
 
 ## Currently
 
@@ -82,7 +77,7 @@ I work on the PHP portals for clients, professionals and brokers: registration
 and permission flows, scheduling, payments, and the shared foundation beneath
 them. Legacy PHP in a WordPress-based ecosystem, with reversible MySQL migrations.
 
----
+<p align="center"><img src="./assets/rule.svg" width="420" alt=""></p>
 
 ## Stack
 
@@ -101,7 +96,7 @@ them. Legacy PHP in a WordPress-based ecosystem, with reversible MySQL migration
   <img src="https://skillicons.dev/icons?i=linux,docker,git,github,nodejs,react,flask,vscode" alt="Runtime and tooling">
 </p>
 
----
+<p align="center"><img src="./assets/rule.svg" width="420" alt=""></p>
 
 ## Communities & organizations
 
@@ -132,7 +127,7 @@ them. Legacy PHP in a WordPress-based ecosystem, with reversible MySQL migration
   </tr>
 </table>
 
----
+<p align="center"><img src="./assets/rule.svg" width="420" alt=""></p>
 
 ## Contact
 
