@@ -1,6 +1,14 @@
 <p align="center">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/profile-banner.png">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/profile-banner-light.png">
   <img src="./assets/profile-banner.png" width="100%" alt="AMADEUS — Pedro Barbosa — Quantitative Developer and Systems Engineer">
+</picture>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/at-a-glance.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/at-a-glance-light.svg">
   <img src="./assets/at-a-glance.svg" width="100%" alt="Quant research and backtesting · Backend in Go, PHP and Python · UTC−3 · English and Português">
+</picture>
 </p>
 
 <p align="center">
@@ -11,24 +19,48 @@
 </p>
 
 <p align="center">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/h-work.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/h-work-light.svg">
   <img src="./assets/h-work.svg" width="100%" alt="What I work on">
+</picture>
 </p>
 
 <table>
 <tr>
-<td width="50%"><img src="./assets/w-quant.svg" width="100%" alt="Quantitative development — trading strategy research and backtesting on QuantConnect, risk modelling and predictive models on financial time series."></td>
-<td width="50%"><img src="./assets/w-go.svg" width="100%" alt="Backend systems in Go — services that ship as a single static binary with no runtime dependencies, SQLite with full-text search, systemd deployment."></td>
+<td width="50%"><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/w-quant.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/w-quant-light.svg">
+  <img src="./assets/w-quant.svg" width="100%" alt="Quantitative development — trading strategy research and backtesting on QuantConnect, risk modelling and predictive models on financial time series.">
+</picture></td>
+<td width="50%"><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/w-go.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/w-go-light.svg">
+  <img src="./assets/w-go.svg" width="100%" alt="Backend systems in Go — services that ship as a single static binary with no runtime dependencies, SQLite with full-text search, systemd deployment.">
+</picture></td>
 </tr>
 <tr>
-<td width="50%"><img src="./assets/w-php.svg" width="100%" alt="PHP applications and legacy modernisation — registration and permission flows, scheduling, payments, reversible database migrations."></td>
-<td width="50%"><img src="./assets/w-data.svg" width="100%" alt="Data automation — collection bots, scraping, pipelines and internal tooling on Linux and systemd."></td>
+<td width="50%"><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/w-php.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/w-php-light.svg">
+  <img src="./assets/w-php.svg" width="100%" alt="PHP and legacy modernisation — registration and permission flows, scheduling, payments, reversible database migrations.">
+</picture></td>
+<td width="50%"><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/w-data.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/w-data-light.svg">
+  <img src="./assets/w-data.svg" width="100%" alt="Data automation — collection bots, scraping, pipelines and internal tooling on Linux and systemd.">
+</picture></td>
 </tr>
 </table>
 
 > Most of what I build is private — client work, an employer's platform, and my own tooling. The public repositories below are the part I can show.
 
 <p align="center">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/h-selected.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/h-selected-light.svg">
   <img src="./assets/h-selected.svg" width="100%" alt="Selected work">
+</picture>
 </p>
 
 **iode** — personal orchestration engine, in Go. Indexes projects, collects daily
@@ -48,7 +80,11 @@ end, in JavaScript.
 Python and R.
 
 <p align="center">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/h-currently.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/h-currently-light.svg">
   <img src="./assets/h-currently.svg" width="100%" alt="Currently">
+</picture>
 </p>
 
 **Software Engineer at [TIIX](https://github.com/AM-TIIX)** — a health and services
@@ -58,49 +94,69 @@ payments, and the shared foundation beneath them. Legacy PHP in a WordPress-base
 ecosystem, with reversible MySQL migrations.
 
 <p align="center">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/h-stack.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/h-stack-light.svg">
   <img src="./assets/h-stack.svg" width="100%" alt="Stack">
+</picture>
 </p>
 
-<p align="center"><sub><b>LANGUAGES</b></sub></p>
+<p align="center"><b>LANGUAGES</b></p>
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=go,python,php,js,ts,r,bash" alt="Go, Python, PHP, JavaScript, TypeScript, R, Bash">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=go,python,php,js,ts,r,bash&theme=dark">
+  <source media="(prefers-color-scheme: light)" srcset="https://skillicons.dev/icons?i=go,python,php,js,ts,r,bash&theme=light">
+  <img src="https://skillicons.dev/icons?i=go,python,php,js,ts,r,bash&theme=dark" alt="Go, Python, PHP, JavaScript, TypeScript, R, Bash">
+</picture>
 </p>
 
-<p align="center"><sub><b>DATA &amp; ANALYSIS</b></sub></p>
+<p align="center"><b>DATA &amp; ANALYSIS</b></p>
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=sqlite,postgresql,mongodb,sklearn" alt="SQLite, PostgreSQL, MongoDB, scikit-learn">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=sqlite,postgresql,mongodb,sklearn&theme=dark">
+  <source media="(prefers-color-scheme: light)" srcset="https://skillicons.dev/icons?i=sqlite,postgresql,mongodb,sklearn&theme=light">
+  <img src="https://skillicons.dev/icons?i=sqlite,postgresql,mongodb,sklearn&theme=dark" alt="SQLite, PostgreSQL, MongoDB, scikit-learn">
+</picture>
 </p>
 
-<p align="center"><sub><b>RUNTIME &amp; TOOLING</b></sub></p>
+<p align="center"><b>RUNTIME &amp; TOOLING</b></p>
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=linux,docker,git,github,nodejs,react,flask,vscode" alt="Linux, Docker, Git, GitHub, Node.js, React, Flask, VS Code">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=linux,docker,git,github,nodejs,react,flask,vscode&theme=dark">
+  <source media="(prefers-color-scheme: light)" srcset="https://skillicons.dev/icons?i=linux,docker,git,github,nodejs,react,flask,vscode&theme=light">
+  <img src="https://skillicons.dev/icons?i=linux,docker,git,github,nodejs,react,flask,vscode&theme=dark" alt="Linux, Docker, Git, GitHub, Node.js, React, Flask, VS Code">
+</picture>
 </p>
 
 <p align="center">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/h-communities.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/h-communities-light.svg">
   <img src="./assets/h-communities.svg" width="100%" alt="Communities and organizations">
+</picture>
 </p>
 
 <table>
 <tr>
 <td width="50%" valign="top">
-  <a href="https://github.com/QuantConnect"><img src="https://github.com/QuantConnect.png?size=64" width="46" align="left" hspace="12" alt="QuantConnect"></a>
+  <a href="https://github.com/QuantConnect"><img src="https://github.com/QuantConnect.png?size=80" width="56" align="left" hspace="14" alt="QuantConnect"></a>
   <h3><a href="https://github.com/QuantConnect">QuantConnect</a></h3>
   <p>Algorithmic trading research and backtesting, on the platform behind <a href="https://github.com/QuantConnect/Lean">Lean</a>.</p>
 </td>
 <td width="50%" valign="top">
-  <a href="https://github.com/AM-TIIX"><img src="https://github.com/AM-TIIX.png?size=64" width="46" align="left" hspace="12" alt="TIIX"></a>
+  <a href="https://github.com/AM-TIIX"><img src="https://github.com/AM-TIIX.png?size=80" width="56" align="left" hspace="14" alt="TIIX"></a>
   <h3><a href="https://github.com/AM-TIIX">TIIX</a></h3>
   <p>Health and services platform (<a href="https://tiix.com.br/">tiix.com.br</a>). Current employer.</p>
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
-  <a href="https://github.com/NER-ELOHIM"><img src="https://github.com/NER-ELOHIM.png?size=64" width="46" align="left" hspace="12" alt="NER-ELOHIM"></a>
+  <a href="https://github.com/NER-ELOHIM"><img src="https://github.com/NER-ELOHIM.png?size=80" width="56" align="left" hspace="14" alt="NER-ELOHIM"></a>
   <h3><a href="https://github.com/NER-ELOHIM">NER-ELOHIM</a></h3>
   <p>My own organization, where the Go suite and the engineering tooling live. Private by design.</p>
 </td>
 <td width="50%" valign="top">
-  <a href="https://github.com/instituto-nova-sos"><img src="https://github.com/instituto-nova-sos.png?size=64" width="46" align="left" hspace="12" alt="Instituto Nova SOS"></a>
+  <a href="https://github.com/instituto-nova-sos"><img src="https://github.com/instituto-nova-sos.png?size=80" width="56" align="left" hspace="14" alt="Instituto Nova SOS"></a>
   <h3><a href="https://github.com/instituto-nova-sos">Instituto Nova SOS</a></h3>
   <p>Contributor to <code>chesed</code>, a Go and TypeScript project for a social institute.</p>
 </td>
@@ -108,7 +164,11 @@ ecosystem, with reversible MySQL migrations.
 </table>
 
 <p align="center">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/h-contact.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/h-contact-light.svg">
   <img src="./assets/h-contact.svg" width="100%" alt="Contact">
+</picture>
 </p>
 
 <p align="center">

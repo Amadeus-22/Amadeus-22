@@ -1,53 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="628" height="238" viewBox="0 0 628 238" role="img" aria-labelledby="t">
+<svg xmlns="http://www.w3.org/2000/svg" width="628" height="300" viewBox="0 0 628 300" role="img" aria-labelledby="t">
   <title id="t">Quantitative development — Trading strategy research and backtesting on QuantConnect. Risk modelling and predictive models on financial time series, with evaluation that separates a real edge from a curve that only looks good.</title>
   <defs>
-    <linearGradient id="bgq" x1="0" y1="0" x2="1" y2="1">
+    <linearGradient id="bgc0d" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#0b0f16"/><stop offset="0.55" stop-color="#070a10"/>
       <stop offset="1" stop-color="#0d1219"/>
     </linearGradient>
-    <linearGradient id="redq" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#7a0f0a"/><stop offset="0.5" stop-color="#ff3b30"/>
-      <stop offset="1" stop-color="#7a0f0a"/>
+    <linearGradient id="redc0d" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff3b30" stop-opacity="0.25"/>
+      <stop offset="0.5" stop-color="#ff3b30"/>
+      <stop offset="1" stop-color="#ff3b30" stop-opacity="0.25"/>
     </linearGradient>
-    <radialGradient id="haloq" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0" stop-color="#ff3b30" stop-opacity="0.20"/>
-      <stop offset="1" stop-color="#ff3b30" stop-opacity="0"/>
-    </radialGradient>
-    <pattern id="gridq" width="34" height="34" patternUnits="userSpaceOnUse">
-      <path d="M34 0H0V34" fill="none" stroke="#39506b" stroke-opacity="0.20" stroke-width="1"/>
+    <pattern id="gridc0d" width="34" height="34" patternUnits="userSpaceOnUse">
+      <path d="M34 0H0V34" fill="none" stroke="#39506b" stroke-opacity="0.2" stroke-width="1"/>
     </pattern>
-    <pattern id="scanq" width="4" height="4" patternUnits="userSpaceOnUse">
+    <pattern id="scanc0d" width="4" height="4" patternUnits="userSpaceOnUse">
       <rect width="4" height="1.4" fill="#8fc7ff" fill-opacity="0.045"/>
     </pattern>
-    <linearGradient id="chromeq" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#c9d1da"/><stop offset="0.42" stop-color="#8d96a3"/>
-      <stop offset="0.68" stop-color="#5b636f"/><stop offset="1" stop-color="#8e97a4"/>
-    </linearGradient>
-    <linearGradient id="chromeHiq" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#e6ecf2"/><stop offset="1" stop-color="#98a1ad"/>
-    </linearGradient>
-    <radialGradient id="eyeq">
-      <stop offset="0" stop-color="#fff0f0"/><stop offset="0.35" stop-color="#ff3b30"/>
-      <stop offset="1" stop-color="#8f0d06"/>
-    </radialGradient>
   </defs>
-  <rect width="628" height="238" fill="url(#bgq)"/>
-  <rect width="628" height="238" fill="url(#gridq)"/>
-  <rect width="628" height="238" fill="url(#scanq)"/>
+  <rect width="628" height="300" fill="url(#bgc0d)"/>
+  <rect width="628" height="300" fill="url(#gridc0d)"/>
+  <rect width="628" height="300" fill="url(#scanc0d)"/>
 
-  <g stroke="#ff3b30" stroke-width="1.6" fill="none" opacity="0.9">
-    <path d="M10 26 L10 10 L26 10"/>
-    <path d="M602 10 L618 10 L618 26"/>
-    <path d="M10 212 L10 228 L26 228"/>
-    <path d="M602 228 L618 228 L618 212"/>
+  <g stroke="#ff3b30" stroke-width="2.0" fill="none" opacity="0.9">
+    <path d="M10 28 L10 10 L28 10"/><path d="M600 10 L618 10 L618 28"/>
+    <path d="M10 272 L10 290 L28 290"/><path d="M600 290 L618 290 L618 272"/>
   </g>
 
-  <rect x="0" y="0" width="628" height="2" fill="url(#redq)" opacity="0.8"/>
-  <g fill="#ff3b30"><rect x="38" y="42" width="4" height="16"/></g>
-  <text x="54" y="56" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="19" font-weight="700" fill="#eef4fb" letter-spacing="2.2">QUANTITATIVE DEVELOPMENT</text>
-  <line x1="38" y1="76" x2="590" y2="76" stroke="#39506b" stroke-width="1" opacity="0.7"/>
-  <text x="38" y="104" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="13.5" fill="#9fb2c8">Trading strategy research and backtesting on</text>
-  <text x="38" y="128" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="13.5" fill="#9fb2c8">QuantConnect. Risk modelling and predictive models on</text>
-  <text x="38" y="152" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="13.5" fill="#9fb2c8">financial time series, with evaluation that separates</text>
-  <text x="38" y="176" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="13.5" fill="#9fb2c8">a real edge from a curve that only looks good.</text>
+  <rect x="0" y="0" width="628" height="3" fill="url(#redc0d)"/>
+  <g fill="#ff3b30"><rect x="36" y="40" width="6" height="24"/></g>
+  <text x="54" y="60" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="26" font-weight="700" fill="#eef4fb" letter-spacing="1.6">QUANTITATIVE DEVELOPMENT</text>
+  <line x1="36" y1="82" x2="592" y2="82" stroke="#39506b" stroke-width="1.4" opacity="0.8"/>
+  <text x="36" y="116" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="20" fill="#a8bcd2">Trading strategy research and</text>
+  <text x="36" y="146" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="20" fill="#a8bcd2">backtesting on QuantConnect. Risk</text>
+  <text x="36" y="176" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="20" fill="#a8bcd2">modelling and predictive models on</text>
+  <text x="36" y="206" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="20" fill="#a8bcd2">financial time series, with evaluation</text>
+  <text x="36" y="236" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="20" fill="#a8bcd2">that separates a real edge from a curve</text>
+  <text x="36" y="266" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="20" fill="#a8bcd2">that only looks good.</text>
 </svg>

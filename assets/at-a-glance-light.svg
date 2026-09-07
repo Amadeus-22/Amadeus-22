@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="150" viewBox="0 0 1280 150" role="img" aria-labelledby="t">
+  <title id="t">Quant research and backtesting. Backend in Go, PHP and Python. UTC minus 3. English and Portugues.</title>
+  <defs>
+    <linearGradient id="bggl" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eef1f5"/><stop offset="0.55" stop-color="#e6eaf0"/>
+      <stop offset="1" stop-color="#dfe4ec"/>
+    </linearGradient>
+    <linearGradient id="redgl" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#c1121f" stop-opacity="0.25"/>
+      <stop offset="0.5" stop-color="#c1121f"/>
+      <stop offset="1" stop-color="#c1121f" stop-opacity="0.25"/>
+    </linearGradient>
+    <pattern id="gridgl" width="34" height="34" patternUnits="userSpaceOnUse">
+      <path d="M34 0H0V34" fill="none" stroke="#8fa2bb" stroke-opacity="0.3" stroke-width="1"/>
+    </pattern>
+    <pattern id="scangl" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="1.4" fill="#39506b" fill-opacity="0.03"/>
+    </pattern>
+  </defs>
+  <rect width="1280" height="150" fill="url(#bggl)"/>
+  <rect width="1280" height="150" fill="url(#gridgl)"/>
+  <rect width="1280" height="150" fill="url(#scangl)"/>
+
+  <g stroke="#c1121f" stroke-width="2.0" fill="none" opacity="0.9">
+    <path d="M10 30 L10 10 L30 10"/><path d="M1250 10 L1270 10 L1270 30"/>
+    <path d="M10 120 L10 140 L30 140"/><path d="M1250 140 L1270 140 L1270 120"/>
+  </g>
+
+  <rect x="0" y="0" width="1280" height="3" fill="url(#redgl)"/>
+  <line x1="320.0" y1="34" x2="320.0" y2="116" stroke="#8fa2bb" stroke-width="1.2" opacity="0.7"/>
+  <line x1="640.0" y1="34" x2="640.0" y2="116" stroke="#8fa2bb" stroke-width="1.2" opacity="0.7"/>
+  <line x1="960.0" y1="34" x2="960.0" y2="116" stroke="#8fa2bb" stroke-width="1.2" opacity="0.7"/>
+  <text x="160.0" y="72" text-anchor="middle" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="36" font-weight="700" fill="#111820" letter-spacing="3">QUANT</text>
+  <text x="160.0" y="108" text-anchor="middle" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="19" fill="#4a5a6b">research &amp; backtesting</text>
+  <text x="480.0" y="72" text-anchor="middle" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="36" font-weight="700" fill="#111820" letter-spacing="3">BACKEND</text>
+  <text x="480.0" y="108" text-anchor="middle" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="19" fill="#4a5a6b">Go · PHP · Python</text>
+  <text x="800.0" y="72" text-anchor="middle" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="36" font-weight="700" fill="#111820" letter-spacing="3">UTC−3</text>
+  <text x="800.0" y="108" text-anchor="middle" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="19" fill="#4a5a6b">overlaps US &amp; EU hours</text>
+  <text x="1120.0" y="72" text-anchor="middle" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="36" font-weight="700" fill="#111820" letter-spacing="3">EN · PT</text>
+  <text x="1120.0" y="108" text-anchor="middle" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="19" fill="#4a5a6b">working languages</text>
+</svg>

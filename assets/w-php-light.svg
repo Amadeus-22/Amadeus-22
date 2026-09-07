@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="628" height="300" viewBox="0 0 628 300" role="img" aria-labelledby="t">
+  <title id="t">PHP and legacy modernisation — Working inside established codebases: registration and permission flows, scheduling, payments, and reversible database migrations on systems already carrying users.</title>
+  <defs>
+    <linearGradient id="bgc2l" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eef1f5"/><stop offset="0.55" stop-color="#e6eaf0"/>
+      <stop offset="1" stop-color="#dfe4ec"/>
+    </linearGradient>
+    <linearGradient id="redc2l" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#c1121f" stop-opacity="0.25"/>
+      <stop offset="0.5" stop-color="#c1121f"/>
+      <stop offset="1" stop-color="#c1121f" stop-opacity="0.25"/>
+    </linearGradient>
+    <pattern id="gridc2l" width="34" height="34" patternUnits="userSpaceOnUse">
+      <path d="M34 0H0V34" fill="none" stroke="#8fa2bb" stroke-opacity="0.3" stroke-width="1"/>
+    </pattern>
+    <pattern id="scanc2l" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="1.4" fill="#39506b" fill-opacity="0.03"/>
+    </pattern>
+  </defs>
+  <rect width="628" height="300" fill="url(#bgc2l)"/>
+  <rect width="628" height="300" fill="url(#gridc2l)"/>
+  <rect width="628" height="300" fill="url(#scanc2l)"/>
+
+  <g stroke="#c1121f" stroke-width="2.0" fill="none" opacity="0.9">
+    <path d="M10 28 L10 10 L28 10"/><path d="M600 10 L618 10 L618 28"/>
+    <path d="M10 272 L10 290 L28 290"/><path d="M600 290 L618 290 L618 272"/>
+  </g>
+
+  <rect x="0" y="0" width="628" height="3" fill="url(#redc2l)"/>
+  <g fill="#c1121f"><rect x="36" y="40" width="6" height="24"/></g>
+  <text x="54" y="60" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="26" font-weight="700" fill="#111820" letter-spacing="1.6">PHP AND LEGACY MODERNISATION</text>
+  <line x1="36" y1="82" x2="592" y2="82" stroke="#8fa2bb" stroke-width="1.4" opacity="0.8"/>
+  <text x="36" y="116" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="20" fill="#33414f">Working inside established codebases:</text>
+  <text x="36" y="146" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="20" fill="#33414f">registration and permission flows,</text>
+  <text x="36" y="176" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="20" fill="#33414f">scheduling, payments, and reversible</text>
+  <text x="36" y="206" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="20" fill="#33414f">database migrations on systems already</text>
+  <text x="36" y="236" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="20" fill="#33414f">carrying users.</text>
+</svg>
