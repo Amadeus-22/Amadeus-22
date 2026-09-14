@@ -18,7 +18,7 @@
 </p>
 
 <p align="center">
-  <a href="https://dilectusadeo.com/"><img src="https://img.shields.io/badge/Portfolio-1c2430?style=for-the-badge&logo=googlechrome&logoColor=e8eef6" alt="Portfolio"></a>
+  <a href="https://amadeus-22.github.io/portfolio/"><img src="https://img.shields.io/badge/Portfolio-1c2430?style=for-the-badge&logo=googlechrome&logoColor=e8eef6" alt="Portfolio"></a>
   <a href="mailto:barbosamaverickv8@gmail.com"><img src="https://img.shields.io/badge/Start_a_Project-c1121f?style=for-the-badge&logo=minutemailer&logoColor=e8eef6" alt="Start a project"></a>
   <a href="https://www.linkedin.com/in/pedro-barbosa-0143a6289/"><img src="https://img.shields.io/badge/LinkedIn-1c2430?style=for-the-badge&logo=linkedin&logoColor=e8eef6" alt="LinkedIn"></a>
   <a href="https://github.com/QuantConnect"><img src="https://img.shields.io/badge/QuantConnect-1c2430?style=for-the-badge&logo=quantconnect&logoColor=e8eef6" alt="QuantConnect"></a>
