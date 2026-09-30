@@ -103,7 +103,7 @@ def glance(arq, idp, tema):
     p.append('</svg>')
     (OUT / arq).write_text('\n'.join(p))
 
-TITULOS = [("What I work on","h-work"),("Selected work","h-selected"),("Currently","h-currently"),
+TITULOS = [("What I work on","h-work"),("Selected work","h-selected"),("Open source","h-oss"),("Currently","h-currently"),
            ("Stack","h-stack"),("Communities","h-communities"),("Contact","h-contact")]
 CARDS = [
     ("Quantitative development","Trading strategy research and backtesting on QuantConnect. Risk modelling and predictive models on financial time series, with evaluation that separates a real edge from a curve that only looks good.","w-quant"),

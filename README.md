@@ -65,7 +65,8 @@
 </picture>
 </p>
 
-> Most of what I build is private — client work, an employer's platform, and my own tooling. The public repositories below are the part I can show.
+> Every repository below is public, tested and green in CI. Client work and my own
+> tooling (iode, sentinel) stay private.
 
 <p align="center">
 <picture>
@@ -77,21 +78,47 @@
 </picture>
 </p>
 
-**iode** — personal orchestration engine, in Go. Indexes projects, collects daily
-activity and surfaces connections between them. Single static binary, SQLite with
-FTS5, no CGO. Collectors run as subprocesses over a versioned JSON contract, so a
-new data source never touches the core.
+**[tickguard](https://github.com/Amadeus-22/tickguard)** — validates live crypto
+trade feeds (Binance, Kraken, Mercado Bitcoin), tells known gaps from silent ones,
+writes clean QuantConnect LEAN data and audits existing LEAN datasets. Go.
 
-**Go suite** — `sentinel` for host integrity, `bounty` for ranking funded GitHub
-issues, `rgbd`. One thesis across three programs: no CGO, one binary each,
-deployed with systemd.
+**[rpcgate](https://github.com/Amadeus-22/rpcgate)** — resilient Ethereum JSON-RPC
+gateway: failover, circuit breakers, routing by block height, safe caching and
+per-provider metrics, proven with chaos tests. Go.
 
-**[SOS](https://github.com/Amadeus-22/SOS)** — administrative system built end to
-end, in JavaScript.
+**[chainwatch](https://github.com/Amadeus-22/chainwatch)** — watches wallets for
+risky ERC-20 approvals and drain patterns across EVM chains, reorg-safe, with
+Sign-In with Ethereum and one-click revoke through MetaMask. Go, Solidity, React.
+
+**[costbasis-br](https://github.com/Amadeus-22/costbasis-br)** — Brazilian crypto
+cost basis with exact arithmetic; tax rules are dated, cited data instead of code. Go.
+
+**[Editalis](https://github.com/Amadeus-22/editalis)** — WhatsApp alerts for
+Brazilian public service exams, filtered by each subscriber's profile, with
+billing and LGPD consent. Python, FastAPI.
+
+**[bounty](https://github.com/NER-ELOHIM/bounty)** and
+**[news](https://github.com/NER-ELOHIM/news)** — a GitHub bounty finder that
+filters out bounty farms, and a curated weekly magazine. Go and PHP.
 
 **Quantitative research** — strategy simulation and backtesting on
 [QuantConnect](https://github.com/QuantConnect), with predictive modelling in
 Python and R.
+
+<p align="center">
+<picture>
+  <source media="(max-width: 700px) and (prefers-color-scheme: dark)" srcset="./assets/h-oss-m.svg">
+  <source media="(max-width: 700px) and (prefers-color-scheme: light)" srcset="./assets/h-oss-m-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/h-oss.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/h-oss-light.svg">
+  <img src="./assets/h-oss.svg" width="100%" alt="Open source">
+</picture>
+</p>
+
+- **QuantConnect Lean** — [Rachev Ratio indicator](https://github.com/QuantConnect/Lean/pull/9847) (C#)
+- **QuantConnect lean-cli** — [original casing in invalid choice errors](https://github.com/QuantConnect/lean-cli/pull/667) (Python)
+- **Klever klever-go** — [Swagger schema fix for Duration fields](https://github.com/klever-io/klever-go/pull/170) and [docs regeneration](https://github.com/klever-io/klever-go/pull/171) (Go)
+- **Akaunting** — merged: [database host and port applied on install](https://github.com/akaunting/akaunting/pull/3378) (PHP)
 
 <p align="center">
 <picture>
