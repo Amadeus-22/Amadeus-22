@@ -5,13 +5,17 @@ Precisa ser asset próprio: o <picture> do GitHub só troca tema em imagem que
 ele mesmo serve. Um <source srcset> apontando para o skillicons é bloqueado
 pela CSP, que é por que a seção aparecia vazia.
 """
-import json, re, pathlib
+import json, os, re, pathlib
 
 S = pathlib.Path(__file__).resolve().parent.parent
-OUT = S / 'perfil' / 'assets'
+OUT = S / 'assets'
+# Catálogo do simple-icons (si.json e icons/<slug>.svg). Não fica no repositório:
+#   SI_DIR=/caminho python3 scripts/stack.py
+# Baixar de https://cdn.jsdelivr.net/npm/simple-icons@latest/ (data/simple-icons.json, icons/).
+SI = pathlib.Path(os.environ.get('SI_DIR', S))
 MONO = "Consolas, 'DejaVu Sans Mono', 'Courier New', monospace"
 
-dados = json.load(open(S / 'si.json'))
+dados = json.load(open(SI / 'si.json'))
 icons = dados['icons'] if isinstance(dados, dict) else dados
 por_titulo = {i['title']: i for i in icons}
 
@@ -19,17 +23,23 @@ por_titulo = {i['title']: i for i in icons}
 GRUPOS = [
     ("LANGUAGES", [("go","Go","Go"),("python","Python","Python"),("php","PHP","PHP"),
                    ("javascript","JavaScript","JavaScript"),("typescript","TypeScript","TypeScript"),
-                   ("r","R","R"),("gnubash","GNU Bash","Bash")]),
-    ("DATA &amp; ANALYSIS", [("sqlite","SQLite","SQLite"),("postgresql","PostgreSQL","PostgreSQL"),
-                             ("mongodb","MongoDB","MongoDB"),("scikitlearn","scikit-learn","scikit-learn")]),
-    ("RUNTIME &amp; TOOLING", [("linux","Linux","Linux"),("docker","Docker","Docker"),
-                               ("git","Git","Git"),("github","GitHub","GitHub"),
+                   ("rust","Rust","Rust"),("r","R","R"),("gnubash","GNU Bash","Bash")]),
+    ("INFRASTRUCTURE", [("linux","Linux","Linux"),("docker","Docker","Docker"),
+                        ("kubernetes","Kubernetes","Kubernetes"),("helm","Helm","Helm"),
+                        ("ansible","Ansible","Ansible"),("prometheus","Prometheus","Prometheus"),
+                        ("githubactions","GitHub Actions","GitHub Actions")]),
+    ("DATA &amp; ANALYSIS", [("postgresql","PostgreSQL","PostgreSQL"),("mysql","MySQL","MySQL"),
+                             ("sqlite","SQLite","SQLite"),("mongodb","MongoDB","MongoDB"),
+                             ("scikitlearn","scikit-learn","scikit-learn")]),
+    ("RUNTIME &amp; TOOLING", [("git","Git","Git"),("github","GitHub","GitHub"),
                                ("nodedotjs","Node.js","Node.js"),("react","React","React"),
-                               ("flask","Flask","Flask")]),
+                               ("flask","Flask","Flask"),("solidity","Solidity","Solidity")]),
 ]
 
+TITULO = ". ".join(", ".join(rotulo for _, _, rotulo in itens) for _, itens in GRUPOS) + "."
+
 def traco(arq):
-    t = (S / 'icons' / f'{arq}.svg').read_text()
+    t = (SI / 'icons' / f'{arq}.svg').read_text()
     m = re.search(r'<path[^>]*\sd="([^"]+)"', t)
     return m.group(1)
 
@@ -49,14 +59,16 @@ def clarear(hexa, tema):
     if lum >= 0.30:
         return "#" + hexa
     f = 0.30 / max(lum, 0.02)
-    return "#%02x%02x%02x" % tuple(min(255, int(c*f) + 40) for c in (r, g, b))
+    # Logo quase preto (Rust, GitHub) vira cinza; os demais só clareiam, sem mudar de tom.
+    piso = 118 if max(r, g, b) < 60 else 0
+    return "#%02x%02x%02x" % tuple(min(255, max(piso, int(c*f) + 40)) for c in (r, g, b))
 
 def faixa(tema):
     T = TEMAS[tema]
     w, lin_h, topo = 1280, 168, 30
     h = topo + lin_h*len(GRUPOS) + 16
     p = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" aria-labelledby="t">',
-         '  <title id="t">Go, Python, PHP, JavaScript, TypeScript, R, Bash. SQLite, PostgreSQL, MongoDB, scikit-learn. Linux, Docker, Git, GitHub, Node.js, React, Flask.</title>',
+         f'  <title id="t">{TITULO}</title>',
          f'''  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="{T['bg1']}"/><stop offset="0.55" stop-color="{T['bg2']}"/>
       <stop offset="1" stop-color="{T['bg3']}"/></linearGradient>

@@ -17,7 +17,11 @@ Run them from the repository root:
     python3 scripts/gerar3.py
     python3 scripts/nameplate.py
     python3 scripts/comunidades.py
-    python3 scripts/stack.py
+    SI_DIR=/path/to/simple-icons python3 scripts/stack.py
+
+`stack.py` needs the simple-icons catalogue, which is not kept in this
+repository: `SI_DIR` must hold `si.json` (from `data/simple-icons.json`) and
+`icons/<slug>.svg`, both from https://cdn.jsdelivr.net/npm/simple-icons@latest/.
 
 Everything writes into `assets/`.
 
