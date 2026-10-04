@@ -28,12 +28,11 @@ GRUPOS = [
                         ("kubernetes","Kubernetes","Kubernetes"),("helm","Helm","Helm"),
                         ("ansible","Ansible","Ansible"),("prometheus","Prometheus","Prometheus"),
                         ("githubactions","GitHub Actions","GitHub Actions")]),
-    ("DATA &amp; ANALYSIS", [("postgresql","PostgreSQL","PostgreSQL"),("mysql","MySQL","MySQL"),
-                             ("sqlite","SQLite","SQLite"),("mongodb","MongoDB","MongoDB"),
-                             ("scikitlearn","scikit-learn","scikit-learn")]),
+    ("DATABASES", [("postgresql","PostgreSQL","PostgreSQL"),("mysql","MySQL","MySQL"),
+                   ("sqlite","SQLite","SQLite")]),
     ("RUNTIME &amp; TOOLING", [("git","Git","Git"),("github","GitHub","GitHub"),
                                ("nodedotjs","Node.js","Node.js"),("react","React","React"),
-                               ("flask","Flask","Flask"),("solidity","Solidity","Solidity")]),
+                               ("solidity","Solidity","Solidity")]),
 ]
 
 TITULO = ". ".join(", ".join(rotulo for _, _, rotulo in itens) for _, itens in GRUPOS) + "."

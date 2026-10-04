@@ -173,7 +173,7 @@ ecosystem, with reversible MySQL migrations.
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/stack.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/stack-light.svg">
-  <img src="./assets/stack.svg" width="100%" alt="Go, Python, PHP, JavaScript, TypeScript, Rust, R, Bash · Linux, Docker, Kubernetes, Helm, Ansible, Prometheus, GitHub Actions · PostgreSQL, MySQL, SQLite, MongoDB, scikit-learn · Git, GitHub, Node.js, React, Flask, Solidity">
+  <img src="./assets/stack.svg" width="100%" alt="Go, Python, PHP, JavaScript, TypeScript, Rust, R, Bash · Linux, Docker, Kubernetes, Helm, Ansible, Prometheus, GitHub Actions · PostgreSQL, MySQL, SQLite · Git, GitHub, Node.js, React, Solidity">
 </picture>
 </p>
 
