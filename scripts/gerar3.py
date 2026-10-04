@@ -82,13 +82,34 @@ def card(tit, corpo, arq, idp, tema, w=628, h=300):
     p.append('</svg>')
     (OUT / arq).write_text('\n'.join(p))
 
+def card_m(tit, corpo, arq, idp, tema, w=560, h=420):
+    """Versão para celular do card: mais estreita, fonte maior, título em até duas linhas."""
+    T = TEMAS[tema]
+    tits = quebrar(tit.upper(), 24)
+    linhas = quebrar(corpo, 30)
+    y_linha = 66 + 34*(len(tits)-1) + 48
+    p = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" aria-labelledby="t">',
+         f'  <title id="t">{esc(tit)} — {esc(corpo)}</title>',
+         base(w, h, T, idp), cantos(w, h, T, n=18, sw=2.4),
+         f'  <rect x="0" y="0" width="{w}" height="4" fill="url(#red{idp})"/>',
+         f'  <g fill="{T["acento"]}"><rect x="30" y="42" width="7" height="28"/></g>']
+    for i, l in enumerate(tits):
+        p.append(f'  <text x="48" y="{66 + i*34}" font-family="{MONO}" font-size="30" font-weight="700" '
+                 f'fill="{T["titulo"]}" letter-spacing="1.4">{esc(l)}</text>')
+    p.append(f'  <line x1="30" y1="{y_linha}" x2="{w-30}" y2="{y_linha}" stroke="{T["linha"]}" stroke-width="1.6" opacity="0.8"/>')
+    for i, l in enumerate(linhas[:8]):
+        p.append(f'  <text x="30" y="{y_linha + 38 + i*34}" font-family="{MONO}" font-size="24" '
+                 f'fill="{T["corpo"]}">{esc(l)}</text>')
+    p.append('</svg>')
+    (OUT / arq).write_text('\n'.join(p))
+
 def glance(arq, idp, tema):
     T = TEMAS[tema]
     w, h = 1280, 150
-    cel = [("QUANT","research &amp; backtesting"), ("BACKEND","Go · PHP · Python"),
-           ("UTC−3","overlaps US &amp; EU hours"), ("EN · PT","working languages")]
+    cel = [("DEVOPS","Linux · K8s · CI/CD"), ("BLOCKCHAIN","nodes · contracts"),
+           ("QUANT","research &amp; backtesting"), ("UTC−3","EN · PT · remote")]
     p = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" aria-labelledby="t">',
-         '  <title id="t">Quant research and backtesting. Backend in Go, PHP and Python. UTC minus 3. English and Portugues.</title>',
+         '  <title id="t">DevOps: Linux, Kubernetes, CI/CD. Blockchain: nodes, contracts, monitors. Quant research and backtesting. UTC minus 3, English and Portugues, remote.</title>',
          base(w, h, T, idp), cantos(w, h, T, n=20, sw=2.0),
          f'  <rect x="0" y="0" width="{w}" height="3" fill="url(#red{idp})"/>']
     for i in range(1, 4):
@@ -106,9 +127,11 @@ def glance(arq, idp, tema):
 TITULOS = [("What I work on","h-work"),("Selected work","h-selected"),("Open source","h-oss"),("Currently","h-currently"),
            ("Stack","h-stack"),("Communities","h-communities"),("Contact","h-contact")]
 CARDS = [
-    ("Quantitative development","Trading strategy research and backtesting on QuantConnect. Risk modelling and predictive models on financial time series, with evaluation that separates a real edge from a curve that only looks good.","w-quant"),
+    ("DevOps and automation","Ansible roles, Helm charts, container images and release pipelines, each with a test that runs it for real. Linux and systemd, Prometheus metrics, and incident response down to the root cause.","w-devops"),
+    ("Blockchain infrastructure","Tooling around the chain: a resilient JSON-RPC gateway, wallet and permission monitors, smart contracts on KleverChain, and fixes sent upstream to node and SDK code.","w-chain"),
     ("Backend systems in Go","Services that ship as a single static binary with no runtime dependencies. SQLite with full-text search, subprocess isolation over versioned contracts, systemd deployment.","w-go"),
-    ("PHP and legacy modernisation","Working inside established codebases: registration and permission flows, scheduling, payments, and reversible database migrations on systems already carrying users.","w-php"),
+    ("Full stack in PHP","My day job: a healthcare platform in production, front to back. Registration and permission flows, scheduling, payments, and reversible database migrations on systems already carrying users.","w-php"),
+    ("Quantitative development","Trading strategy research and backtesting on QuantConnect. Risk modelling and predictive models on financial time series, with evaluation that separates a real edge from a curve that only looks good.","w-quant"),
     ("Data automation","Collection bots, scraping, pipelines and internal tooling. Linux and systemd, scheduled jobs, and reporting that someone actually reads.","w-data"),
 ]
 
@@ -119,5 +142,6 @@ for tema in ("dark", "light"):
         titulo(t, f + suf + ".svg", f"t{i}{tema[0]}", tema); n += 1
     for i, (t, c, f) in enumerate(CARDS):
         card(t, c, f + suf + ".svg", f"c{i}{tema[0]}", tema); n += 1
+        card_m(t, c, f + "-m" + suf + ".svg", f"mc{i}{tema[0]}", tema); n += 1
     glance("at-a-glance" + suf + ".svg", f"g{tema[0]}", tema); n += 1
 print(f"{n} placas geradas nos dois temas")

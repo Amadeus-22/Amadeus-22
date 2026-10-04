@@ -8,12 +8,12 @@
   <source media="(max-width: 700px) and (prefers-color-scheme: light)" srcset="./assets/nameplate-m-light.svg">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/nameplate.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/nameplate-light.svg">
-  <img src="./assets/nameplate.svg" width="100%" alt="AMADEUS — Pedro Barbosa — Quantitative Developer and Systems Engineer — Rio de Janeiro, UTC−3, EN & PT, remote">
+  <img src="./assets/nameplate.svg" width="100%" alt="AMADEUS — Pedro Barbosa — DevOps Engineer, blockchain and quant systems — Rio de Janeiro, UTC−3, EN & PT, remote">
 </picture>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/at-a-glance.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/at-a-glance-light.svg">
-  <img src="./assets/at-a-glance.svg" width="100%" alt="Quant research and backtesting · Backend in Go, PHP and Python · UTC−3 · English and Português">
+  <img src="./assets/at-a-glance.svg" width="100%" alt="DevOps: Linux, Kubernetes, CI/CD · Blockchain: nodes and contracts · Quant research and backtesting · UTC−3, English and Português, remote">
 </picture>
 </p>
 
@@ -36,11 +36,18 @@
 
 <p align="center">
 <picture>
-  <source media="(max-width: 700px) and (prefers-color-scheme: dark)" srcset="./assets/w-quant-m.svg">
-  <source media="(max-width: 700px) and (prefers-color-scheme: light)" srcset="./assets/w-quant-m-light.svg">
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/w-quant.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/w-quant-light.svg">
-  <img src="./assets/w-quant.svg" width="380" alt="Quantitative development — trading strategy research and backtesting on QuantConnect, risk modelling and predictive models on financial time series.">
+  <source media="(max-width: 700px) and (prefers-color-scheme: dark)" srcset="./assets/w-devops-m.svg">
+  <source media="(max-width: 700px) and (prefers-color-scheme: light)" srcset="./assets/w-devops-m-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/w-devops.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/w-devops-light.svg">
+  <img src="./assets/w-devops.svg" width="380" alt="DevOps and automation — Ansible roles, Helm charts, container images and release pipelines, each with a test that runs it for real. Linux and systemd, Prometheus metrics, incident response.">
+</picture>
+<picture>
+  <source media="(max-width: 700px) and (prefers-color-scheme: dark)" srcset="./assets/w-chain-m.svg">
+  <source media="(max-width: 700px) and (prefers-color-scheme: light)" srcset="./assets/w-chain-m-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/w-chain.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/w-chain-light.svg">
+  <img src="./assets/w-chain.svg" width="380" alt="Blockchain infrastructure — a resilient JSON-RPC gateway, wallet and permission monitors, smart contracts on KleverChain, and fixes sent upstream to node and SDK code.">
 </picture>
 <picture>
   <source media="(max-width: 700px) and (prefers-color-scheme: dark)" srcset="./assets/w-go-m.svg">
@@ -54,7 +61,14 @@
   <source media="(max-width: 700px) and (prefers-color-scheme: light)" srcset="./assets/w-php-m-light.svg">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/w-php.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/w-php-light.svg">
-  <img src="./assets/w-php.svg" width="380" alt="PHP and legacy modernisation — registration and permission flows, scheduling, payments, reversible database migrations.">
+  <img src="./assets/w-php.svg" width="380" alt="Full stack in PHP — my day job on a healthcare platform in production: registration and permission flows, scheduling, payments, reversible database migrations.">
+</picture>
+<picture>
+  <source media="(max-width: 700px) and (prefers-color-scheme: dark)" srcset="./assets/w-quant-m.svg">
+  <source media="(max-width: 700px) and (prefers-color-scheme: light)" srcset="./assets/w-quant-m-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/w-quant.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/w-quant-light.svg">
+  <img src="./assets/w-quant.svg" width="380" alt="Quantitative development — trading strategy research and backtesting on QuantConnect, risk modelling and predictive models on financial time series.">
 </picture>
 <picture>
   <source media="(max-width: 700px) and (prefers-color-scheme: dark)" srcset="./assets/w-data-m.svg">
@@ -78,9 +92,10 @@
 </picture>
 </p>
 
-**[tickguard](https://github.com/Amadeus-22/tickguard)** — validates live crypto
-trade feeds (Binance, Kraken, Mercado Bitcoin), tells known gaps from silent ones,
-writes clean QuantConnect LEAN data and audits existing LEAN datasets. Go.
+**[permwatch](https://github.com/Amadeus-22/permwatch)** — shows who can sign for a
+KleverChain account, flags risky permissions and alerts by webhook or Telegram when
+they change; also watches spending-limit vaults. Ships with an Ansible role and a
+Helm chart, each tested end to end, and was verified against testnet. Go.
 
 **[rpcgate](https://github.com/Amadeus-22/rpcgate)** — resilient Ethereum JSON-RPC
 gateway: failover, circuit breakers, routing by block height, safe caching and
@@ -90,16 +105,20 @@ per-provider metrics, proven with chaos tests. Go.
 risky ERC-20 approvals and drain patterns across EVM chains, reorg-safe, with
 Sign-In with Ethereum and one-click revoke through MetaMask. Go, Solidity, React.
 
-**[permwatch](https://github.com/Amadeus-22/permwatch)** — shows who can sign for a
-KleverChain account, flags risky permissions and alerts by webhook or Telegram when
-they change; also watches spending-limit vaults. Verified against testnet. Go.
-
 **[klever-contracts](https://github.com/Amadeus-22/klever-contracts)** — smart
 contracts for KleverChain: a KLV vault with a per-period spending limit, deployed
 and exercised on testnet, with a toolchain setup that builds. Rust.
 
+**[tickguard](https://github.com/Amadeus-22/tickguard)** — validates live crypto
+trade feeds (Binance, Kraken, Mercado Bitcoin), tells known gaps from silent ones,
+writes clean QuantConnect LEAN data and audits existing LEAN datasets. Go.
+
 **[costbasis-br](https://github.com/Amadeus-22/costbasis-br)** — Brazilian crypto
 cost basis with exact arithmetic; tax rules are dated, cited data instead of code. Go.
+
+**Quantitative research** — strategy simulation and backtesting on
+[QuantConnect](https://github.com/QuantConnect), with predictive modelling in
+Python and R.
 
 **[Editalis](https://github.com/Amadeus-22/editalis)** — WhatsApp alerts for
 Brazilian public service exams, filtered by each subscriber's profile, with
@@ -108,10 +127,6 @@ billing and LGPD consent. Python, FastAPI.
 **[bounty](https://github.com/NER-ELOHIM/bounty)** and
 **[news](https://github.com/NER-ELOHIM/news)** — a GitHub bounty finder that
 filters out bounty farms, and a curated weekly magazine. Go and PHP.
-
-**Quantitative research** — strategy simulation and backtesting on
-[QuantConnect](https://github.com/QuantConnect), with predictive modelling in
-Python and R.
 
 <p align="center">
 <picture>
@@ -214,8 +229,8 @@ ecosystem, with reversible MySQL migrations.
 </p>
 
 <p align="center">
-  Open to <b>remote roles and contract work</b>: backend engineering,
-  quantitative development and data automation.
+  Open to <b>remote roles and contract work</b>: DevOps and platform engineering,
+  blockchain infrastructure and quantitative development.
 </p>
 
 <p align="center">

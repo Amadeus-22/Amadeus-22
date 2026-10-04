@@ -7,7 +7,7 @@ a size or a piece of text changes.
 | script | produces |
 |---|---|
 | `texto.py` | shared helper: converts text to SVG outlines with fontTools |
-| `gerar3.py` | section headers, work cards, the at-a-glance strip |
+| `gerar3.py` | section headers, work cards (desktop and mobile), the at-a-glance strip |
 | `nameplate.py` | the AMADEUS wordmark plate |
 | `comunidades.py` | the community cards, with avatars embedded as base64 |
 | `stack.py` | the technology strip, logos in their official brand colours |

@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="628" height="300" viewBox="0 0 628 300" role="img" aria-labelledby="t">
-  <title id="t">PHP and legacy modernisation — Working inside established codebases: registration and permission flows, scheduling, payments, and reversible database migrations on systems already carrying users.</title>
+  <title id="t">Full stack in PHP — My day job: a healthcare platform in production, front to back. Registration and permission flows, scheduling, payments, and reversible database migrations on systems already carrying users.</title>
   <defs>
-    <linearGradient id="redc2d" x1="0" y1="0" x2="1" y2="0">
+    <linearGradient id="redc3d" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="#ff3b30" stop-opacity="0.25"/>
       <stop offset="0.5" stop-color="#ff3b30"/>
       <stop offset="1" stop-color="#ff3b30" stop-opacity="0.25"/>
@@ -13,13 +13,14 @@
     <path d="M10 272 L10 290 L28 290"/><path d="M600 290 L618 290 L618 272"/>
   </g>
 
-  <rect x="0" y="0" width="628" height="3" fill="url(#redc2d)"/>
+  <rect x="0" y="0" width="628" height="3" fill="url(#redc3d)"/>
   <g fill="#ff3b30"><rect x="36" y="40" width="6" height="24"/></g>
-  <text x="54" y="60" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="26" font-weight="700" fill="#eef4fb" letter-spacing="1.6">PHP AND LEGACY MODERNISATION</text>
+  <text x="54" y="60" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="26" font-weight="700" fill="#eef4fb" letter-spacing="1.6">FULL STACK IN PHP</text>
   <line x1="36" y1="82" x2="592" y2="82" stroke="#39506b" stroke-width="1.4" opacity="0.8"/>
-  <text x="36" y="116" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="20" fill="#a8bcd2">Working inside established codebases:</text>
-  <text x="36" y="146" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="20" fill="#a8bcd2">registration and permission flows,</text>
-  <text x="36" y="176" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="20" fill="#a8bcd2">scheduling, payments, and reversible</text>
-  <text x="36" y="206" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="20" fill="#a8bcd2">database migrations on systems already</text>
-  <text x="36" y="236" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="20" fill="#a8bcd2">carrying users.</text>
+  <text x="36" y="116" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="20" fill="#a8bcd2">My day job: a healthcare platform in</text>
+  <text x="36" y="146" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="20" fill="#a8bcd2">production, front to back. Registration</text>
+  <text x="36" y="176" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="20" fill="#a8bcd2">and permission flows, scheduling,</text>
+  <text x="36" y="206" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="20" fill="#a8bcd2">payments, and reversible database</text>
+  <text x="36" y="236" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="20" fill="#a8bcd2">migrations on systems already carrying</text>
+  <text x="36" y="266" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="20" fill="#a8bcd2">users.</text>
 </svg>

@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="150" viewBox="0 0 1280 150" role="img" aria-labelledby="t">
-  <title id="t">Quant research and backtesting. Backend in Go, PHP and Python. UTC minus 3. English and Portugues.</title>
+  <title id="t">DevOps: Linux, Kubernetes, CI/CD. Blockchain: nodes, contracts, monitors. Quant research and backtesting. UTC minus 3, English and Portugues, remote.</title>
   <defs>
     <linearGradient id="redgd" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="#ff3b30" stop-opacity="0.25"/>
@@ -17,12 +17,12 @@
   <line x1="320.0" y1="34" x2="320.0" y2="116" stroke="#39506b" stroke-width="1.2" opacity="0.7"/>
   <line x1="640.0" y1="34" x2="640.0" y2="116" stroke="#39506b" stroke-width="1.2" opacity="0.7"/>
   <line x1="960.0" y1="34" x2="960.0" y2="116" stroke="#39506b" stroke-width="1.2" opacity="0.7"/>
-  <text x="160.0" y="72" text-anchor="middle" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="36" font-weight="700" fill="#eef4fb" letter-spacing="3">QUANT</text>
-  <text x="160.0" y="108" text-anchor="middle" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="19" fill="#8ea3bb">research &amp; backtesting</text>
-  <text x="480.0" y="72" text-anchor="middle" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="36" font-weight="700" fill="#eef4fb" letter-spacing="3">BACKEND</text>
-  <text x="480.0" y="108" text-anchor="middle" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="19" fill="#8ea3bb">Go · PHP · Python</text>
-  <text x="800.0" y="72" text-anchor="middle" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="36" font-weight="700" fill="#eef4fb" letter-spacing="3">UTC−3</text>
-  <text x="800.0" y="108" text-anchor="middle" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="19" fill="#8ea3bb">overlaps US &amp; EU hours</text>
-  <text x="1120.0" y="72" text-anchor="middle" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="36" font-weight="700" fill="#eef4fb" letter-spacing="3">EN · PT</text>
-  <text x="1120.0" y="108" text-anchor="middle" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="19" fill="#8ea3bb">working languages</text>
+  <text x="160.0" y="72" text-anchor="middle" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="36" font-weight="700" fill="#eef4fb" letter-spacing="3">DEVOPS</text>
+  <text x="160.0" y="108" text-anchor="middle" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="19" fill="#8ea3bb">Linux · K8s · CI/CD</text>
+  <text x="480.0" y="72" text-anchor="middle" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="36" font-weight="700" fill="#eef4fb" letter-spacing="3">BLOCKCHAIN</text>
+  <text x="480.0" y="108" text-anchor="middle" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="19" fill="#8ea3bb">nodes · contracts</text>
+  <text x="800.0" y="72" text-anchor="middle" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="36" font-weight="700" fill="#eef4fb" letter-spacing="3">QUANT</text>
+  <text x="800.0" y="108" text-anchor="middle" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="19" fill="#8ea3bb">research &amp; backtesting</text>
+  <text x="1120.0" y="72" text-anchor="middle" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="36" font-weight="700" fill="#eef4fb" letter-spacing="3">UTC−3</text>
+  <text x="1120.0" y="108" text-anchor="middle" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="19" fill="#8ea3bb">EN · PT · remote</text>
 </svg>

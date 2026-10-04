@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="560" height="420" viewBox="0 0 560 420" role="img" aria-labelledby="t">
   <title id="t">Quantitative development — Trading strategy research and backtesting on QuantConnect. Risk modelling and predictive models on financial time series, with evaluation that separates a real edge from a curve that only looks good.</title>
   <defs>
-    <linearGradient id="redmc0l" x1="0" y1="0" x2="1" y2="0">
+    <linearGradient id="redmc4l" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="#c1121f" stop-opacity="0.25"/>
       <stop offset="0.5" stop-color="#c1121f"/>
       <stop offset="1" stop-color="#c1121f" stop-opacity="0.25"/>
@@ -13,7 +13,7 @@
     <path d="M10 392 L10 410 L28 410"/><path d="M532 410 L550 410 L550 392"/>
   </g>
 
-  <rect x="0" y="0" width="560" height="4" fill="url(#redmc0l)"/>
+  <rect x="0" y="0" width="560" height="4" fill="url(#redmc4l)"/>
   <g fill="#c1121f"><rect x="30" y="42" width="7" height="28"/></g>
   <text x="48" y="66" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="30" font-weight="700" fill="#111820" letter-spacing="1.4">QUANTITATIVE DEVELOPMENT</text>
   <line x1="30" y1="114" x2="530" y2="114" stroke="#8fa2bb" stroke-width="1.6" opacity="0.8"/>

@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="628" height="300" viewBox="0 0 628 300" role="img" aria-labelledby="t">
   <title id="t">Backend systems in Go — Services that ship as a single static binary with no runtime dependencies. SQLite with full-text search, subprocess isolation over versioned contracts, systemd deployment.</title>
   <defs>
-    <linearGradient id="redc1l" x1="0" y1="0" x2="1" y2="0">
+    <linearGradient id="redc2l" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="#c1121f" stop-opacity="0.25"/>
       <stop offset="0.5" stop-color="#c1121f"/>
       <stop offset="1" stop-color="#c1121f" stop-opacity="0.25"/>
@@ -13,7 +13,7 @@
     <path d="M10 272 L10 290 L28 290"/><path d="M600 290 L618 290 L618 272"/>
   </g>
 
-  <rect x="0" y="0" width="628" height="3" fill="url(#redc1l)"/>
+  <rect x="0" y="0" width="628" height="3" fill="url(#redc2l)"/>
   <g fill="#c1121f"><rect x="36" y="40" width="6" height="24"/></g>
   <text x="54" y="60" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="26" font-weight="700" fill="#111820" letter-spacing="1.6">BACKEND SYSTEMS IN GO</text>
   <line x1="36" y1="82" x2="592" y2="82" stroke="#8fa2bb" stroke-width="1.4" opacity="0.8"/>
