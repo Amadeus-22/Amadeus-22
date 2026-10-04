@@ -8,7 +8,7 @@
   <source media="(max-width: 700px) and (prefers-color-scheme: light)" srcset="./assets/nameplate-m-light.svg">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/nameplate.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/nameplate-light.svg">
-  <img src="./assets/nameplate.svg" width="100%" alt="AMADEUS — Pedro Barbosa — DevOps Engineer, blockchain and quant systems — Rio de Janeiro, UTC−3, EN & PT, remote">
+  <img src="./assets/nameplate.svg" width="100%" alt="AMADEUS — Pedro Barbosa — Software Engineer and Quant Researcher: DevOps and automation, blockchain infrastructure, systems in Go and PHP — Rio de Janeiro, UTC−3, EN & PT, remote">
 </picture>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/at-a-glance.svg">
@@ -173,7 +173,7 @@ ecosystem, with reversible MySQL migrations.
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/stack.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/stack-light.svg">
-  <img src="./assets/stack.svg" width="100%" alt="Go, Python, PHP, JavaScript, TypeScript, Rust, R, Bash · Linux, Docker, Kubernetes, Helm, Ansible, Prometheus, GitHub Actions · PostgreSQL, MySQL, SQLite · Git, GitHub, Node.js, React, Solidity">
+  <img src="./assets/stack.svg" width="100%" alt="Go, Python, PHP, JavaScript, TypeScript, Rust, Bash · Linux, Docker, Kubernetes, Helm, Ansible, Prometheus, GitHub Actions · PostgreSQL, MySQL, SQLite · Git, GitHub, Node.js, React, Solidity">
 </picture>
 </p>
 

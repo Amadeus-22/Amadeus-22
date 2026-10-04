@@ -23,7 +23,7 @@ por_titulo = {i['title']: i for i in icons}
 GRUPOS = [
     ("LANGUAGES", [("go","Go","Go"),("python","Python","Python"),("php","PHP","PHP"),
                    ("javascript","JavaScript","JavaScript"),("typescript","TypeScript","TypeScript"),
-                   ("rust","Rust","Rust"),("r","R","R"),("gnubash","GNU Bash","Bash")]),
+                   ("rust","Rust","Rust"),("gnubash","GNU Bash","Bash")]),
     ("INFRASTRUCTURE", [("linux","Linux","Linux"),("docker","Docker","Docker"),
                         ("kubernetes","Kubernetes","Kubernetes"),("helm","Helm","Helm"),
                         ("ansible","Ansible","Ansible"),("prometheus","Prometheus","Prometheus"),

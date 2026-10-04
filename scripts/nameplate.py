@@ -18,7 +18,7 @@ def placa(tema, movel=False):
     w, h = (560, 240) if movel else (1280, 236)
     cx = w / 2
     p = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" aria-labelledby="t">',
-         '  <title id="t">AMADEUS — Pedro Barbosa — DevOps Engineer, blockchain and quant systems</title>',
+         '  <title id="t">AMADEUS — Pedro Barbosa — Software Engineer and Quant Researcher</title>',
          f'''  <defs><linearGradient id="r{tema[0]}{int(movel)}" x1="0" y1="0" x2="1" y2="0">
     <stop offset="0" stop-color="{T['papel']}" stop-opacity="0"/>
     <stop offset="0.5" stop-color="{T['papel']}"/>
@@ -45,20 +45,20 @@ def placa(tema, movel=False):
              f'width="{360 if movel else 640}" height="2" fill="url(#r{tema[0]}{int(movel)})"/>')
 
     if movel:
-        for i, l in enumerate(["DEVOPS ENGINEER", "BLOCKCHAIN &amp; QUANT SYSTEMS"]):
+        for i, l in enumerate(["SOFTWARE ENGINEER", "QUANT RESEARCHER"]):
             p.append(f'  <text x="{cx}" y="{y2+28+i*24}" text-anchor="middle" font-family="{MONO}" '
                      f'font-size="16" font-weight="700" fill="{T["papel"]}" letter-spacing="1.8">{l}</text>')
         y3 = y2 + 82
         p.append(f'  <text x="{cx}" y="{y3}" text-anchor="middle" font-family="{MONO}" font-size="14" '
-                 f'fill="{T["txt"]}">Go &#183; Python &#183; PHP &#183; R</text>')
+                 f'fill="{T["txt"]}">DevOps &#183; Blockchain &#183; Go &#183; PHP</text>')
         y4 = y3 + 28
     else:
         p.append(f'  <text x="{cx}" y="{y2+34}" text-anchor="middle" font-family="{MONO}" '
                  f'font-size="22" font-weight="700" fill="{T["papel"]}" letter-spacing="4.5">'
-                 f'DEVOPS ENGINEER // BLOCKCHAIN &amp; QUANT SYSTEMS</text>')
+                 f'SOFTWARE ENGINEER // QUANT RESEARCHER</text>')
         y3 = y2 + 68
         p.append(f'  <text x="{cx}" y="{y3}" text-anchor="middle" font-family="{MONO}" font-size="17" '
-                 f'fill="{T["txt"]}">Infrastructure and automation &#183; systems in Go and PHP &#183; quantitative research in Python and R</text>')
+                 f'fill="{T["txt"]}">DevOps and automation &#183; blockchain infrastructure &#183; systems in Go and PHP</text>')
         y4 = y3 + 34
 
     p.append(f'  <text x="{cx}" y="{y4}" text-anchor="middle" font-family="{MONO}" '
