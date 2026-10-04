@@ -90,6 +90,14 @@ per-provider metrics, proven with chaos tests. Go.
 risky ERC-20 approvals and drain patterns across EVM chains, reorg-safe, with
 Sign-In with Ethereum and one-click revoke through MetaMask. Go, Solidity, React.
 
+**[permwatch](https://github.com/Amadeus-22/permwatch)** — shows who can sign for a
+KleverChain account, flags risky permissions and alerts by webhook or Telegram when
+they change; also watches spending-limit vaults. Verified against testnet. Go.
+
+**[klever-contracts](https://github.com/Amadeus-22/klever-contracts)** — smart
+contracts for KleverChain: a KLV vault with a per-period spending limit, deployed
+and exercised on testnet, with a toolchain setup that builds. Rust.
+
 **[costbasis-br](https://github.com/Amadeus-22/costbasis-br)** — Brazilian crypto
 cost basis with exact arithmetic; tax rules are dated, cited data instead of code. Go.
 
@@ -117,7 +125,10 @@ Python and R.
 
 - **QuantConnect Lean** — [Rachev Ratio indicator](https://github.com/QuantConnect/Lean/pull/9847) (C#)
 - **QuantConnect lean-cli** — [original casing in invalid choice errors](https://github.com/QuantConnect/lean-cli/pull/667) (Python)
-- **Klever klever-go** — [Swagger schema fix for Duration fields](https://github.com/klever-io/klever-go/pull/170) and [docs regeneration](https://github.com/klever-io/klever-go/pull/171) (Go)
+- **Klever klever-go** — [data race fix in the nodes coordinator](https://github.com/klever-io/klever-go/pull/172), [real tests in place of empty ones](https://github.com/klever-io/klever-go/pull/173), [Swagger schema fix for Duration fields](https://github.com/klever-io/klever-go/pull/170) and [docs regeneration](https://github.com/klever-io/klever-go/pull/171) (Go)
+- **Coinbase cdp-sdk** — [`parse_units` rounding and crash on carries](https://github.com/coinbase/cdp-sdk/pull/840) (Python)
+- **ethPandaOps ethereum-helm-charts** — [duplicate labels in the spamoor chart](https://github.com/ethpandaops/ethereum-helm-charts/pull/497) (Helm)
+- **Linux Mint mintupdate** — [missing import that left the release upgrade hanging](https://github.com/linuxmint/mintupdate/pull/1099) (Python)
 - **Akaunting** — merged: [database host and port applied on install](https://github.com/akaunting/akaunting/pull/3378) (PHP)
 
 <p align="center">
