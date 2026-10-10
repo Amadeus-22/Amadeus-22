@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 """Banner em GIF. A foto do laboratório ganha vida quadro a quadro: os robôs
-se mexem de leve (mãos digitando, ferro de solda, braço apontando, cabeças),
-as telas têm varredura e brilho, os LEDs dos racks piscam, pacotes andam pelo
-roadmap e o ponteiro vermelho pulsa no mapa.
+viram a cabeça, digitam, soldam e apontam; os LEDs dos racks piscam, pacotes
+andam pelo roadmap e o ponteiro vermelho pulsa no mapa.
+
+O movimento é uma deformação da própria foto: cada parte gira em torno de um
+pivô, e o deslocamento cai a zero numa faixa em volta dela. Nada é recortado e
+colado nem misturado com a imagem parada, então não há fantasma nem borrão.
 
 Tudo tem período que divide o laço de 4 s, então o GIF recomeça sem salto.
 
@@ -15,7 +18,7 @@ import sys
 
 import cv2
 import numpy as np
-from PIL import Image, ImageDraw, ImageFilter
+from PIL import Image, ImageDraw
 from scipy import ndimage
 
 RAIZ = pathlib.Path(__file__).resolve().parent.parent
@@ -50,86 +53,32 @@ LEDS = [
 LUZES = [(197, 291, 8, 0.0), (1052, 214, 10, 1.0), (826, 458, 7, 2.0), (124, 108, 6, 0.5)]
 ROTA = [(934, 104), (1004, 110), (1006, 134), (1070, 132), (1072, 160), (1140, 158), (1142, 206), (1206, 204)]
 
-# Cabeças. Cada uma é recortada da foto como um sprite, o lugar onde ela estava
-# é reconstruído (inpainting) e o sprite gira em torno do pescoço por cima desse
-# fundo limpo. Sem isso, a cabeça original fica parada atrás da que se move e o
-# resultado é um fantasma em vez de um movimento.
-#   elipse (cx, cy, rx, ry), pivô no pescoço (px, py), graus, aceno em px, fase, recorte
-# recorte: limiar de luminância para separar a cabeça clara do fundo escuro, ou
-# None quando o fundo também é claro e a própria elipse serve de contorno.
-CABECAS = [
-    ((1057, 212, 47, 58), (1080, 284), 9.0, 2.6, 0.0, None),    # robô em pé à direita
-    ((222, 286, 50, 56), (230, 352), 9.0, 2.6, 1.5, 105),       # robô sentado
-    ((105, 126, 33, 40), (106, 178), 11.0, 2.4, 0.5, 105),      # robô grande à esquerda
-    ((372, 122, 30, 36), (373, 168), 12.0, 2.4, 2.5, 105),      # fila do fundo
-    ((512, 126, 27, 33), (513, 170), 12.0, 2.2, 1.2, 105),
-    ((605, 130, 25, 31), (606, 172), 12.0, 2.0, 3.3, 105),
-    ((687, 136, 23, 29), (688, 176), 12.0, 2.0, 0.4, 105),
-    ((748, 141, 21, 27), (749, 178), 12.0, 1.8, 2.0, 105),
-    ((802, 144, 20, 26), (803, 180), 12.0, 1.8, 3.0, 105),
+# Partes que se mexem. Cada uma gira em torno de um pivô e pode se deslocar.
+#   forma, pivô (px, py), graus, (dx, dy) em px, período do giro em s, fase em s
+# forma: ('cabeca', cx, cy, rx, ry, limiar) recorta a cabeça clara do fundo
+# escuro pelo limiar de luminância (None usa a elipse, para a cabeça diante do
+# quadro claro, onde o brilho não separa nada); ('elipse', cx, cy, rx, ry)
+# é a própria elipse. O aceno (dy) das cabeças corre no dobro do ritmo do giro.
+PARTES = [
+    # cabeças: robô em pé à direita, sentado, grande à esquerda e a fila do fundo
+    (('cabeca', 1058, 213, 48, 57, None), (1080, 286), 7.0, (0, 1.8), 4.0, 0.0),
+    (('cabeca', 222, 286, 50, 56, 105), (230, 354), 8.0, (0, 2.0), 4.0, 1.5),
+    (('cabeca', 105, 126, 33, 40, 105), (106, 180), 9.0, (0, 1.8), 4.0, 0.5),
+    (('cabeca', 372, 122, 30, 36, 105), (373, 170), 10.0, (0, 1.8), 4.0, 2.5),
+    (('cabeca', 512, 126, 27, 33, 105), (513, 172), 10.0, (0, 1.6), 4.0, 1.2),
+    (('cabeca', 605, 130, 25, 31, 105), (606, 174), 10.0, (0, 1.6), 4.0, 3.3),
+    (('cabeca', 687, 136, 23, 29, 105), (688, 178), 10.0, (0, 1.4), 4.0, 0.4),
+    (('cabeca', 748, 141, 21, 27, 105), (749, 180), 10.0, (0, 1.4), 4.0, 2.0),
+    (('cabeca', 802, 144, 20, 26, 105), (803, 182), 10.0, (0, 1.4), 4.0, 3.0),
+    # braços e mãos
+    (('elipse', 962, 298, 70, 30), (1034, 326), 3.0, (0, 0), 2.0, 0.4),      # antebraço que aponta o mapa
+    (('elipse', 925, 398, 34, 24), (960, 410), 1.6, (0, 1.2), 4.0, 1.5),     # tablet na mão
+    (('elipse', 250, 462, 42, 24), (205, 455), 0.0, (3.2, 1.6), 1.0, 0.0),   # mão com o ferro de solda
+    (('elipse', 308, 466, 26, 18), (308, 466), 0.0, (1.4, 1.2), 1.0, 0.5),   # a outra mão, na placa
+    (('elipse', 650, 512, 36, 20), (650, 512), 0.0, (0, 3.2), 0.5, 0.00),    # mãos digitando, em contratempo
+    (('elipse', 736, 482, 32, 18), (736, 482), 0.0, (0, 3.2), 0.5, 0.25),
 ]
-MARGEM = 26
-
-# Mãos, braços e ombros: deslocamentos pequenos dentro de uma máscara esfumada.
-#   elipse (cx, cy, rx, ry), pivô (px, py), graus, (dx, dy), período em s, fase em s
-MOVIMENTOS = [
-    ((968, 300, 84, 40), (1034, 326), 3.4, (0, 0), 2.0, 0.4),     # antebraço que aponta o mapa
-    ((925, 398, 40, 30), (960, 410), 1.8, (0, 1.4), 4.0, 1.5),    # tablet na mão
-    ((250, 462, 50, 30), (205, 455), 0.0, (3.6, 1.8), 1.0, 0.0),  # mão com o ferro de solda
-    ((308, 466, 32, 24), (308, 466), 0.0, (1.6, 1.4), 1.0, 0.5),  # a outra mão, segurando a placa
-    ((650, 512, 44, 26), (650, 512), 0.0, (0, 3.6), 0.5, 0.00),   # mãos digitando, em contratempo
-    ((736, 482, 40, 24), (736, 482), 0.0, (0, 3.6), 0.5, 0.25),
-    ((856, 448, 54, 50), (864, 528), 3.0, (0, 0), 2.0, 0.75),     # cabeça e ombros de quem digita
-]
-
-
-def preparar_cabecas(base):
-    """Devolve a foto sem as cabeças e, para cada uma, o sprite com alfa."""
-    limpa = np.asarray(base, dtype=np.uint8).copy()
-    lum = np.asarray(base.convert('L'), dtype=np.float32)
-    yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
-    sprites = []
-    for (cx, cy, rx, ry), (px, py), graus, aceno, fase, limiar in CABECAS:
-        dentro = ((xx - cx) / rx) ** 2 + ((yy - cy) / ry) ** 2 <= 1.0
-        if limiar is None:
-            cabeca = dentro
-        else:
-            # A parte clara dá o contorno; o casco convexo dela traz junto o que
-            # é escuro mas faz parte da cabeça (orelha, sombra do rosto, nuca).
-            # Sem o casco, só a parte clara girava e o resto ficava parado.
-            claro = dentro & (lum > limiar)
-            claro = ndimage.binary_closing(claro, iterations=4)
-            rotulos, n = ndimage.label(claro)
-            if n > 1:   # fica só a maior mancha: a cabeça, não um reflexo no rack
-                tam = ndimage.sum(claro, rotulos, range(1, n + 1))
-                claro = rotulos == (1 + int(np.argmax(tam)))
-            pts = cv2.findNonZero(claro.astype(np.uint8))
-            casco = np.zeros((H, W), dtype=np.uint8)
-            cv2.fillConvexPoly(casco, cv2.convexHull(pts), 1)
-            cabeca = casco.astype(bool)
-
-        # Pescoço: uma faixa do queixo até o pivô, que acompanha a cabeça cada
-        # vez menos conforme desce. No pivô o giro não desloca nada, então é ali
-        # que o sprite pode sumir sem deixar degrau.
-        queixo = cy + ry * 0.80
-        u = np.clip((yy - queixo) / max(py - queixo, 1.0), 0, 1)
-        centro = cx + (px - cx) * u
-        meia = rx * (0.62 - 0.22 * u)
-        pescoco = (yy >= queixo) & (yy <= py) & (np.abs(xx - centro) <= meia)
-
-        alfa = ndimage.gaussian_filter((cabeca | pescoco).astype(np.float32), 1.3)
-        alfa *= 1.0 - u ** 1.5
-
-        x0, y0 = max(int(cx - rx - MARGEM), 0), max(int(cy - ry - MARGEM), 0)
-        x1, y1 = min(int(cx + rx + MARGEM), W), min(int(max(cy + ry, py) + MARGEM), H)
-        rgba = np.dstack([np.asarray(base, dtype=np.uint8)[y0:y1, x0:x1], (alfa[y0:y1, x0:x1] * 255).astype(np.uint8)])
-        sprites.append((Image.fromarray(rgba, 'RGBA'), (x0, y0, x1, y1), (px, py), graus, aceno, fase))
-
-        # O fundo só é reconstruído onde a cabeça estava. No pescoço fica a foto
-        # original, e o sprite se mistura com ela.
-        buraco = ndimage.binary_dilation(cabeca & (yy < queixo + 2), iterations=5).astype(np.uint8) * 255
-        limpa[y0:y1, x0:x1] = cv2.inpaint(limpa[y0:y1, x0:x1], buraco[y0:y1, x0:x1], 6, cv2.INPAINT_TELEA)
-    return limpa.astype(np.float32), sprites
+QUEDA = 9       # largura, em px, da faixa onde o deslocamento cai a zero
 
 
 def mascara_poligono(p):
@@ -148,38 +97,66 @@ def onda(t, periodo, fase=0.0):
     return 0.5 - 0.5 * math.cos(2 * math.pi * (t + fase) / periodo)
 
 
-def mover(limpa, sprites, t):
-    """Põe cada cabeça no seu ângulo e depois mexe mãos, braços e ombros."""
-    arr = limpa.copy()
-    for sprite, (x0, y0, x1, y1), (px, py), graus, aceno, fase in sprites:
-        # vira devagar de um lado para o outro (4 s) e acena no dobro do ritmo (2 s)
-        ang = math.radians(graus) * math.sin(2 * math.pi * (t + fase) / 4.0)
-        dy = aceno * math.sin(2 * math.pi * (t + fase) / 2.0)
-        ca, sa = math.cos(ang), math.sin(ang)
-        qx, qy = px - x0, py - y0
-        coef = (ca, sa, qx - ca * qx - sa * (qy + dy),
-                -sa, ca, qy + sa * qx - ca * (qy + dy))
-        girado = np.asarray(sprite.transform(sprite.size, Image.AFFINE, coef, resample=Image.BICUBIC), dtype=np.float32)
-        a = girado[..., 3:4] / 255.0
-        arr[y0:y1, x0:x1] = arr[y0:y1, x0:x1] * (1 - a) + girado[..., :3] * a
+def preparar_partes(base):
+    """Para cada parte: a região da foto, o peso do movimento e a grade de pixels."""
+    lum = np.asarray(base.convert('L'), dtype=np.float32)
+    yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
+    prontas = []
+    for forma, (px, py), graus, desloc, periodo, fase in PARTES:
+        tipo, cx, cy, rx, ry = forma[:5]
+        dentro = ((xx - cx) / rx) ** 2 + ((yy - cy) / ry) ** 2 <= 1.0
+        rigido = dentro
+        if tipo == 'cabeca':
+            limiar = forma[5]
+            if limiar is not None:
+                # A parte clara dá o contorno; o casco convexo dela traz junto o
+                # que é escuro mas faz parte da cabeça (orelha, sombra, nuca).
+                claro = dentro & (lum > limiar)
+                claro = ndimage.binary_closing(claro, iterations=4)
+                rotulos, n = ndimage.label(claro)
+                if n > 1:
+                    tam = ndimage.sum(claro, rotulos, range(1, n + 1))
+                    claro = rotulos == (1 + int(np.argmax(tam)))
+                casco = np.zeros((H, W), dtype=np.uint8)
+                cv2.fillConvexPoly(casco, cv2.convexHull(cv2.findNonZero(claro.astype(np.uint8))), 1)
+                rigido = casco.astype(bool)
+            # O pescoço entra junto: perto do pivô o giro quase não desloca nada.
+            queixo = cy + ry * 0.8
+            u = np.clip((yy - queixo) / max(py - queixo, 1.0), 0, 1)
+            rigido = rigido | ((yy >= queixo) & (yy <= py) & (np.abs(xx - (cx + (px - cx) * u)) <= rx * 0.6))
+            rigido = ndimage.binary_dilation(rigido, iterations=2)
+        # Peso 1 dentro da parte, caindo suave até 0 a QUEDA pixels dela.
+        dist = ndimage.distance_transform_edt(~rigido)
+        peso = np.clip(1 - dist / QUEDA, 0, 1)
+        peso = (peso * peso * (3 - 2 * peso)).astype(np.float32)
+        ys, xs = np.nonzero(peso > 0)
+        x0, x1 = max(xs.min() - 4, 0), min(xs.max() + 5, W)
+        y0, y1 = max(ys.min() - 4, 0), min(ys.max() + 5, H)
+        prontas.append((slice(y0, y1), slice(x0, x1), peso[y0:y1, x0:x1], xx[y0:y1, x0:x1], yy[y0:y1, x0:x1],
+                        (px, py), graus, desloc, periodo, fase, tipo))
+    return prontas
 
-    for (cx, cy, rx, ry), (px, py), graus, (ax, ay), periodo, fase in MOVIMENTOS:
+
+def mover(base_arr, partes, t):
+    """Deforma a foto: cada parte no seu ângulo, com o entorno acompanhando de leve."""
+    arr = base_arr.copy()
+    for sy, sx, peso, gx, gy, (px, py), graus, (ax, ay), periodo, fase, tipo in partes:
         s = math.sin(2 * math.pi * (t + fase) / periodo)
         ang = math.radians(graus) * s
-        dx, dy = ax * s, ay * math.cos(2 * math.pi * (t + fase) / periodo) if ax and ay else ay * s
-        margem = 16
-        x0, y0 = max(int(cx - rx - margem), 0), max(int(cy - ry - margem), 0)
-        x1, y1 = min(int(cx + rx + margem), W), min(int(cy + ry + margem), H)
-        atual = Image.fromarray(np.clip(arr[y0:y1, x0:x1], 0, 255).astype(np.uint8))
+        if tipo == 'cabeca':
+            dx, dy = 0.0, ay * math.sin(2 * math.pi * (t + fase) / (periodo / 2))
+        else:
+            dx, dy = ax * s, (ay * math.cos(2 * math.pi * (t + fase) / periodo) if ax and ay else ay * s)
+        # De onde vem cada pixel se a parte fosse rígida: giro inverso em torno do pivô.
         ca, sa = math.cos(ang), math.sin(ang)
-        qx, qy = px - x0, py - y0
-        coef = (ca, sa, qx - ca * (qx + dx) - sa * (qy + dy),
-                -sa, ca, qy + sa * (qx + dx) - ca * (qy + dy))
-        movido = atual.transform(atual.size, Image.AFFINE, coef, resample=Image.BICUBIC)
-        m = Image.new('L', atual.size, 0)
-        ImageDraw.Draw(m).ellipse((cx - x0 - rx * 0.72, cy - y0 - ry * 0.72, cx - x0 + rx * 0.72, cy - y0 + ry * 0.72), fill=255)
-        m = np.asarray(m.filter(ImageFilter.GaussianBlur(min(rx, ry) * 0.28)), dtype=np.float32)[..., None] / 255.0
-        arr[y0:y1, x0:x1] = arr[y0:y1, x0:x1] * (1 - m) + np.asarray(movido, dtype=np.float32) * m
+        rx_, ry_ = gx - px - dx, gy - py - dy
+        ox = ca * rx_ + sa * ry_ + px
+        oy = -sa * rx_ + ca * ry_ + py
+        # O peso mistura a posição de origem com a própria posição: é isso que
+        # estica o entorno em vez de sobrepor duas imagens.
+        mapa_x = (gx + peso * (ox - gx)).astype(np.float32)
+        mapa_y = (gy + peso * (oy - gy)).astype(np.float32)
+        arr[sy, sx] = cv2.remap(arr, mapa_x, mapa_y, cv2.INTER_LANCZOS4, borderMode=cv2.BORDER_REFLECT)
     return arr
 
 
@@ -223,21 +200,7 @@ def luzes(t, mascaras):
 
     arr = np.asarray(cam, dtype=np.float32)
 
-    # brilho e varredura das telas, direto em numpy para respeitar o contorno
     extra = np.zeros((H, W, 4), dtype=np.float32)
-    ys = np.arange(H, dtype=np.float32)[:, None]
-    for i, (nome, p) in enumerate(TELAS.items()):
-        m = mascaras[nome]
-        _, y0, _, y1 = caixa(p)
-        brilho = 0.07 * onda(t, 2.0, i * 0.5)
-        periodo = (4.0, 2.0, 4.0)[i % 3]
-        pos = y0 - 60 + ((t + i * 0.9) % periodo) / periodo * (y1 - y0 + 60)
-        faixa = np.clip(1 - np.abs(ys - (pos + 30)) / 30, 0, 1) * 0.22
-        a = np.clip(brilho + faixa, 0, 1) * m
-        extra[..., 0] = np.maximum(extra[..., 0], 175 * (a > 0))
-        extra[..., 1] = np.maximum(extra[..., 1], 226 * (a > 0))
-        extra[..., 2] = np.maximum(extra[..., 2], 255 * (a > 0))
-        extra[..., 3] = np.maximum(extra[..., 3], a * 255)
 
     # halos nos robôs
     yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
@@ -261,14 +224,15 @@ def compor(fundo, camada):
 def gerar(largura):
     base = Image.open(FOTO).convert('RGB')
     mascaras = {n: mascara_poligono(p) for n, p in TELAS.items()}
-    limpa, sprites = preparar_cabecas(base)
+    partes = preparar_partes(base)
+    base_arr = np.asarray(base, dtype=np.float32)
     escala = largura / W
     tam = (largura, round(H * escala))
 
     quadros = []
     for k in range(N):
         t = k / FPS
-        arr = mover(limpa, sprites, t)
+        arr = mover(base_arr, partes, t)
         extra, desenho = luzes(t, mascaras)
         arr = compor(compor(arr, extra), desenho)
         img = Image.fromarray(np.clip(arr, 0, 255).astype(np.uint8))
