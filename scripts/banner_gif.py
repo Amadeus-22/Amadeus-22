@@ -10,7 +10,7 @@ fica quase toda coberta e só aparece numa lasca de poucos pixels.
 
 Tudo tem período que divide o laço de 4 s, então o GIF recomeça sem salto.
 
-    python3 scripts/banner_gif.py            # gera assets/profile-banner.gif e a versão de celular
+    python3 scripts/banner_gif.py            # gera assets/profile-banner.gif
     python3 scripts/banner_gif.py 960        # largura menor, arquivo menor
 """
 import math
@@ -207,13 +207,6 @@ def compor(fundo, camada):
     return fundo * (1 - a) + camada[..., :3] * a
 
 
-# Recorte para celular: a cena aproximada, com as cabeças da fila do fundo
-# inteiras e os três robôs que trabalham. (x0, y0, x1, y1) na foto; saída 3:2.
-RECORTE_CELULAR = (330, 33, 1230, 633)
-LARGURA_CELULAR = 720
-SAIDA_CELULAR = RAIZ / 'assets' / 'profile-banner-m.gif'
-
-
 def salvar(quadros, destino):
     """Grava os quadros como GIF em laço, com uma paleta só e quadros de diferença."""
     tam = quadros[0].size
@@ -256,10 +249,6 @@ def gerar(largura):
 
     tam = (largura, round(H * largura / W))
     salvar([q if tam == (W, H) else q.resize(tam, Image.LANCZOS) for q in inteiros], SAIDA)
-
-    x0, y0, x1, y1 = RECORTE_CELULAR
-    tam_m = (LARGURA_CELULAR, round((y1 - y0) * LARGURA_CELULAR / (x1 - x0)))
-    salvar([q.crop(RECORTE_CELULAR).resize(tam_m, Image.LANCZOS) for q in inteiros], SAIDA_CELULAR)
 
 
 if __name__ == '__main__':
