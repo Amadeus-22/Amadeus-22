@@ -11,6 +11,7 @@ a size or a piece of text changes.
 | `nameplate.py` | the AMADEUS wordmark plate |
 | `comunidades.py` | the community cards, with avatars embedded as base64 |
 | `stack.py` | the technology strip, logos in their official brand colours |
+| `banner_gif.py` | the animated banner: the lab photo with the robots moving and the screens live, as a 6-second looping GIF |
 
 Run them from the repository root:
 
@@ -18,6 +19,7 @@ Run them from the repository root:
     python3 scripts/nameplate.py
     python3 scripts/comunidades.py
     SI_DIR=/path/to/simple-icons python3 scripts/stack.py
+    python3 scripts/banner_gif.py 960     # needs Pillow and NumPy; 960 is the width
 
 `stack.py` needs the simple-icons catalogue, which is not kept in this
 repository: `SI_DIR` must hold `si.json` (from `data/simple-icons.json`) and
