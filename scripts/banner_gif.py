@@ -3,9 +3,10 @@
 viram a cabeça, digitam, soldam e apontam; os LEDs dos racks piscam, pacotes
 andam pelo roadmap e o ponteiro vermelho pulsa no mapa.
 
-O movimento é uma deformação da própria foto: cada parte gira em torno de um
-pivô, e o deslocamento cai a zero numa faixa em volta dela. Nada é recortado e
-colado nem misturado com a imagem parada, então não há fantasma nem borrão.
+Cada parte que se mexe é recortada da foto pelo seu contorno real (GrabCut), e
+só ela gira, em torno da junta: o pescoço para as cabeças, o pulso para as mãos.
+O fundo fica parado. Onde a parte estava, a foto é reconstruída, mas essa área
+fica quase toda coberta e só aparece numa lasca de poucos pixels.
 
 Tudo tem período que divide o laço de 4 s, então o GIF recomeça sem salto.
 
@@ -53,32 +54,28 @@ LEDS = [
 LUZES = [(197, 291, 8, 0.0), (1052, 214, 10, 1.0), (826, 458, 7, 2.0), (124, 108, 6, 0.5)]
 ROTA = [(934, 104), (1004, 110), (1006, 134), (1070, 132), (1072, 160), (1140, 158), (1142, 206), (1206, 204)]
 
-# Partes que se mexem. Cada uma gira em torno de um pivô e pode se deslocar.
-#   forma, pivô (px, py), graus, (dx, dy) em px, período do giro em s, fase em s
-# forma: ('cabeca', cx, cy, rx, ry, limiar) recorta a cabeça clara do fundo
-# escuro pelo limiar de luminância (None usa a elipse, para a cabeça diante do
-# quadro claro, onde o brilho não separa nada); ('elipse', cx, cy, rx, ry)
-# é a própria elipse. O aceno (dy) das cabeças corre no dobro do ritmo do giro.
+# Partes que se mexem.
+#   elipse em volta da parte (cx, cy, rx, ry): é só o ponto de partida do recorte
+#   junta (px, py): onde ela gira; None usa o meio da base do recorte (pescoço)
+#   graus do giro, período em s, fase em s
 PARTES = [
     # cabeças: robô em pé à direita, sentado, grande à esquerda e a fila do fundo
-    (('cabeca', 1058, 213, 48, 57, None), (1080, 286), 7.0, (0, 1.8), 4.0, 0.0),
-    (('cabeca', 222, 286, 50, 56, 105), (230, 354), 8.0, (0, 2.0), 4.0, 1.5),
-    (('cabeca', 105, 126, 33, 40, 105), (106, 180), 9.0, (0, 1.8), 4.0, 0.5),
-    (('cabeca', 372, 122, 30, 36, 105), (373, 170), 10.0, (0, 1.8), 4.0, 2.5),
-    (('cabeca', 512, 126, 27, 33, 105), (513, 172), 10.0, (0, 1.6), 4.0, 1.2),
-    (('cabeca', 605, 130, 25, 31, 105), (606, 174), 10.0, (0, 1.6), 4.0, 3.3),
-    (('cabeca', 687, 136, 23, 29, 105), (688, 178), 10.0, (0, 1.4), 4.0, 0.4),
-    (('cabeca', 748, 141, 21, 27, 105), (749, 180), 10.0, (0, 1.4), 4.0, 2.0),
-    (('cabeca', 802, 144, 20, 26, 105), (803, 182), 10.0, (0, 1.4), 4.0, 3.0),
-    # braços e mãos
-    (('elipse', 962, 298, 70, 30), (1034, 326), 3.0, (0, 0), 2.0, 0.4),      # antebraço que aponta o mapa
-    (('elipse', 925, 398, 34, 24), (960, 410), 1.6, (0, 1.2), 4.0, 1.5),     # tablet na mão
-    (('elipse', 250, 462, 42, 24), (205, 455), 0.0, (3.2, 1.6), 1.0, 0.0),   # mão com o ferro de solda
-    (('elipse', 308, 466, 26, 18), (308, 466), 0.0, (1.4, 1.2), 1.0, 0.5),   # a outra mão, na placa
-    (('elipse', 650, 512, 36, 20), (650, 512), 0.0, (0, 3.2), 0.5, 0.00),    # mãos digitando, em contratempo
-    (('elipse', 736, 482, 32, 18), (736, 482), 0.0, (0, 3.2), 0.5, 0.25),
+    ((1058, 213, 50, 60), (1072, 262), 7.0, 4.0, 0.0),
+    ((222, 286, 52, 58), (228, 340), 7.0, 4.0, 1.5),
+    ((105, 126, 34, 42), None, 8.0, 4.0, 0.5),
+    ((372, 122, 31, 38), None, 9.0, 4.0, 2.5),
+    ((512, 126, 28, 35), None, 9.0, 4.0, 1.2),
+    ((605, 130, 26, 33), None, 9.0, 4.0, 3.3),
+    ((687, 136, 24, 31), None, 9.0, 4.0, 0.4),
+    ((748, 141, 22, 29), None, 9.0, 4.0, 2.0),
+    ((802, 144, 21, 28), None, 9.0, 4.0, 3.0),
+    # mãos, girando no pulso
+    ((650, 512, 40, 24), (679, 523), 5.0, 0.5, 0.00),     # mão esquerda digitando
+    ((736, 482, 36, 22), (756, 479), 5.0, 0.5, 0.25),     # mão direita, em contratempo
+    ((250, 462, 46, 28), (202, 470), 2.5, 1.0, 0.0),      # mão com o ferro de solda
+    ((940, 290, 52, 26), (975, 305), 3.5, 2.0, 0.4),      # mão que aponta o mapa
 ]
-QUEDA = 9       # largura, em px, da faixa onde o deslocamento cai a zero
+MARGEM = 20
 
 
 def mascara_poligono(p):
@@ -98,65 +95,54 @@ def onda(t, periodo, fase=0.0):
 
 
 def preparar_partes(base):
-    """Para cada parte: a região da foto, o peso do movimento e a grade de pixels."""
-    lum = np.asarray(base.convert('L'), dtype=np.float32)
+    """Recorta cada parte e devolve a foto sem elas mais a lista de sprites."""
+    bgr = cv2.cvtColor(np.asarray(base, dtype=np.uint8), cv2.COLOR_RGB2BGR)
+    limpa = bgr.copy()
     yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
-    prontas = []
-    for forma, (px, py), graus, desloc, periodo, fase in PARTES:
-        tipo, cx, cy, rx, ry = forma[:5]
-        dentro = ((xx - cx) / rx) ** 2 + ((yy - cy) / ry) ** 2 <= 1.0
-        rigido = dentro
-        if tipo == 'cabeca':
-            limiar = forma[5]
-            if limiar is not None:
-                # A parte clara dá o contorno; o casco convexo dela traz junto o
-                # que é escuro mas faz parte da cabeça (orelha, sombra, nuca).
-                claro = dentro & (lum > limiar)
-                claro = ndimage.binary_closing(claro, iterations=4)
-                rotulos, n = ndimage.label(claro)
-                if n > 1:
-                    tam = ndimage.sum(claro, rotulos, range(1, n + 1))
-                    claro = rotulos == (1 + int(np.argmax(tam)))
-                casco = np.zeros((H, W), dtype=np.uint8)
-                cv2.fillConvexPoly(casco, cv2.convexHull(cv2.findNonZero(claro.astype(np.uint8))), 1)
-                rigido = casco.astype(bool)
-            # O pescoço entra junto: perto do pivô o giro quase não desloca nada.
-            queixo = cy + ry * 0.8
-            u = np.clip((yy - queixo) / max(py - queixo, 1.0), 0, 1)
-            rigido = rigido | ((yy >= queixo) & (yy <= py) & (np.abs(xx - (cx + (px - cx) * u)) <= rx * 0.6))
-            rigido = ndimage.binary_dilation(rigido, iterations=2)
-        # Peso 1 dentro da parte, caindo suave até 0 a QUEDA pixels dela.
-        dist = ndimage.distance_transform_edt(~rigido)
-        peso = np.clip(1 - dist / QUEDA, 0, 1)
-        peso = (peso * peso * (3 - 2 * peso)).astype(np.float32)
-        ys, xs = np.nonzero(peso > 0)
-        x0, x1 = max(xs.min() - 4, 0), min(xs.max() + 5, W)
-        y0, y1 = max(ys.min() - 4, 0), min(ys.max() + 5, H)
-        prontas.append((slice(y0, y1), slice(x0, x1), peso[y0:y1, x0:x1], xx[y0:y1, x0:x1], yy[y0:y1, x0:x1],
-                        (px, py), graus, desloc, periodo, fase, tipo))
-    return prontas
+    sprites = []
+    for (cx, cy, rx, ry), junta, graus, periodo, fase in PARTES:
+        x0, y0 = max(int(cx - rx - MARGEM), 0), max(int(cy - ry - MARGEM), 0)
+        x1, y1 = min(int(cx + rx + MARGEM), W), min(int(cy + ry + MARGEM), H)
+        e = ((xx[y0:y1, x0:x1] - cx) / rx) ** 2 + ((yy[y0:y1, x0:x1] - cy) / ry) ** 2
+        # GrabCut: o miolo da elipse é a parte com certeza, a borda é "talvez",
+        # e o algoritmo acha o contorno real pelas cores.
+        marca = np.full(e.shape, cv2.GC_BGD, np.uint8)
+        marca[e <= 1.25 ** 2] = cv2.GC_PR_BGD
+        marca[e <= 1.0] = cv2.GC_PR_FGD
+        marca[e <= 0.45 ** 2] = cv2.GC_FGD
+        cv2.grabCut(bgr[y0:y1, x0:x1], marca, None, np.zeros((1, 65)), np.zeros((1, 65)), 6, cv2.GC_INIT_WITH_MASK)
+        frente = (marca == cv2.GC_FGD) | (marca == cv2.GC_PR_FGD)
+        rotulos, n = ndimage.label(frente)
+        if n > 1:   # só a maior mancha
+            frente = rotulos == (1 + int(np.argmax(ndimage.sum(frente, rotulos, range(1, n + 1)))))
+        frente = ndimage.binary_fill_holes(frente)
+
+        if junta is None:   # meio da base do recorte
+            ys, xs = np.nonzero(frente)
+            base_y = ys.max()
+            junta = (x0 + float(xs[ys >= base_y - 3].mean()), y0 + float(base_y))
+
+        # Borda de um pixel só de transição: nítida, sem serrilhado.
+        alfa = cv2.GaussianBlur(frente.astype(np.float32), (0, 0), 0.7)
+        rgb = cv2.cvtColor(bgr[y0:y1, x0:x1], cv2.COLOR_BGR2RGB).astype(np.float32)
+        premult = np.dstack([rgb * alfa[..., None], alfa])   # alfa pré-multiplicado: sem franja escura ao girar
+        sprites.append((premult, (x0, y0, x1, y1), junta, graus, periodo, fase))
+
+        buraco = (ndimage.binary_dilation(frente, iterations=7)).astype(np.uint8) * 255
+        limpa[y0:y1, x0:x1] = cv2.inpaint(limpa[y0:y1, x0:x1], buraco, 5, cv2.INPAINT_NS)
+    return cv2.cvtColor(limpa, cv2.COLOR_BGR2RGB).astype(np.float32), sprites
 
 
-def mover(base_arr, partes, t):
-    """Deforma a foto: cada parte no seu ângulo, com o entorno acompanhando de leve."""
-    arr = base_arr.copy()
-    for sy, sx, peso, gx, gy, (px, py), graus, (ax, ay), periodo, fase, tipo in partes:
-        s = math.sin(2 * math.pi * (t + fase) / periodo)
-        ang = math.radians(graus) * s
-        if tipo == 'cabeca':
-            dx, dy = 0.0, ay * math.sin(2 * math.pi * (t + fase) / (periodo / 2))
-        else:
-            dx, dy = ax * s, (ay * math.cos(2 * math.pi * (t + fase) / periodo) if ax and ay else ay * s)
-        # De onde vem cada pixel se a parte fosse rígida: giro inverso em torno do pivô.
-        ca, sa = math.cos(ang), math.sin(ang)
-        rx_, ry_ = gx - px - dx, gy - py - dy
-        ox = ca * rx_ + sa * ry_ + px
-        oy = -sa * rx_ + ca * ry_ + py
-        # O peso mistura a posição de origem com a própria posição: é isso que
-        # estica o entorno em vez de sobrepor duas imagens.
-        mapa_x = (gx + peso * (ox - gx)).astype(np.float32)
-        mapa_y = (gy + peso * (oy - gy)).astype(np.float32)
-        arr[sy, sx] = cv2.remap(arr, mapa_x, mapa_y, cv2.INTER_LANCZOS4, borderMode=cv2.BORDER_REFLECT)
+def mover(limpa, sprites, t):
+    """Cola cada parte, no seu ângulo, por cima do fundo parado."""
+    arr = limpa.copy()
+    for premult, (x0, y0, x1, y1), (px, py), graus, periodo, fase in sprites:
+        ang = graus * math.sin(2 * math.pi * (t + fase) / periodo)
+        m = cv2.getRotationMatrix2D((px - x0, py - y0), ang, 1.0)
+        girado = cv2.warpAffine(premult, m, (x1 - x0, y1 - y0), flags=cv2.INTER_LANCZOS4,
+                                borderMode=cv2.BORDER_CONSTANT, borderValue=0)
+        a = np.clip(girado[..., 3:4], 0, 1)
+        arr[y0:y1, x0:x1] = arr[y0:y1, x0:x1] * (1 - a) + np.clip(girado[..., :3], 0, 255)
     return arr
 
 
@@ -224,15 +210,14 @@ def compor(fundo, camada):
 def gerar(largura):
     base = Image.open(FOTO).convert('RGB')
     mascaras = {n: mascara_poligono(p) for n, p in TELAS.items()}
-    partes = preparar_partes(base)
-    base_arr = np.asarray(base, dtype=np.float32)
+    limpa, sprites = preparar_partes(base)
     escala = largura / W
     tam = (largura, round(H * escala))
 
     quadros = []
     for k in range(N):
         t = k / FPS
-        arr = mover(base_arr, partes, t)
+        arr = mover(limpa, sprites, t)
         extra, desenho = luzes(t, mascaras)
         arr = compor(compor(arr, extra), desenho)
         img = Image.fromarray(np.clip(arr, 0, 255).astype(np.uint8))
