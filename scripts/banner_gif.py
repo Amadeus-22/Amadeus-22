@@ -4,7 +4,7 @@ se mexem de leve (mãos digitando, ferro de solda, braço apontando, cabeças),
 as telas têm varredura e brilho, os LEDs dos racks piscam, pacotes andam pelo
 roadmap e o ponteiro vermelho pulsa no mapa.
 
-Tudo tem período que divide o laço de 6 s, então o GIF recomeça sem salto.
+Tudo tem período que divide o laço de 4 s, então o GIF recomeça sem salto.
 
     python3 scripts/banner_gif.py            # gera assets/profile-banner.gif
     python3 scripts/banner_gif.py 960        # largura menor, arquivo menor
@@ -20,8 +20,8 @@ RAIZ = pathlib.Path(__file__).resolve().parent.parent
 FOTO = RAIZ / 'assets' / 'profile-banner.jpg'
 SAIDA = RAIZ / 'assets' / 'profile-banner.gif'
 W, H = 1280, 633
-LACO = 6.0      # segundos
-FPS = 10
+LACO = 4.0      # segundos
+FPS = 15
 N = int(LACO * FPS)
 
 TELAS = {
@@ -37,13 +37,13 @@ TELAS = {
 VERDE, AMBAR, AZUL = (73, 255, 157), (255, 182, 72), (111, 211, 255)
 # (x, y, cor, fase em s, período em s)
 LEDS = [
-    (22, 78, VERDE, 0.0, 1.5), (22, 118, VERDE, 0.6, 2.0), (22, 158, AMBAR, 1.1, 3.0),
-    (22, 196, VERDE, 1.7, 3.0), (22, 236, VERDE, 0.3, 2.0), (22, 318, AZUL, 0.9, 3.0),
-    (22, 398, VERDE, 1.4, 2.0), (22, 438, AMBAR, 0.2, 3.0), (138, 96, VERDE, 0.5, 3.0),
-    (300, 92, VERDE, 0.8, 2.0), (300, 132, AZUL, 0.1, 3.0), (300, 170, VERDE, 1.5, 2.0),
-    (452, 222, VERDE, 1.0, 1.5), (470, 236, AMBAR, 0.4, 3.0), (512, 84, VERDE, 0.7, 2.0),
-    (560, 100, VERDE, 1.6, 3.0), (596, 96, AZUL, 0.2, 2.0), (652, 110, VERDE, 1.2, 1.5),
-    (652, 168, AMBAR, 0.5, 3.0), (716, 118, VERDE, 0.9, 2.0),
+    (22, 78, VERDE, 0.0, 1.0), (22, 118, VERDE, 0.6, 2.0), (22, 158, AMBAR, 1.1, 4.0),
+    (22, 196, VERDE, 1.7, 4.0), (22, 236, VERDE, 0.3, 2.0), (22, 318, AZUL, 0.9, 4.0),
+    (22, 398, VERDE, 1.4, 2.0), (22, 438, AMBAR, 0.2, 4.0), (138, 96, VERDE, 0.5, 4.0),
+    (300, 92, VERDE, 0.8, 2.0), (300, 132, AZUL, 0.1, 4.0), (300, 170, VERDE, 1.5, 2.0),
+    (452, 222, VERDE, 1.0, 1.0), (470, 236, AMBAR, 0.4, 4.0), (512, 84, VERDE, 0.7, 2.0),
+    (560, 100, VERDE, 1.6, 4.0), (596, 96, AZUL, 0.2, 2.0), (652, 110, VERDE, 1.2, 1.0),
+    (652, 168, AMBAR, 0.5, 4.0), (716, 118, VERDE, 0.9, 2.0),
 ]
 LUZES = [(197, 291, 8, 0.0), (1052, 214, 10, 1.0), (826, 458, 7, 2.0), (124, 108, 6, 0.5)]
 ROTA = [(934, 104), (1004, 110), (1006, 134), (1070, 132), (1072, 160), (1140, 158), (1142, 206), (1206, 204)]
@@ -54,25 +54,35 @@ ROTA = [(934, 104), (1004, 110), (1006, 134), (1070, 132), (1072, 160), (1140, 1
 #   elipse (cx, cy, rx, ry), pivô (px, py), graus, (dx, dy), período em s, fase em s
 MOVIMENTOS = [
     # robô em pé à direita: cabeça acompanha o mapa, antebraço percorre a tela
-    ((1055, 215, 54, 64), (1078, 278), 3.0, (0, 0), 6.0, 0.0),
-    ((968, 300, 84, 40), (1034, 326), 2.6, (0, 0), 3.0, 0.4),
-    ((925, 398, 40, 30), (960, 410), 1.5, (0, 1.2), 3.0, 1.5),
-    # robô sentado soldando: cabeça inclina, mão com o ferro trabalha na placa
-    ((222, 290, 52, 58), (228, 348), 2.4, (0, 0), 6.0, 1.5),
-    ((250, 462, 50, 30), (205, 455), 0.0, (3.2, 1.6), 1.5, 0.0),
-    ((308, 466, 32, 24), (308, 466), 0.0, (1.4, 1.2), 1.5, 0.75),
-    # robô digitando, de costas: mãos em contratempo, ombros acompanham
-    ((650, 512, 44, 26), (650, 512), 0.0, (0, 3.4), 0.5, 0.00),
-    ((736, 482, 40, 24), (736, 482), 0.0, (0, 3.4), 0.5, 0.25),
-    ((856, 450, 50, 46), (862, 525), 1.3, (0, 0), 3.0, 0.75),
-    # fila de robôs ao fundo: cada cabeça se mexe no seu tempo
-    ((105, 128, 30, 36), (106, 170), 1.8, (0, 0), 6.0, 0.5),
-    ((372, 124, 28, 32), (373, 162), 1.8, (0, 0), 6.0, 2.5),
-    ((512, 128, 26, 30), (513, 164), 1.6, (0, 0), 6.0, 4.0),
-    ((605, 132, 24, 28), (606, 166), 1.6, (0, 0), 6.0, 1.0),
-    ((687, 138, 22, 26), (688, 170), 1.5, (0, 0), 6.0, 3.2),
-    ((748, 143, 20, 24), (749, 172), 1.5, (0, 0), 6.0, 5.0),
-    ((802, 146, 19, 23), (803, 174), 1.5, (0, 0), 6.0, 2.0),
+    ((1055, 215, 54, 64), (1078, 278), 4.5, (0, 0), 4.0, 0.0),
+    ((1055, 215, 54, 64), (1078, 278), 0.0, (0, 1.6), 2.0, 0.3),
+    ((968, 300, 84, 40), (1034, 326), 3.0, (0, 0), 2.0, 0.4),
+    ((925, 398, 40, 30), (960, 410), 1.8, (0, 1.4), 4.0, 1.5),
+    # robô sentado soldando: cabeça inclina e acena, mão com o ferro trabalha na placa
+    ((222, 290, 52, 58), (228, 348), 4.0, (0, 0), 4.0, 1.5),
+    ((222, 290, 52, 58), (228, 348), 0.0, (0, 1.6), 2.0, 0.0),
+    ((250, 462, 50, 30), (205, 455), 0.0, (3.6, 1.8), 1.0, 0.0),
+    ((308, 466, 32, 24), (308, 466), 0.0, (1.6, 1.4), 1.0, 0.5),
+    # robô digitando, de costas: mãos em contratempo, cabeça e ombros acompanham
+    ((650, 512, 44, 26), (650, 512), 0.0, (0, 3.6), 0.5, 0.00),
+    ((736, 482, 40, 24), (736, 482), 0.0, (0, 3.6), 0.5, 0.25),
+    ((856, 450, 50, 46), (862, 525), 2.4, (0, 0), 2.0, 0.75),
+    # robô grande à esquerda: olha de um lado para o outro
+    ((105, 128, 32, 38), (106, 172), 5.0, (0, 0), 4.0, 0.5),
+    ((105, 128, 32, 38), (106, 172), 0.0, (0, 1.5), 2.0, 1.0),
+    # fila de robôs ao fundo: cada cabeça vira e acena no seu tempo
+    ((372, 124, 30, 34), (373, 164), 5.0, (0, 0), 4.0, 2.5),
+    ((372, 124, 30, 34), (373, 164), 0.0, (0, 1.4), 2.0, 0.2),
+    ((512, 128, 27, 31), (513, 166), 5.0, (0, 0), 4.0, 1.2),
+    ((512, 128, 27, 31), (513, 166), 0.0, (0, 1.3), 2.0, 1.4),
+    ((605, 132, 25, 29), (606, 168), 5.0, (0, 0), 4.0, 3.3),
+    ((605, 132, 25, 29), (606, 168), 0.0, (0, 1.2), 2.0, 0.7),
+    ((687, 138, 23, 27), (688, 172), 4.5, (0, 0), 4.0, 0.4),
+    ((687, 138, 23, 27), (688, 172), 0.0, (0, 1.1), 2.0, 1.7),
+    ((748, 143, 21, 25), (749, 174), 4.5, (0, 0), 4.0, 2.0),
+    ((748, 143, 21, 25), (749, 174), 0.0, (0, 1.0), 2.0, 0.9),
+    ((802, 146, 20, 24), (803, 176), 4.5, (0, 0), 4.0, 3.0),
+    ((802, 146, 20, 24), (803, 176), 0.0, (0, 1.0), 2.0, 0.1),
 ]
 
 
@@ -125,12 +135,12 @@ def luzes(t, mascaras):
     for k in range(9):
         x = 392 + k * 7.2
         alt_max = 14 + (k * 7) % 22
-        alt = alt_max * (0.35 + 0.65 * onda(t, 3.0, k * 0.33))
+        alt = alt_max * (0.35 + 0.65 * onda(t, 2.0, k * 0.22))
         d.rectangle((x, 470 - alt, x + 4, 470), fill=(127, 214, 255, 140))
 
     # editor: linhas digitadas e cursor
     for k, (larg, cor) in enumerate([(92, (159, 227, 255)), (64, (199, 245, 208)), (118, (159, 227, 255))]):
-        prog = min(((t + k * 2.0) % LACO) / (LACO * 0.7), 1.0)
+        prog = min(((t + k * LACO / 3) % LACO) / (LACO * 0.7), 1.0)
         passo = math.floor(prog * 24) / 24
         if passo > 0:
             d.rectangle((566, 368 + k * 8, 566 + larg * passo, 370 + k * 8), fill=cor + (205,))
@@ -148,7 +158,7 @@ def luzes(t, mascaras):
     comp = [math.dist(a, b) for a, b in zip(ROTA, ROTA[1:])]
     total = sum(comp)
     for k in range(3):
-        f = ((t + k * 2.0) % LACO) / LACO
+        f = ((t + k * LACO / 3) % LACO) / LACO
         alfa = int(255 * min(f / 0.08, 1.0, (1 - f) / 0.1))
         alvo, i = f * total, 0
         while i < len(comp) - 1 and alvo > comp[i]:
@@ -178,8 +188,8 @@ def luzes(t, mascaras):
     for i, (nome, p) in enumerate(TELAS.items()):
         m = mascaras[nome]
         _, y0, _, y1 = caixa(p)
-        brilho = 0.07 * onda(t, 3.0, i * 0.7)
-        periodo = (6.0, 3.0, 6.0)[i % 3]
+        brilho = 0.07 * onda(t, 2.0, i * 0.5)
+        periodo = (4.0, 2.0, 4.0)[i % 3]
         pos = y0 - 60 + ((t + i * 0.9) % periodo) / periodo * (y1 - y0 + 60)
         faixa = np.clip(1 - np.abs(ys - (pos + 30)) / 30, 0, 1) * 0.22
         a = np.clip(brilho + faixa, 0, 1) * m
@@ -191,8 +201,8 @@ def luzes(t, mascaras):
     # halos nos robôs
     yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
     for x, y, r, fase in LUZES:
-        forca = 0.15 + 0.6 * onda(t, 3.0, fase)
-        raio = r * (0.8 + 0.45 * onda(t, 3.0, fase))
+        forca = 0.15 + 0.6 * onda(t, 2.0, fase)
+        raio = r * (0.8 + 0.45 * onda(t, 2.0, fase))
         a = np.clip(1 - np.hypot(xx - x, yy - y) / raio, 0, 1) * forca
         extra[..., 0] = np.where(a > extra[..., 3] / 255, 143, extra[..., 0])
         extra[..., 1] = np.where(a > extra[..., 3] / 255, 224, extra[..., 1])
