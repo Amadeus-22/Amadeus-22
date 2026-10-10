@@ -13,8 +13,10 @@ import math
 import pathlib
 import sys
 
+import cv2
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter
+from scipy import ndimage
 
 RAIZ = pathlib.Path(__file__).resolve().parent.parent
 FOTO = RAIZ / 'assets' / 'profile-banner.jpg'
@@ -48,42 +50,69 @@ LEDS = [
 LUZES = [(197, 291, 8, 0.0), (1052, 214, 10, 1.0), (826, 458, 7, 2.0), (124, 108, 6, 0.5)]
 ROTA = [(934, 104), (1004, 110), (1006, 134), (1070, 132), (1072, 160), (1140, 158), (1142, 206), (1206, 204)]
 
-# Partes dos robôs que se mexem. Cada uma gira alguns graus em torno de um pivô
-# (pescoço, cotovelo) e/ou se desloca alguns pixels, dentro de uma máscara
-# esfumada, para o movimento não deixar costura na foto.
+# Cabeças. Cada uma é recortada da foto como um sprite, o lugar onde ela estava
+# é reconstruído (inpainting) e o sprite gira em torno do pescoço por cima desse
+# fundo limpo. Sem isso, a cabeça original fica parada atrás da que se move e o
+# resultado é um fantasma em vez de um movimento.
+#   elipse (cx, cy, rx, ry), pivô no pescoço (px, py), graus, aceno em px, fase, recorte
+# recorte: limiar de luminância para separar a cabeça clara do fundo escuro, ou
+# None quando o fundo também é claro e a própria elipse serve de contorno.
+CABECAS = [
+    ((1057, 212, 47, 58), (1080, 284), 9.0, 2.6, 0.0, None),    # robô em pé à direita
+    ((222, 286, 50, 56), (230, 352), 9.0, 2.6, 1.5, 105),       # robô sentado
+    ((105, 126, 33, 40), (106, 178), 11.0, 2.4, 0.5, 105),      # robô grande à esquerda
+    ((372, 122, 30, 36), (373, 168), 12.0, 2.4, 2.5, 105),      # fila do fundo
+    ((512, 126, 27, 33), (513, 170), 12.0, 2.2, 1.2, 105),
+    ((605, 130, 25, 31), (606, 172), 12.0, 2.0, 3.3, 105),
+    ((687, 136, 23, 29), (688, 176), 12.0, 2.0, 0.4, 105),
+    ((748, 141, 21, 27), (749, 178), 12.0, 1.8, 2.0, 105),
+    ((802, 144, 20, 26), (803, 180), 12.0, 1.8, 3.0, 105),
+]
+MARGEM = 26
+
+# Mãos, braços e ombros: deslocamentos pequenos dentro de uma máscara esfumada.
 #   elipse (cx, cy, rx, ry), pivô (px, py), graus, (dx, dy), período em s, fase em s
 MOVIMENTOS = [
-    # robô em pé à direita: cabeça acompanha o mapa, antebraço percorre a tela
-    ((1055, 215, 54, 64), (1078, 278), 4.5, (0, 0), 4.0, 0.0),
-    ((1055, 215, 54, 64), (1078, 278), 0.0, (0, 1.6), 2.0, 0.3),
-    ((968, 300, 84, 40), (1034, 326), 3.0, (0, 0), 2.0, 0.4),
-    ((925, 398, 40, 30), (960, 410), 1.8, (0, 1.4), 4.0, 1.5),
-    # robô sentado soldando: cabeça inclina e acena, mão com o ferro trabalha na placa
-    ((222, 290, 52, 58), (228, 348), 4.0, (0, 0), 4.0, 1.5),
-    ((222, 290, 52, 58), (228, 348), 0.0, (0, 1.6), 2.0, 0.0),
-    ((250, 462, 50, 30), (205, 455), 0.0, (3.6, 1.8), 1.0, 0.0),
-    ((308, 466, 32, 24), (308, 466), 0.0, (1.6, 1.4), 1.0, 0.5),
-    # robô digitando, de costas: mãos em contratempo, cabeça e ombros acompanham
-    ((650, 512, 44, 26), (650, 512), 0.0, (0, 3.6), 0.5, 0.00),
+    ((968, 300, 84, 40), (1034, 326), 3.4, (0, 0), 2.0, 0.4),     # antebraço que aponta o mapa
+    ((925, 398, 40, 30), (960, 410), 1.8, (0, 1.4), 4.0, 1.5),    # tablet na mão
+    ((250, 462, 50, 30), (205, 455), 0.0, (3.6, 1.8), 1.0, 0.0),  # mão com o ferro de solda
+    ((308, 466, 32, 24), (308, 466), 0.0, (1.6, 1.4), 1.0, 0.5),  # a outra mão, segurando a placa
+    ((650, 512, 44, 26), (650, 512), 0.0, (0, 3.6), 0.5, 0.00),   # mãos digitando, em contratempo
     ((736, 482, 40, 24), (736, 482), 0.0, (0, 3.6), 0.5, 0.25),
-    ((856, 450, 50, 46), (862, 525), 2.4, (0, 0), 2.0, 0.75),
-    # robô grande à esquerda: olha de um lado para o outro
-    ((105, 128, 32, 38), (106, 172), 5.0, (0, 0), 4.0, 0.5),
-    ((105, 128, 32, 38), (106, 172), 0.0, (0, 1.5), 2.0, 1.0),
-    # fila de robôs ao fundo: cada cabeça vira e acena no seu tempo
-    ((372, 124, 30, 34), (373, 164), 5.0, (0, 0), 4.0, 2.5),
-    ((372, 124, 30, 34), (373, 164), 0.0, (0, 1.4), 2.0, 0.2),
-    ((512, 128, 27, 31), (513, 166), 5.0, (0, 0), 4.0, 1.2),
-    ((512, 128, 27, 31), (513, 166), 0.0, (0, 1.3), 2.0, 1.4),
-    ((605, 132, 25, 29), (606, 168), 5.0, (0, 0), 4.0, 3.3),
-    ((605, 132, 25, 29), (606, 168), 0.0, (0, 1.2), 2.0, 0.7),
-    ((687, 138, 23, 27), (688, 172), 4.5, (0, 0), 4.0, 0.4),
-    ((687, 138, 23, 27), (688, 172), 0.0, (0, 1.1), 2.0, 1.7),
-    ((748, 143, 21, 25), (749, 174), 4.5, (0, 0), 4.0, 2.0),
-    ((748, 143, 21, 25), (749, 174), 0.0, (0, 1.0), 2.0, 0.9),
-    ((802, 146, 20, 24), (803, 176), 4.5, (0, 0), 4.0, 3.0),
-    ((802, 146, 20, 24), (803, 176), 0.0, (0, 1.0), 2.0, 0.1),
+    ((856, 448, 54, 50), (864, 528), 3.0, (0, 0), 2.0, 0.75),     # cabeça e ombros de quem digita
 ]
+
+
+def preparar_cabecas(base):
+    """Devolve a foto sem as cabeças e, para cada uma, o sprite com alfa."""
+    limpa = np.asarray(base, dtype=np.uint8).copy()
+    lum = np.asarray(base.convert('L'), dtype=np.float32)
+    yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
+    sprites = []
+    for (cx, cy, rx, ry), pivo, graus, aceno, fase, limiar in CABECAS:
+        dentro = ((xx - cx) / rx) ** 2 + ((yy - cy) / ry) ** 2 <= 1.0
+        if limiar is None:
+            m = dentro
+        else:
+            m = dentro & (lum > limiar)
+            m = ndimage.binary_closing(m, iterations=4)
+            m = ndimage.binary_fill_holes(m)
+            rotulos, n = ndimage.label(m)
+            if n > 1:   # fica só a maior mancha: a cabeça, não um reflexo no rack
+                tam = ndimage.sum(m, rotulos, range(1, n + 1))
+                m = rotulos == (1 + int(np.argmax(tam)))
+        alfa = ndimage.gaussian_filter(m.astype(np.float32), 1.3)
+        # Embaixo, a cabeça some aos poucos para dentro do pescoço: ali fica a
+        # foto original, e a junção não abre quando a cabeça gira.
+        queda = np.clip((cy + ry * 0.95 - yy) / (ry * 0.35), 0, 1)
+        alfa *= queda
+        x0, y0 = max(int(cx - rx - MARGEM), 0), max(int(cy - ry - MARGEM), 0)
+        x1, y1 = min(int(cx + rx + MARGEM), W), min(int(cy + ry + MARGEM), H)
+        rgba = np.dstack([np.asarray(base, dtype=np.uint8)[y0:y1, x0:x1], (alfa[y0:y1, x0:x1] * 255).astype(np.uint8)])
+        sprites.append((Image.fromarray(rgba, 'RGBA'), (x0, y0, x1, y1), pivo, graus, aceno, fase))
+        buraco = ndimage.binary_dilation(alfa > 0.5, iterations=4).astype(np.uint8) * 255
+        limpa[y0:y1, x0:x1] = cv2.inpaint(limpa[y0:y1, x0:x1], buraco[y0:y1, x0:x1], 6, cv2.INPAINT_TELEA)
+    return limpa.astype(np.float32), sprites
 
 
 def mascara_poligono(p):
@@ -102,9 +131,21 @@ def onda(t, periodo, fase=0.0):
     return 0.5 - 0.5 * math.cos(2 * math.pi * (t + fase) / periodo)
 
 
-def mover(base, t):
-    """Aplica rotação e deslocamento de cada parte do robô, em sequência."""
-    arr = np.asarray(base, dtype=np.float32).copy()
+def mover(limpa, sprites, t):
+    """Põe cada cabeça no seu ângulo e depois mexe mãos, braços e ombros."""
+    arr = limpa.copy()
+    for sprite, (x0, y0, x1, y1), (px, py), graus, aceno, fase in sprites:
+        # vira devagar de um lado para o outro (4 s) e acena no dobro do ritmo (2 s)
+        ang = math.radians(graus) * math.sin(2 * math.pi * (t + fase) / 4.0)
+        dy = aceno * math.sin(2 * math.pi * (t + fase) / 2.0)
+        ca, sa = math.cos(ang), math.sin(ang)
+        qx, qy = px - x0, py - y0
+        coef = (ca, sa, qx - ca * qx - sa * (qy + dy),
+                -sa, ca, qy + sa * qx - ca * (qy + dy))
+        girado = np.asarray(sprite.transform(sprite.size, Image.AFFINE, coef, resample=Image.BICUBIC), dtype=np.float32)
+        a = girado[..., 3:4] / 255.0
+        arr[y0:y1, x0:x1] = arr[y0:y1, x0:x1] * (1 - a) + girado[..., :3] * a
+
     for (cx, cy, rx, ry), (px, py), graus, (ax, ay), periodo, fase in MOVIMENTOS:
         s = math.sin(2 * math.pi * (t + fase) / periodo)
         ang = math.radians(graus) * s
@@ -113,7 +154,6 @@ def mover(base, t):
         x0, y0 = max(int(cx - rx - margem), 0), max(int(cy - ry - margem), 0)
         x1, y1 = min(int(cx + rx + margem), W), min(int(cy + ry + margem), H)
         atual = Image.fromarray(np.clip(arr[y0:y1, x0:x1], 0, 255).astype(np.uint8))
-        # matriz inversa: de onde vem cada pixel de saída
         ca, sa = math.cos(ang), math.sin(ang)
         qx, qy = px - x0, py - y0
         coef = (ca, sa, qx - ca * (qx + dx) - sa * (qy + dy),
@@ -220,13 +260,14 @@ def compor(fundo, camada):
 def gerar(largura):
     base = Image.open(FOTO).convert('RGB')
     mascaras = {n: mascara_poligono(p) for n, p in TELAS.items()}
+    limpa, sprites = preparar_cabecas(base)
     escala = largura / W
     tam = (largura, round(H * escala))
 
     quadros = []
     for k in range(N):
         t = k / FPS
-        arr = mover(base, t)
+        arr = mover(limpa, sprites, t)
         extra, desenho = luzes(t, mascaras)
         arr = compor(compor(arr, extra), desenho)
         img = Image.fromarray(np.clip(arr, 0, 255).astype(np.uint8))

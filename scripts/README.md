@@ -19,7 +19,7 @@ Run them from the repository root:
     python3 scripts/nameplate.py
     python3 scripts/comunidades.py
     SI_DIR=/path/to/simple-icons python3 scripts/stack.py
-    python3 scripts/banner_gif.py 960     # needs Pillow and NumPy; 960 is the width
+    python3 scripts/banner_gif.py 960     # needs Pillow, NumPy, SciPy and opencv-python-headless; 960 is the width
 
 `stack.py` needs the simple-icons catalogue, which is not kept in this
 repository: `SI_DIR` must hold `si.json` (from `data/simple-icons.json`) and
