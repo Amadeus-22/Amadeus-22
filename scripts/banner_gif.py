@@ -10,7 +10,7 @@ fica quase toda coberta e só aparece numa lasca de poucos pixels.
 
 Tudo tem período que divide o laço de 4 s, então o GIF recomeça sem salto.
 
-    python3 scripts/banner_gif.py            # gera assets/profile-banner.gif
+    python3 scripts/banner_gif.py            # gera assets/profile-banner.gif e a versão de celular
     python3 scripts/banner_gif.py 960        # largura menor, arquivo menor
 """
 import math
@@ -207,24 +207,16 @@ def compor(fundo, camada):
     return fundo * (1 - a) + camada[..., :3] * a
 
 
-def gerar(largura):
-    base = Image.open(FOTO).convert('RGB')
-    mascaras = {n: mascara_poligono(p) for n, p in TELAS.items()}
-    limpa, sprites = preparar_partes(base)
-    escala = largura / W
-    tam = (largura, round(H * escala))
+# Recorte para celular: a cena aproximada, com as cabeças da fila do fundo
+# inteiras e os três robôs que trabalham. (x0, y0, x1, y1) na foto; saída 3:2.
+RECORTE_CELULAR = (330, 33, 1230, 633)
+LARGURA_CELULAR = 720
+SAIDA_CELULAR = RAIZ / 'assets' / 'profile-banner-m.gif'
 
-    quadros = []
-    for k in range(N):
-        t = k / FPS
-        arr = mover(limpa, sprites, t)
-        extra, desenho = luzes(t, mascaras)
-        arr = compor(compor(arr, extra), desenho)
-        img = Image.fromarray(np.clip(arr, 0, 255).astype(np.uint8))
-        if tam != (W, H):
-            img = img.resize(tam, Image.LANCZOS)
-        quadros.append(img)
 
+def salvar(quadros, destino):
+    """Grava os quadros como GIF em laço, com uma paleta só e quadros de diferença."""
+    tam = quadros[0].size
     # Uma paleta só para todos os quadros, tirada de uma amostra do laço, e sem
     # pontilhado: o pontilhado muda de quadro para quadro e a foto "ferve".
     amostra = Image.new('RGB', (tam[0], tam[1] * 4))
@@ -244,9 +236,30 @@ def gerar(largura):
     for q in saida:
         q.putpalette(pal)
 
-    saida[0].save(SAIDA, save_all=True, append_images=saida[1:], duration=int(1000 / FPS), loop=0,
+    saida[0].save(destino, save_all=True, append_images=saida[1:], duration=int(1000 / FPS), loop=0,
                   transparency=TRANSP, disposal=1, optimize=False)
-    print(f'{SAIDA.relative_to(RAIZ)}: {tam[0]}x{tam[1]}, {N} quadros, {SAIDA.stat().st_size / 1e6:.2f} MB')
+    print(f'{destino.relative_to(RAIZ)}: {tam[0]}x{tam[1]}, {N} quadros, {destino.stat().st_size / 1e6:.2f} MB')
+
+
+def gerar(largura):
+    base = Image.open(FOTO).convert('RGB')
+    mascaras = {n: mascara_poligono(p) for n, p in TELAS.items()}
+    limpa, sprites = preparar_partes(base)
+
+    inteiros = []
+    for k in range(N):
+        t = k / FPS
+        arr = mover(limpa, sprites, t)
+        extra, desenho = luzes(t, mascaras)
+        arr = compor(compor(arr, extra), desenho)
+        inteiros.append(Image.fromarray(np.clip(arr, 0, 255).astype(np.uint8)))
+
+    tam = (largura, round(H * largura / W))
+    salvar([q if tam == (W, H) else q.resize(tam, Image.LANCZOS) for q in inteiros], SAIDA)
+
+    x0, y0, x1, y1 = RECORTE_CELULAR
+    tam_m = (LARGURA_CELULAR, round((y1 - y0) * LARGURA_CELULAR / (x1 - x0)))
+    salvar([q.crop(RECORTE_CELULAR).resize(tam_m, Image.LANCZOS) for q in inteiros], SAIDA_CELULAR)
 
 
 if __name__ == '__main__':
