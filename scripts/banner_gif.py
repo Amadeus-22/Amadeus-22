@@ -89,28 +89,45 @@ def preparar_cabecas(base):
     lum = np.asarray(base.convert('L'), dtype=np.float32)
     yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
     sprites = []
-    for (cx, cy, rx, ry), pivo, graus, aceno, fase, limiar in CABECAS:
+    for (cx, cy, rx, ry), (px, py), graus, aceno, fase, limiar in CABECAS:
         dentro = ((xx - cx) / rx) ** 2 + ((yy - cy) / ry) ** 2 <= 1.0
         if limiar is None:
-            m = dentro
+            cabeca = dentro
         else:
-            m = dentro & (lum > limiar)
-            m = ndimage.binary_closing(m, iterations=4)
-            m = ndimage.binary_fill_holes(m)
-            rotulos, n = ndimage.label(m)
+            # A parte clara dá o contorno; o casco convexo dela traz junto o que
+            # é escuro mas faz parte da cabeça (orelha, sombra do rosto, nuca).
+            # Sem o casco, só a parte clara girava e o resto ficava parado.
+            claro = dentro & (lum > limiar)
+            claro = ndimage.binary_closing(claro, iterations=4)
+            rotulos, n = ndimage.label(claro)
             if n > 1:   # fica só a maior mancha: a cabeça, não um reflexo no rack
-                tam = ndimage.sum(m, rotulos, range(1, n + 1))
-                m = rotulos == (1 + int(np.argmax(tam)))
-        alfa = ndimage.gaussian_filter(m.astype(np.float32), 1.3)
-        # Embaixo, a cabeça some aos poucos para dentro do pescoço: ali fica a
-        # foto original, e a junção não abre quando a cabeça gira.
-        queda = np.clip((cy + ry * 0.95 - yy) / (ry * 0.35), 0, 1)
-        alfa *= queda
+                tam = ndimage.sum(claro, rotulos, range(1, n + 1))
+                claro = rotulos == (1 + int(np.argmax(tam)))
+            pts = cv2.findNonZero(claro.astype(np.uint8))
+            casco = np.zeros((H, W), dtype=np.uint8)
+            cv2.fillConvexPoly(casco, cv2.convexHull(pts), 1)
+            cabeca = casco.astype(bool)
+
+        # Pescoço: uma faixa do queixo até o pivô, que acompanha a cabeça cada
+        # vez menos conforme desce. No pivô o giro não desloca nada, então é ali
+        # que o sprite pode sumir sem deixar degrau.
+        queixo = cy + ry * 0.80
+        u = np.clip((yy - queixo) / max(py - queixo, 1.0), 0, 1)
+        centro = cx + (px - cx) * u
+        meia = rx * (0.62 - 0.22 * u)
+        pescoco = (yy >= queixo) & (yy <= py) & (np.abs(xx - centro) <= meia)
+
+        alfa = ndimage.gaussian_filter((cabeca | pescoco).astype(np.float32), 1.3)
+        alfa *= 1.0 - u ** 1.5
+
         x0, y0 = max(int(cx - rx - MARGEM), 0), max(int(cy - ry - MARGEM), 0)
-        x1, y1 = min(int(cx + rx + MARGEM), W), min(int(cy + ry + MARGEM), H)
+        x1, y1 = min(int(cx + rx + MARGEM), W), min(int(max(cy + ry, py) + MARGEM), H)
         rgba = np.dstack([np.asarray(base, dtype=np.uint8)[y0:y1, x0:x1], (alfa[y0:y1, x0:x1] * 255).astype(np.uint8)])
-        sprites.append((Image.fromarray(rgba, 'RGBA'), (x0, y0, x1, y1), pivo, graus, aceno, fase))
-        buraco = ndimage.binary_dilation(alfa > 0.5, iterations=4).astype(np.uint8) * 255
+        sprites.append((Image.fromarray(rgba, 'RGBA'), (x0, y0, x1, y1), (px, py), graus, aceno, fase))
+
+        # O fundo só é reconstruído onde a cabeça estava. No pescoço fica a foto
+        # original, e o sprite se mistura com ela.
+        buraco = ndimage.binary_dilation(cabeca & (yy < queixo + 2), iterations=5).astype(np.uint8) * 255
         limpa[y0:y1, x0:x1] = cv2.inpaint(limpa[y0:y1, x0:x1], buraco[y0:y1, x0:x1], 6, cv2.INPAINT_TELEA)
     return limpa.astype(np.float32), sprites
 
@@ -170,22 +187,6 @@ def luzes(t, mascaras):
     """Camada RGBA com tudo o que é luz: telas, LEDs, pulsos, pacotes."""
     cam = Image.new('RGBA', (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(cam, 'RGBA')
-
-    # gráfico de barras
-    for k in range(9):
-        x = 392 + k * 7.2
-        alt_max = 14 + (k * 7) % 22
-        alt = alt_max * (0.35 + 0.65 * onda(t, 2.0, k * 0.22))
-        d.rectangle((x, 470 - alt, x + 4, 470), fill=(127, 214, 255, 140))
-
-    # editor: linhas digitadas e cursor
-    for k, (larg, cor) in enumerate([(92, (159, 227, 255)), (64, (199, 245, 208)), (118, (159, 227, 255))]):
-        prog = min(((t + k * LACO / 3) % LACO) / (LACO * 0.7), 1.0)
-        passo = math.floor(prog * 24) / 24
-        if passo > 0:
-            d.rectangle((566, 368 + k * 8, 566 + larg * passo, 370 + k * 8), fill=cor + (205,))
-    if (t % 1.0) < 0.5:
-        d.rectangle((690, 382, 695, 389), fill=(234, 248, 255, 255))
 
     # ponteiro vermelho
     for k in range(2):
