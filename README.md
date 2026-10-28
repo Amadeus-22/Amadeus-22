@@ -138,13 +138,14 @@ filters out bounty farms, and a curated weekly magazine. Go and PHP.
 </picture>
 </p>
 
-- **QuantConnect Lean** — [Rachev Ratio indicator](https://github.com/QuantConnect/Lean/pull/9847) (C#)
-- **QuantConnect lean-cli** — [original casing in invalid choice errors](https://github.com/QuantConnect/lean-cli/pull/667) (Python)
-- **Klever klever-go** — [data race fix in the nodes coordinator](https://github.com/klever-io/klever-go/pull/172), [real tests in place of empty ones](https://github.com/klever-io/klever-go/pull/173), [Swagger schema fix for Duration fields](https://github.com/klever-io/klever-go/pull/170) and [docs regeneration](https://github.com/klever-io/klever-go/pull/171) (Go)
-- **Coinbase cdp-sdk** — [`parse_units` rounding and crash on carries](https://github.com/coinbase/cdp-sdk/pull/840) (Python)
-- **ethPandaOps ethereum-helm-charts** — [duplicate labels in the spamoor chart](https://github.com/ethpandaops/ethereum-helm-charts/pull/497) (Helm)
-- **Linux Mint mintupdate** — [missing import that left the release upgrade hanging](https://github.com/linuxmint/mintupdate/pull/1099) (Python)
-- **Akaunting** — merged: [database host and port applied on install](https://github.com/akaunting/akaunting/pull/3378) (PHP)
+**21 pull requests merged** in Binance, QuantConnect, Klever, Solana and Linux Mint, each with a test that fails before the fix and passes after it.
+
+- **Binance** binance-connector-python — 4 merged, shipped in `binance-common` 4.6.0 and 4.7.0: [signed session re-logon after a reconnect](https://github.com/binance/binance-connector-python/pull/572), [user data subscriptions restored after a reconnect](https://github.com/binance/binance-connector-python/pull/581), [streams resubscribed after a dropped connection](https://github.com/binance/binance-connector-python/pull/580), [enum values in stream names](https://github.com/binance/binance-connector-python/pull/577) (Python)
+- **QuantConnect** lean-cli — 6 merged, including [Docker images with a registry port](https://github.com/QuantConnect/lean-cli/pull/670), [URLs in `--notify-webhooks`](https://github.com/QuantConnect/lean-cli/pull/672) and [`=` in Docker environment values](https://github.com/QuantConnect/lean-cli/pull/680) (Python)
+- **Klever** klever-go — 6 merged, including a [data race in the nodes coordinator](https://github.com/klever-io/klever-go/pull/172), [nil entries in the mempool listing](https://github.com/klever-io/klever-go/pull/175) and [a 400 instead of a 500 for a bad page](https://github.com/klever-io/klever-go/pull/178) (Go)
+- **Solana** solana-py — 3 merged, including [`decode_sync_native` accepting any instruction](https://github.com/michaelhly/solana-py/pull/711) (Python)
+- **Linux Mint** — 2 merged: [mintmenu "Launch when I log in"](https://github.com/linuxmint/mintmenu/pull/291) and [mintupdate missing import](https://github.com/linuxmint/mintupdate/pull/1099) (Python)
+- **In review** — [Grafana Loki `$.field` in LogQL formatters](https://github.com/grafana/loki/pull/24989) (approved), [google/osv.dev TuxCare version matching](https://github.com/google/osv.dev/issues/6257), [QuantConnect Lean SPXW fee](https://github.com/QuantConnect/Lean/pull/9923)
 
 <p align="center">
 <picture>
