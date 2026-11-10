@@ -61,7 +61,7 @@
   <source media="(max-width: 700px) and (prefers-color-scheme: light)" srcset="./assets/w-php-m-light.svg">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/w-php.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/w-php-light.svg">
-  <img src="./assets/w-php.svg" width="380" alt="Full stack in PHP — my day job on a healthcare platform in production: registration and permission flows, scheduling, payments, reversible database migrations.">
+  <img src="./assets/w-php.svg" width="380" alt="Full stack in PHP — built at TIIX, a healthcare platform in production: registration and permission flows, scheduling, payments, reversible database migrations.">
 </picture>
 <picture>
   <source media="(max-width: 700px) and (prefers-color-scheme: dark)" srcset="./assets/w-quant-m.svg">
@@ -92,6 +92,11 @@
 </picture>
 </p>
 
+**[Tekel](https://github.com/Amadeus-22/tekel)** — finds the trades and blocks your
+market data silently lost. Watches Binance, Kraken and Mercado Bitcoin trades and
+KleverChain blocks live, tells a known gap from a silent one, writes clean
+QuantConnect LEAN data, with an optional Grafana dashboard. Open source, Go.
+
 **[permwatch](https://github.com/Amadeus-22/permwatch)** — shows who can sign for a
 KleverChain account, flags risky permissions and alerts by webhook or Telegram when
 they change; also watches spending-limit vaults. Ships with an Ansible role and a
@@ -108,10 +113,6 @@ Sign-In with Ethereum and one-click revoke through MetaMask. Go, Solidity, React
 **[klever-contracts](https://github.com/Amadeus-22/klever-contracts)** — smart
 contracts for KleverChain: a KLV vault with a per-period spending limit, deployed
 and exercised on testnet, with a toolchain setup that builds. Rust.
-
-**[tickguard](https://github.com/Amadeus-22/tickguard)** — validates live crypto
-trade feeds (Binance, Kraken, Mercado Bitcoin), tells known gaps from silent ones,
-writes clean QuantConnect LEAN data and audits existing LEAN datasets. Go.
 
 **[costbasis-br](https://github.com/Amadeus-22/costbasis-br)** — Brazilian crypto
 cost basis with exact arithmetic; tax rules are dated, cited data instead of code. Go.
@@ -138,14 +139,15 @@ filters out bounty farms, and a curated weekly magazine. Go and PHP.
 </picture>
 </p>
 
-**21 pull requests merged** in Binance, QuantConnect, Klever, Solana and Linux Mint, each with a test that fails before the fix and passes after it.
+**34 pull requests merged** in Binance, QuantConnect, Klever, Solana, Linux Mint and Grafana, each with a test that fails before the fix and passes after it.
 
-- **Binance** binance-connector-python — 4 merged, shipped in `binance-common` 4.6.0 and 4.7.0: [signed session re-logon after a reconnect](https://github.com/binance/binance-connector-python/pull/572), [user data subscriptions restored after a reconnect](https://github.com/binance/binance-connector-python/pull/581), [streams resubscribed after a dropped connection](https://github.com/binance/binance-connector-python/pull/580), [enum values in stream names](https://github.com/binance/binance-connector-python/pull/577) (Python)
-- **QuantConnect** lean-cli — 6 merged, including [Docker images with a registry port](https://github.com/QuantConnect/lean-cli/pull/670), [URLs in `--notify-webhooks`](https://github.com/QuantConnect/lean-cli/pull/672) and [`=` in Docker environment values](https://github.com/QuantConnect/lean-cli/pull/680) (Python)
+- **Binance** binance-connector-python — 4 merged, shipped in `binance-common` 4.6.0 and 4.7.0: [signed session re-logon after a reconnect](https://github.com/binance/binance-connector-python/pull/572), [user data subscriptions restored after a reconnect](https://github.com/binance/binance-connector-python/pull/581), [streams resubscribed after a dropped connection](https://github.com/binance/binance-connector-python/pull/580), [enum values in stream names](https://github.com/binance/binance-connector-python/pull/577); plus [in-flight requests lost on reconnect](https://github.com/binance/binance-connector-python/issues/587), reported with a reproduction and fixed by Binance in 4.9.0 (Python)
+- **QuantConnect** lean-cli — 8 merged, including [Docker images with a registry port](https://github.com/QuantConnect/lean-cli/pull/670), [URLs in `--notify-webhooks`](https://github.com/QuantConnect/lean-cli/pull/672) and [`=` in Docker environment values](https://github.com/QuantConnect/lean-cli/pull/680) (Python)
 - **Klever** klever-go — 6 merged, including a [data race in the nodes coordinator](https://github.com/klever-io/klever-go/pull/172), [nil entries in the mempool listing](https://github.com/klever-io/klever-go/pull/175) and [a 400 instead of a 500 for a bad page](https://github.com/klever-io/klever-go/pull/178) (Go)
-- **Solana** solana-py — 3 merged, including [`decode_sync_native` accepting any instruction](https://github.com/michaelhly/solana-py/pull/711) (Python)
-- **Linux Mint** — 2 merged: [mintmenu "Launch when I log in"](https://github.com/linuxmint/mintmenu/pull/291) and [mintupdate missing import](https://github.com/linuxmint/mintupdate/pull/1099) (Python)
-- **In review** — [Grafana Loki `$.field` in LogQL formatters](https://github.com/grafana/loki/pull/24989) (approved), [google/osv.dev TuxCare version matching](https://github.com/google/osv.dev/issues/6257), [QuantConnect Lean SPXW fee](https://github.com/QuantConnect/Lean/pull/9923)
+- **Linux Mint** — 8 merged across mintupdate, mintsources, mintinstall, mintcommon, mintmenu and warpinator (Python)
+- **Solana** solana-py — 4 merged, including [`decode_sync_native` accepting any instruction](https://github.com/michaelhly/solana-py/pull/711) (Python)
+- **Grafana** Loki — 1 merged in LogQL (Go) · **TerraCode** — 2 merged (Node.js)
+- **In review** — [lean-cli: stop the container on SIGTERM](https://github.com/QuantConnect/lean-cli/pull/712), [Lean: IB fee minimum](https://github.com/QuantConnect/Lean/pull/10016), [Klever: unknown asset as not found](https://github.com/klever-io/klever-go/pull/194), [Coinbase cdp-sdk: non-ASCII JWT hashing](https://github.com/coinbase/cdp-sdk/pull/842)
 
 <p align="center">
 <picture>
@@ -153,15 +155,15 @@ filters out bounty farms, and a curated weekly magazine. Go and PHP.
   <source media="(max-width: 700px) and (prefers-color-scheme: light)" srcset="./assets/h-currently-m-light.svg">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/h-currently.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/h-currently-light.svg">
-  <img src="./assets/h-currently.svg" width="100%" alt="Currently">
+  <img src="./assets/h-currently.svg" width="100%" alt="Experience">
 </picture>
 </p>
 
 **Software Engineer at [TIIX](https://github.com/AM-TIIX)** — a health and services
-platform ([tiix.com.br](https://tiix.com.br/)). I work on the PHP portals for
-clients, professionals and brokers: registration and permission flows, scheduling,
-payments, and the shared foundation beneath them. Legacy PHP in a WordPress-based
-ecosystem, with reversible MySQL migrations.
+platform ([tiix.com.br](https://tiix.com.br/)). Owned the PHP portals for clients,
+professionals and brokers in production: registration and permission flows,
+scheduling, payments and reversible MySQL migrations, and migrated parts of the
+platform to a TypeScript monorepo (React, Next.js, NestJS, PostgreSQL).
 
 <p align="center">
 <picture>
@@ -201,7 +203,7 @@ ecosystem, with reversible MySQL migrations.
   <source media="(max-width: 700px) and (prefers-color-scheme: light)" srcset="./assets/c-tiix-m-light.svg">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/c-tiix.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/c-tiix-light.svg">
-  <img src="./assets/c-tiix.svg" width="380" alt="TIIX — health and services platform at tiix.com.br. Current employer.">
+  <img src="./assets/c-tiix.svg" width="380" alt="TIIX — health and services platform at tiix.com.br. Previous role.">
 </picture></a>
 <a href="https://github.com/NER-ELOHIM"><picture>
   <source media="(max-width: 700px) and (prefers-color-scheme: dark)" srcset="./assets/c-ner-m.svg">

@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="628" height="250" viewBox="0 0 628 250" role="img" aria-labelledby="t">
-  <title id="t">TIIX — Health and services platform at tiix.com.br. Current employer: the PHP portals for clients, professionals and brokers.</title>
+  <title id="t">TIIX — Health and services platform at tiix.com.br. Previous role: the PHP portals for clients, professionals and brokers.</title>
   <defs><linearGradient id="r" x1="0" y1="0" x2="1" y2="0">
     <stop offset="0" stop-color="#c1121f" stop-opacity="0.25"/>
     <stop offset="0.5" stop-color="#c1121f"/>
@@ -13,7 +13,7 @@
   <text x="110" y="58" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="24" font-weight="700" fill="#111820" letter-spacing="1">TIIX</text>
   <line x1="34" y1="112" x2="594" y2="112" stroke="#8fa2bb" stroke-width="1.2" opacity="0.75"/>
   <text x="34" y="142" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="18" fill="#33414f">Health and services platform at</text>
-  <text x="34" y="168" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="18" fill="#33414f">tiix.com.br. Current employer: the PHP</text>
+  <text x="34" y="168" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="18" fill="#33414f">tiix.com.br. Previous role: the PHP</text>
   <text x="34" y="194" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="18" fill="#33414f">portals for clients, professionals and</text>
   <text x="34" y="220" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="18" fill="#33414f">brokers.</text>
 </svg>

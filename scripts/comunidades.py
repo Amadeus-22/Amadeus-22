@@ -32,7 +32,7 @@ def quebrar(t, n):
 
 ORGS = [
     ("QuantConnect", "QuantConnect", "Algorithmic trading research and backtesting, on the platform behind Lean, its open-source engine.", "c-qc"),
-    ("AM-TIIX", "TIIX", "Health and services platform at tiix.com.br. Current employer: the PHP portals for clients, professionals and brokers.", "c-tiix"),
+    ("AM-TIIX", "TIIX", "Health and services platform at tiix.com.br. Previous role: the PHP portals for clients, professionals and brokers.", "c-tiix"),
     ("NER-ELOHIM", "NER-ELOHIM", "My own organization, where the Go suite and the engineering tooling live. Private by design.", "c-ner"),
     ("instituto-nova-sos", "Instituto Nova SOS", "Contributor to chesed, a Go and TypeScript project for a social institute.", "c-sos"),
 ]

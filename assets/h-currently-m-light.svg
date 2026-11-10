@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="560" height="90" viewBox="0 0 560 90" role="img" aria-labelledby="t">
-  <title id="t">Currently</title>
+  <title id="t">Experience</title>
   <defs>
     <linearGradient id="redmt2l" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="#c1121f" stop-opacity="0.25"/>
@@ -14,5 +14,5 @@
   <rect x="0" y="0" width="560" height="4" fill="url(#redmt2l)"/>
   <rect x="0" y="86" width="560" height="4" fill="url(#redmt2l)" opacity="0.6"/>
   <text x="280" y="56" text-anchor="middle" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="30" font-weight="700"
-        fill="#111820" letter-spacing="4">CURRENTLY</text>
+        fill="#111820" letter-spacing="4">EXPERIENCE</text>
 </svg>

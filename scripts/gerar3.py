@@ -124,13 +124,13 @@ def glance(arq, idp, tema):
     p.append('</svg>')
     (OUT / arq).write_text('\n'.join(p))
 
-TITULOS = [("What I work on","h-work"),("Selected work","h-selected"),("Open source","h-oss"),("Currently","h-currently"),
+TITULOS = [("What I work on","h-work"),("Selected work","h-selected"),("Open source","h-oss"),("Experience","h-currently"),
            ("Stack","h-stack"),("Communities","h-communities"),("Contact","h-contact")]
 CARDS = [
     ("DevOps and automation","Ansible roles, Helm charts, container images and release pipelines, each with a test that runs it for real. Linux and systemd, Prometheus metrics, and incident response down to the root cause.","w-devops"),
     ("Blockchain infrastructure","Tooling around the chain: a resilient JSON-RPC gateway, wallet and permission monitors, smart contracts on KleverChain, and fixes sent upstream to node and SDK code.","w-chain"),
     ("Backend systems in Go","Services that ship as a single static binary with no runtime dependencies. SQLite with full-text search, subprocess isolation over versioned contracts, systemd deployment.","w-go"),
-    ("Full stack in PHP","My day job: a healthcare platform in production, front to back. Registration and permission flows, scheduling, payments, and reversible database migrations on systems already carrying users.","w-php"),
+    ("Full stack in PHP","Built at TIIX: a healthcare platform in production, front to back. Registration and permission flows, scheduling, payments, and reversible database migrations on systems already carrying users.","w-php"),
     ("Quantitative development","Trading strategy research and backtesting on QuantConnect. Risk modelling and predictive models on financial time series, with evaluation that separates a real edge from a curve that only looks good.","w-quant"),
     ("Data automation","Collection bots, scraping, pipelines and internal tooling. Linux and systemd, scheduled jobs, and reporting that someone actually reads.","w-data"),
 ]
