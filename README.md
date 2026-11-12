@@ -121,9 +121,9 @@ cost basis with exact arithmetic; tax rules are dated, cited data instead of cod
 [QuantConnect](https://github.com/QuantConnect), with predictive modelling in
 Python and R.
 
-**[Editalis](https://github.com/Amadeus-22/editalis)** — WhatsApp alerts for
-Brazilian public service exams, filtered by each subscriber's profile, with
-billing and LGPD consent. Python, FastAPI.
+**[editalis-cloud](https://github.com/Amadeus-22/editalis-cloud)** — infrastructure
+as code for a WhatsApp alerts product: AWS with Terraform, Helm charts and Argo CD,
+checked in CI with Checkov and Trivy.
 
 **[bounty](https://github.com/NER-ELOHIM/bounty)** and
 **[news](https://github.com/NER-ELOHIM/news)** — a GitHub bounty finder that
