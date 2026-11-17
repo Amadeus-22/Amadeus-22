@@ -92,6 +92,12 @@
 </picture>
 </p>
 
+**[cota](https://github.com/Amadeus-22/cota)** — the daily back office of an
+investment fund: replays trades, splits, dividends and investor flows, marks the
+portfolio to market, computes the net asset value and the quota with exact
+`Decimal` arithmetic, and reconciles every figure with the administrator, naming
+the cause of each break. Python, FastAPI, React + TypeScript.
+
 **[Tekel](https://github.com/Amadeus-22/tekel)** — finds the trades and blocks your
 market data silently lost. Watches Binance, Kraken and Mercado Bitcoin trades and
 KleverChain blocks live, tells a known gap from a silent one, writes clean
@@ -111,7 +117,7 @@ per-provider metrics, proven with chaos tests. Go.
 
 **[chainwatch](https://github.com/Amadeus-22/chainwatch)** — watches wallets for
 risky ERC-20 approvals and drain patterns across EVM chains, reorg-safe, with
-Sign-In with Ethereum and one-click revoke through MetaMask. Go, Solidity, React.
+Sign-In with Ethereum and one-click revoke through MetaMask. Go, Solidity, React + TypeScript.
 
 **[klever-contracts](https://github.com/Amadeus-22/klever-contracts)** — smart
 contracts for KleverChain: a KLV vault with a per-period spending limit, deployed
