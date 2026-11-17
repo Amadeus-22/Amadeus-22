@@ -92,11 +92,11 @@
 </picture>
 </p>
 
-**[cota](https://github.com/Amadeus-22/cota)** — the daily back office of an
-investment fund: replays trades, splits, dividends and investor flows, marks the
-portfolio to market, computes the net asset value and the quota with exact
-`Decimal` arithmetic, and reconciles every figure with the administrator, naming
-the cause of each break. Python, FastAPI, React + TypeScript.
+**[Emaús](https://github.com/Amadeus-22/emaus)** — fund back office: rebuilds the
+daily quota of a real Ibovespa fund from CVM, B3 and Banco Central open data and
+reconciles it with the official quota (portfolio checked to the cent, gap within
+a basis point until an ex-dividend day), plus a daily ledger with administrator
+reconciliation. Python with exact `Decimal`, FastAPI, React + TypeScript.
 
 **[Tekel](https://github.com/Amadeus-22/tekel)** — finds the trades and blocks your
 market data silently lost. Watches Binance, Kraken and Mercado Bitcoin trades and
