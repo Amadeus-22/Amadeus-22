@@ -97,6 +97,9 @@ market data silently lost. Watches Binance, Kraken and Mercado Bitcoin trades an
 KleverChain blocks live, tells a known gap from a silent one, writes clean
 QuantConnect LEAN data, with an optional Grafana dashboard. Open source, Go.
 
+**[costbasis-br](https://github.com/Amadeus-22/costbasis-br)** — Brazilian crypto
+cost basis with exact arithmetic; tax rules are dated, cited data instead of code. Go.
+
 **[permwatch](https://github.com/Amadeus-22/permwatch)** — shows who can sign for a
 KleverChain account, flags risky permissions and alerts by webhook or Telegram when
 they change; also watches spending-limit vaults. Ships with an Ansible role and a
@@ -113,9 +116,6 @@ Sign-In with Ethereum and one-click revoke through MetaMask. Go, Solidity, React
 **[klever-contracts](https://github.com/Amadeus-22/klever-contracts)** — smart
 contracts for KleverChain: a KLV vault with a per-period spending limit, deployed
 and exercised on testnet, with a toolchain setup that builds. Rust.
-
-**[costbasis-br](https://github.com/Amadeus-22/costbasis-br)** — Brazilian crypto
-cost basis with exact arithmetic; tax rules are dated, cited data instead of code. Go.
 
 **Quantitative research** — strategy simulation and backtesting on
 [QuantConnect](https://github.com/QuantConnect), with predictive modelling in
@@ -139,15 +139,22 @@ filters out bounty farms, and a curated weekly magazine. Go and PHP.
 </picture>
 </p>
 
-**34 pull requests merged** in Binance, QuantConnect, Klever, Solana, Linux Mint and Grafana, each with a test that fails before the fix and passes after it.
+**41 pull requests merged** upstream, most of them Python and market infrastructure, each with a test that fails before the fix and passes after it.
 
-- **Binance** binance-connector-python — 4 merged, shipped in `binance-common` 4.6.0 and 4.7.0: [signed session re-logon after a reconnect](https://github.com/binance/binance-connector-python/pull/572), [user data subscriptions restored after a reconnect](https://github.com/binance/binance-connector-python/pull/581), [streams resubscribed after a dropped connection](https://github.com/binance/binance-connector-python/pull/580), [enum values in stream names](https://github.com/binance/binance-connector-python/pull/577); plus [in-flight requests lost on reconnect](https://github.com/binance/binance-connector-python/issues/587), reported with a reproduction and fixed by Binance in 4.9.0 (Python)
-- **QuantConnect** lean-cli — 8 merged, including [Docker images with a registry port](https://github.com/QuantConnect/lean-cli/pull/670), [URLs in `--notify-webhooks`](https://github.com/QuantConnect/lean-cli/pull/672) and [`=` in Docker environment values](https://github.com/QuantConnect/lean-cli/pull/680) (Python)
-- **Klever** klever-go — 6 merged, including a [data race in the nodes coordinator](https://github.com/klever-io/klever-go/pull/172), [nil entries in the mempool listing](https://github.com/klever-io/klever-go/pull/175) and [a 400 instead of a 500 for a bad page](https://github.com/klever-io/klever-go/pull/178) (Go)
+**Python for markets**
+
+- **Binance** binance-connector-python — 5 merged, shipped in `binance-common` 4.6.0 and 4.7.0: [signed session re-logon after a reconnect](https://github.com/binance/binance-connector-python/pull/572), [user data subscriptions restored after a reconnect](https://github.com/binance/binance-connector-python/pull/581), [streams resubscribed after a dropped connection](https://github.com/binance/binance-connector-python/pull/580), [enum values in stream names](https://github.com/binance/binance-connector-python/pull/577), [percent-encoded proxy credentials](https://github.com/binance/binance-connector-python/pull/583); plus [in-flight requests lost on reconnect](https://github.com/binance/binance-connector-python/issues/587), reported with a reproduction and fixed by Binance in 4.9.0
+- **QuantConnect** lean-cli — 8 merged, including [Docker images with a registry port](https://github.com/QuantConnect/lean-cli/pull/670), [URLs in `--notify-webhooks`](https://github.com/QuantConnect/lean-cli/pull/672) and [`=` in Docker environment values](https://github.com/QuantConnect/lean-cli/pull/680)
+- **QuantConnect** Lean — [Interactive Brokers fee: charge the per-order maximum when it is below the minimum](https://github.com/QuantConnect/Lean/pull/10016), co-authored in [Lean master](https://github.com/QuantConnect/Lean/commit/8ea507e1) (C#)
+- **Solana** solana-py — 5 merged, including [`decode_sync_native` accepting any instruction](https://github.com/michaelhly/solana-py/pull/711) and [the vote withdraw authority marked read-only](https://github.com/michaelhly/solana-py/pull/730)
+
+**Infrastructure and Linux**
+
 - **Linux Mint** — 8 merged across mintupdate, mintsources, mintinstall, mintcommon, mintmenu and warpinator (Python)
-- **Solana** solana-py — 4 merged, including [`decode_sync_native` accepting any instruction](https://github.com/michaelhly/solana-py/pull/711) (Python)
-- **Grafana** Loki — 1 merged in LogQL (Go) · **TerraCode** — 2 merged (Node.js)
-- **In review** — [lean-cli: stop the container on SIGTERM](https://github.com/QuantConnect/lean-cli/pull/712), [Lean: IB fee minimum](https://github.com/QuantConnect/Lean/pull/10016), [Klever: unknown asset as not found](https://github.com/klever-io/klever-go/pull/194), [Coinbase cdp-sdk: non-ASCII JWT hashing](https://github.com/coinbase/cdp-sdk/pull/842)
+- **Klever** klever-go — 6 merged, including a [data race in the nodes coordinator](https://github.com/klever-io/klever-go/pull/172), [nil entries in the mempool listing](https://github.com/klever-io/klever-go/pull/175) and [a 400 instead of a 500 for a bad page](https://github.com/klever-io/klever-go/pull/178) (Go)
+- **Google** OSV.dev — [RPM version ordering for TuxCare, CentOS, OracleLinux and RHEL](https://github.com/google/osv.dev/pull/6357) (Go) · **Grafana** Loki — 1 merged in LogQL (Go)
+- **TerraCode** — 6 merged (Node.js) · **Akaunting** — 1 merged (PHP)
+- **In review** — [lean-cli: stop the container on SIGTERM](https://github.com/QuantConnect/lean-cli/pull/712), [lean-cli: Docker client timeout](https://github.com/QuantConnect/lean-cli/pull/716), [Canonical chisel: generated paths in sorted order](https://github.com/canonical/chisel/pull/355), [Klever: unknown asset as not found](https://github.com/klever-io/klever-go/pull/194)
 
 <p align="center">
 <picture>
