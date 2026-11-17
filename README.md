@@ -92,7 +92,7 @@
 </picture>
 </p>
 
-**[Emaús](https://github.com/Amadeus-22/emaus)** — fund back office: rebuilds the
+**[Mene](https://github.com/Amadeus-22/mene)** — fund back office: rebuilds the
 daily quota of a real Ibovespa fund from CVM, B3 and Banco Central open data and
 reconciles it with the official quota (portfolio checked to the cent, gap within
 a basis point until an ex-dividend day), plus a daily ledger with administrator
